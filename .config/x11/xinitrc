@@ -3,4 +3,4 @@
 # setup the desktop environment and launch programs
 [ -f "$HOME/.xprofile" ] && . "$HOME/.xprofile"
 
-exec bspwm
+ssh-agent bspwm
