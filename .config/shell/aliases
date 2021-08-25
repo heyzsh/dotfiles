@@ -6,6 +6,12 @@
 #   \_____|\_)_\_____(___/|_____|___/ 
 #                                  
 
+# ========
+# dotfiles
+# ========
+
+alias config='/usr/bin/git --git-dir=$HOME/GitHub/veryretro --work-tree=$HOME'
+
 # =======
 # pacman
 # =======
