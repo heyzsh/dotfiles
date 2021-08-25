@@ -1,0 +1,59 @@
+#          _  _                       
+#         | |(_)                      
+#    _____| | _ _____  ___ _____  ___ 
+#   (____ | || (____ |/___) ___ |/___)
+#   / ___ | || / ___ |___ | ____|___ |
+#   \_____|\_)_\_____(___/|_____|___/ 
+#                                  
+
+# =======
+# pacman
+# =======
+
+alias install='yay -S'
+alias search='yay -Ss'
+alias remove='sudo pacman -Rns'
+alias upgrade='sudo pacman -Syu'
+
+# ====
+# lsd
+# ====
+
+alias l='lsd -a'
+alias ll='lsd -l'
+alias lt='lsd --tree'
+alias la='lsd -la'
+
+# ===============
+# power commands
+# ===============
+
+alias die='shutdown -h now'
+alias out='pkill x'
+alias sus='sudo systemctl --suspend'
+
+# ====
+# git
+# ====
+
+alias gita='git add .'
+alias gitc='git commit'
+alias gitp='git push'
+
+# =====
+# grep
+# =====
+
+alias grep='grep --color=auto'
+
+# =======
+# neovim
+# =======
+
+alias v='nvim'
+
+# ===========
+# x utilities
+# ===========
+
+alias ccp='xclip -selection c'
