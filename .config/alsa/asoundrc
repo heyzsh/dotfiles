@@ -1,0 +1,101 @@
+#--------------------------------------------------
+# Cards
+#--------------------------------------------------
+pcm.audiophile {
+    type hw
+    card 0
+}
+
+ctl.audiophile {
+    type hw
+    card 0
+}
+
+#--------------------------------------------------
+# Normal alsa configuration
+#--------------------------------------------------
+pcm.normal {
+    type plug
+    slave.pcm "duplex"
+} 
+
+pcm.duplex {
+    type asym
+    playback.pcm "ladspa"
+    capture.pcm "dsnooper"
+}
+
+# --- ladspa chain ---
+pcm.ladspa {
+  type ladspa
+  slave.pcm "dmixplug"
+  path "/usr/lib64/ladspa";
+  plugins [
+    {
+    label amp_stereo
+    input {
+        #InputGain(Db)
+        controls [ 2 ]
+        }
+
+    }]
+}
+
+pcm.dmixplug {
+  type plug
+  slave.pcm "dmixer"
+}
+
+pcm.dmixer {
+    type dmix
+    ipc_key 1234
+    slave {
+        pcm "audiophile"
+        period_size 1024
+        buffer_size 4096
+        rate 44100
+    }
+} 
+
+pcm.dsnooper {
+    type dsnoop
+    ipc_key 2048
+    ipc_perm 0666 
+    slave.pcm "audiophile"
+    slave 
+    {
+        period_time 0
+        period_size 1024
+        buffer_size 4096
+        rate 44100
+    }
+    bindings {
+        0 0
+        1 1
+    }
+}
+
+#--------------------------------------------------
+# Special entries for pulseaudio/apulse in apps like skype
+#--------------------------------------------------
+pcm.duplexPulse {
+    type asym
+    playback.pcm "dmixerPulse"
+    capture.pcm "dsnooper"
+}
+
+pcm.dmixerPulse {
+    type dmix
+    ipc_key 1234
+    slave {
+        pcm "audiophile"
+        period_size 1024
+        buffer_size 4096
+        rate 44100
+    }
+}
+
+#--------------------------------------------------
+# Global configurations for better quality convertion
+#--------------------------------------------------
+defaults.pcm.rate_converter "speexrate_medium"
