@@ -1,6 +1,0 @@
-#!/bin/sh
-
-# setup the desktop environment and launch programs
-[ -f "$HOME/.xprofile" ] && . "$HOME/.xprofile"
-
-ssh-agent bspwm
