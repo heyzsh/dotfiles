@@ -82,10 +82,14 @@ export MOZ_ENABLE_WAYLAND=1
 
 export _JAVA_AWT_WM_NONREPARENTING=1
 
+
+BEMENU_OPTS="-i --tb #3426FD"
+
 #---------#
 # wayland #
 #---------#
-export GDK_BACKEND=wayland
+# It's known to break some apps
+#export GDK_BACKEND=wayland
 
 if test -z "${XDG_RUNTIME_DIR}"; then
     export XDG_RUNTIME_DIR=/tmp/${UID}-runtime-dir
@@ -94,3 +98,26 @@ if test -z "${XDG_RUNTIME_DIR}"; then
         chmod 0700 "${XDG_RUNTIME_DIR}"
     fi
 fi
+
+
+export BEMENU_BACKEND="wayland"
+# this may fix external monitor problem
+export WLR_DRM_NO_MODIFIERS=1
+
+# make Firefox use native Wayland backend
+export MOZ_ENABLE_WAYLAND=1
+# force wayland backend for bemenu
+export BEMENU_BACKEND=wayland
+
+# Force Wayland backend for qt5 apps
+export QT_QPA_PLATFORM=wayland
+export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+
+# for Java some apps
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+# general
+export XDG_SESSION_TYPE="wayland"
+
+export DISPLAY="$WAYLAND_DISPLAY"
+
