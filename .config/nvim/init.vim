@@ -307,6 +307,12 @@ map <leader>s? z=
 " Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>
 
+" ==========
+" => MACROS
+" ==========
+
+let @c = "I# \<Esc>A #\<Esc>yyPVr-r#$r#yyjp"
+
 " ===================
 " => HELPER FUNCTIONS 
 " ===================
