@@ -6,8 +6,8 @@ env:
 
 window:
   padding:
-    x: 4
-    y: 4
+    x: 7
+    y: 7
   dynamic_padding: false
   decorations: none
   title: Alacritty
