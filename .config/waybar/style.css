@@ -20,6 +20,7 @@ window#waybar.hidden {
   font-weight: bold;
   color: #fbf1c7;
   border-radius: 0;
+  box-shadow: inset 0 -2px #fbf1c7;
   transition: none;
 }
 
@@ -28,8 +29,8 @@ window#waybar.hidden {
 }
 
 #workspaces button.focused {
-  background: #665c54;
-  box-shadow: inset 0 -2px #fbf1c7;
+  box-shadow: inset 0 -2px #fabd2f;
+  color: #fabd2f;
 }
 
 #workspaces button.urgent {
@@ -58,6 +59,7 @@ window#waybar.hidden {
   padding: 0 7px;
   margin: 0 3px;
   color: #fbf1c7;
+  box-shadow: inset 0 -2px #fbf1c7;
 }
 
 #window,
@@ -76,7 +78,6 @@ window#waybar.hidden {
 
 .modules-right > widget:last-child > #workspaces {
   margin-right: 0;
-  box-shadow: 2px 2px 2px #000000;
 }
 
 #clock {
@@ -101,7 +102,8 @@ window#waybar.hidden {
 }
 
 #battery.critical:not(.charging) {
-  background-color: #cc241d;
+  background-color: #9d0006;
+  box-shadow: inset 0 -2px #9d0006;
   animation-name: blink;
   animation-duration: 0.25s;
   animation-timing-function: linear;
@@ -140,6 +142,7 @@ label:focus {
 
 #network.disconnected {
   background-color: #9d0006;
+  box-shadow: inset 0 -2px #9d0006;
   font-weight: bold;
 }
 
@@ -163,6 +166,7 @@ label:focus {
 
 #temperature.critical {
   background-color: #9d0006;
+  box-shadow: inset 0 -2px #9d0006;
   font-weight: bold;
 }
 
