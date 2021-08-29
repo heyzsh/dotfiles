@@ -10,7 +10,7 @@ set $right    l
 set $br       bracketright
 set $bl       bracketleft
 # Programs
-set $term     foot
+set $term     alacritty
 set $menu     /usr/bin/bemenu-run | xargs swaymsg exec --
 # Wallpapers
 set $primary_bg "$HOME/.local/backgrounds/primary.jpg"  
@@ -70,8 +70,8 @@ input "2:14:SynPS/2_Synaptics_TouchPad" {
 # VISUALS #
 #---------#
 # Borders
-default_border            pixel 3
-default_floating_border   pixel 3
+default_border            pixel 2
+default_floating_border   pixel 2
 smart_borders             off
 # Gaps
 gaps inner  8          
@@ -79,11 +79,10 @@ smart_gaps  off
 # Font
 font Adobe Source Code SemiBold 10
 # Color Scheme
-#client.focused             #FFFFFF #FFFFFF #FFFFFF #FFFFFF #FFFFFF
-#client.focused_inactive    #FFFFFF #FFFFFF #FFFFFF #FFFFFF #FFFFFF
-#client.placeholder         #FFFFFF #FFFFFF #FFFFFF #FFFFFF #FFFFFF
-#client.unfocused           #FFFFFF #FFFFFF #FFFFFF #FFFFFF #FFFFFF
-#client.urgent              #FFFFFF #FFFFFF #FFFFFF #FFFFFF #FFFFFF
+client.focused            #ebdbb2 #fbf1c7 #3c3836 #ebdbb2 #ebdbb2
+client.unfocused          #ebdbb2 #d5c4a1 #3c3836 #504945 #504945
+client.focused_inactive   #a89984 #bdae93 #3c3836 #a89984 #a89984
+client.urgent             #af3013 #fbf1c7 #fbf1c7 #af30a3 #af30a3
 # Resize Mode
 mode "resize" {
   bindsym $left   resize shrink   width   10px
@@ -135,10 +134,10 @@ bindsym $mod+Shift+$bl      move container to workspace prev
 bindsym $mod+Ctrl+Shift+period    move workspace to output right
 bindsym $mod+Ctrl+Shift+comma     move workspace to output left
 # Layouts
-bindsym $mod+Shift+y        layout default
-bindsym $mod+Shift+u        layout splith
-bindsym $mod+Shift+i        layout splitv
-bindsym $mod+Shift+o        layout stacking
+bindsym $mod+o              layout default
+bindsym $mod+i              layout splith
+bindsym $mod+u              layout splitv
+bindsym $mod+y              layout stacking
 bindsym $mod+Shift+p        layout tabbed
 bindsym $mod+Ctrl+period    layout toggle split
 bindsym $mod+Ctrl+comma     layout toggle all
