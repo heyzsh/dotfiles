@@ -93,6 +93,7 @@ export MOZ_ENABLE_WAYLAND=1
 #------#
 # JAVA #
 #------#
+# Wayland Fix for Java Programs
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 #---------#
@@ -112,5 +113,3 @@ if test -z "${XDG_RUNTIME_DIR}"; then
 fi
 # External Monitors Fix
 export WLR_DRM_NO_MODIFIERS=1
-# Java Programs Using Wayland Fix
-export _JAVA_AWT_WM_NONREPARENTING=1
