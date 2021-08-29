@@ -1,0 +1,16 @@
+# package.use# required by sys-apps/busybox-1.33.1-r2::gentoo[static]
+# required by @system
+# required by @world (argument)
+>=virtual/libcrypt-2 static-libs
+# required by virtual/libcrypt-2::gentoo
+# required by sys-apps/util-linux-2.37.2::gentoo
+# required by dev-lang/python-3.10.0_rc1_p1::gentoo
+# required by dev-libs/glib-2.68.4::gentoo
+# required by dev-lang/vala-0.52.5::gentoo
+# required by gnome-base/librsvg-2.50.7::gentoo[vala]
+# required by x11-themes/adwaita-icon-theme-40.1.1::gentoo
+# required by virtual/freedesktop-icon-theme-0-r4::gentoo
+# required by www-client/firefox-91.0.2::gentoo
+# required by @selected
+# required by @world (argument)
+>=sys-libs/libxcrypt-4.4.25 static-libs
