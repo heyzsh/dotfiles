@@ -1,9 +1,8 @@
 #!/bin/sh
 
-# ======================
-# home dir organization
-# ======================
-
+#-----------------------#
+# HOME DIR ORGANIZATION #
+#-----------------------#
 ! [ -d "$HOME/.config" ]              && mkdir "$HOME/.config"
 ! [ -d "$HOME/.local/bin" ]           && mkdir -p "$HOME/.local/bin"
 ! [ -d "$HOME/.local/share" ]         && mkdir -p "$HOME/.local/share"
@@ -23,74 +22,87 @@ export PASSWORD_STORE_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/password-store"
 export HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/history"
 export GNUPGHOME="${XDG_DATA_HOME:-$HOME/.local/share}/gnupg"
 export CARGO_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/cargo"
-
-# it's causing an issue for some reason, needs to be reported
+# It's causing an issue for some reason, needs to be reported.
 # export ALSA_CONFIG_PATH="${XDG_CONFIG_HOME:-$HOME/.config}/alsa/asoundrc"
 
-
-# ====================
-# preferrerd programs
-# ====================
-
+#--------------------#
+# PREFERRED PROGRAMS #
+#--------------------#
 export BROWSER="/usr/bin/firefox"
 export DOCUMENT_VIEWER="/usr/bin/zathura"
 export EDITOR="/usr/bin/nvim"
 export FILE_MANAGER="/usr/bin/lf"
 export IMAGE_EDITOR="/usr/bin/gimp"
-export IMAGE_VIEWER="/usr/bin/sxiv"
+export IMAGE_VIEWER="/usr/bin/imv"
 export MAIL="/usr/bin/mutt"
 export PLAYER="/usr/bin/mpv"
 export TERMINAL="/usr/bin/alacritty"
 
-# ===============
-# custom scripts
-# ===============
-
+#--------------#
+# SCRIPTS PATH #
+#--------------#
 export PATH=$PATH:/home/$USER/.local/bin
 
-# =========
-# go paths
-# =========
-
+#--------------#
+# GOLANG PATHS #
+#--------------#
 export GOPATH="${HOME}/github/go"
 export GOBIN="${HOME}/github/go/bin"
 export PATH=$PATH:$GOBIN
 
-# ===
-# fzf
-# ===
-
+#-------------#
+# FZF OPTIONS #
+#-------------#
 export FZF_DEFAULT_OPTS="--layout=reverse --height 60%"
 
-# ==
-# qt
-# ==
-
+#------------#
+# QT OPTIONS #
+#------------#
+# Force QT to Use GTK Theme
 export QT_QPA_PLATFORMTHEME="gtk2"
+# Force Wayland for QT Programs
+export QT_QPA_PLATFORM=wayland
+export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 
-# =======
-# firefox
-# =======
+#--------#
+# BEMENU #
+#--------#
+export BEMENU_BACKEND="wayland"
+export BEMENU_OPTS="
+ -iw                                  \
+--fn  'Adobe Source Code Pro Bold 11' \
+  -l  10                              \
+--tb  #1D2021                         \
+--tf  #A89984                         \
+--fb  #3C3836                         \
+--ff  #928374                         \
+--nb  #282828                         \
+--nf  #BDAE93                         \
+--hb  #282828                         \
+--hf  #FABD2F                         \
+--sb  #32302F                         \
+--sf  #A89984                         \
+"
 
-# smooth scrolling
-export MOZ_USE_XINPUT2="1"
+#-----------------#
+# FIREFOX OPTIONS #
+#-----------------#
+# Enable Wayland for Mozilla Firefox
 export MOZ_ENABLE_WAYLAND=1
 
-# ====
-# java
-# ====
-
+#------#
+# JAVA #
+#------#
 export _JAVA_AWT_WM_NONREPARENTING=1
 
-
-BEMENU_OPTS="-i --tb #3426FD"
-
 #---------#
-# wayland #
+# WAYLAND #
 #---------#
-# It's known to break some apps
-#export GDK_BACKEND=wayland
-
+export XDG_SESSION_TYPE="wayland"
+export DISPLAY="$WAYLAND_DISPLAY"
+# It's known to break some programs.
+# export GDK_BACKEND=wayland
+# Sets the runtime directory for Wayland.
 if test -z "${XDG_RUNTIME_DIR}"; then
     export XDG_RUNTIME_DIR=/tmp/${UID}-runtime-dir
     if ! test -d "${XDG_RUNTIME_DIR}"; then
@@ -98,26 +110,7 @@ if test -z "${XDG_RUNTIME_DIR}"; then
         chmod 0700 "${XDG_RUNTIME_DIR}"
     fi
 fi
-
-
-export BEMENU_BACKEND="wayland"
-# this may fix external monitor problem
+# External Monitors Fix
 export WLR_DRM_NO_MODIFIERS=1
-
-# make Firefox use native Wayland backend
-export MOZ_ENABLE_WAYLAND=1
-# force wayland backend for bemenu
-export BEMENU_BACKEND=wayland
-
-# Force Wayland backend for qt5 apps
-export QT_QPA_PLATFORM=wayland
-export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
-
-# for Java some apps
+# Java Programs Using Wayland Fix
 export _JAVA_AWT_WM_NONREPARENTING=1
-
-# general
-export XDG_SESSION_TYPE="wayland"
-
-export DISPLAY="$WAYLAND_DISPLAY"
-
