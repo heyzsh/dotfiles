@@ -1,9 +1,0 @@
-x11-libs/cairo X
-x11-libs/gtk+ X
-media-libs/libepoxy X
-media-libs/mesa X
-media-libs/libglvnd X
-x11-libs/libglvnd X
-www-client/firefox hwaccel
->=virtual/libcrypt-2 static-libs
->=sys-libs/libxcrypt-4.4.25 static-libs
