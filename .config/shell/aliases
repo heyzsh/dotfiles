@@ -1,34 +1,66 @@
-#          _  _                       
-#         | |(_)                      
-#    _____| | _ _____  ___ _____  ___ 
-#   (____ | || (____ |/___) ___ |/___)
-#   / ___ | || / ___ |___ | ____|___ |
-#   \_____|\_)_\_____(___/|_____|___/ 
-#                                  
-
-# ========
-# dotfiles
-# ========
-
+#---------------#
+# CONFIGURATION #
+#---------------#
 alias config='/usr/bin/git --git-dir=$HOME/github/veryretro --work-tree=$HOME'
 
-# ====
-# lsd
-# ====
-
+#-----#
+# LSD #
+#-----#
 alias l='lsd'
 alias ll='lsd -la'
 alias llt='lsd --tree'
 alias llta='lsd --tree -a'
 
-# =====
-# grep
-# =====
-
+#------#
+# GREP #
+#------#
 alias grep='grep --color=auto'
 
-# =======
-# neovim
-# =======
+#-----#
+# GIT #
+#-----#
+alias gcl='git clone'
+alias gad='git add'
+alias gco='git commit -m'
+alias gps='git push'
+alias gpl='git pull'
 
-alias nv='nvim'
+#--------#
+# NEOVIM #
+#--------#
+alias nv='neovim'
+alias nvc='neovim $HOME/.config/init.vim'
+alias nva='neovim $HOME/.config/shell/aliases'
+alias nvp='neovim $HOME/.config/shell/profile'
+alias nvmk='sudo nvim /etc/portage/make.conf'
+
+#--------------------#
+# PORTAGE AND EMERGE #
+#--------------------#
+alias install='sudo emerge -av'
+alias qinstall='sudo emerge -q'
+alias update='sudo -avuND @world'
+alias qupdate='sudo -quND @world'
+alias esync='sudo emerge-webrsync && sudo emerge --sync'
+alias clean='sudo emerge --depclean'
+alias pretend='emerge -pv'
+alias search='emerge -s'
+
+#-----------------------#
+# DIRECTORIES SHORTCUTS #
+#-----------------------#
+alias cfg='cd $HOME/.config'
+alias cdl='cd $HOME/downloads'
+alias cdg='cd $HOME/github'
+alias cds='cd $HOME/.config/shell'
+alias cdp='cd /etc/portage'
+alias cdpu='cd /etc/portage/package.use'
+alias cdb='cd $HOME/.local/backgrounds'
+alias scp='cd $HOME/.local/bin'
+
+#-------#
+# POWER #
+#-------#
+alias die='sudo shutdown -h now'
+alias out='pkill sway'
+
