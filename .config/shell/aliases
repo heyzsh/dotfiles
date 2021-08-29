@@ -6,7 +6,7 @@ alias config='/usr/bin/git --git-dir=$HOME/github/veryretro --work-tree=$HOME'
 #-----#
 # LSD #
 #-----#
-alias l='lsd'
+alias l='lsd -1'
 alias ll='lsd -la'
 alias llt='lsd --tree'
 alias llta='lsd --tree -a'
@@ -28,10 +28,10 @@ alias gpl='git pull'
 #--------#
 # NEOVIM #
 #--------#
-alias nv='neovim'
-alias nvc='neovim $HOME/.config/init.vim'
-alias nva='neovim $HOME/.config/shell/aliases'
-alias nvp='neovim $HOME/.config/shell/profile'
+alias nv='nvim'
+alias nvc='nvim $HOME/.config/init.vim'
+alias nva='nvim $HOME/.config/shell/aliases'
+alias nvp='nvim $HOME/.config/shell/profile'
 alias nvmk='sudo nvim /etc/portage/make.conf'
 
 #--------------------#
@@ -57,6 +57,7 @@ alias cdp='cd /etc/portage'
 alias cdpu='cd /etc/portage/package.use'
 alias cdb='cd $HOME/.local/backgrounds'
 alias scp='cd $HOME/.local/bin'
+alias kernel='cd /usr/src/linux/ && sudo make menuconfig'
 
 #-------#
 # POWER #
