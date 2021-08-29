@@ -1,0 +1,210 @@
+* {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  min-height: 0;
+}
+
+window#waybar {
+  background-color: transparent;
+  color: #fbf1c7;
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+#workspaces button {
+  padding: 0 5px;
+  margin: 0 2px;
+  background-color: #3c3836;
+  font-weight: bold;
+  color: #fbf1c7;
+  border-radius: 0;
+  transition: none;
+}
+
+#workspaces button:hover {
+  background: #504945;
+}
+
+#workspaces button.focused {
+  background: #665c54;
+  box-shadow: inset 0 -2px #fbf1c7;
+}
+
+#workspaces button.urgent {
+  background-color: #665c54;
+}
+
+#mode {
+  background-color: #3c3836;
+  border-bottom: 3px solid #fbf1c7;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#mpd {
+  padding: 0 7px;
+  margin: 0 3px;
+  color: #fbf1c7;
+}
+
+#window,
+#workspaces {
+  margin: 0 4px;
+}
+
+.modules-center {
+  text-shadow: 1px 1px 2px #1d2021; 
+  font-weight: bold;
+}
+
+.modules-left > widget:first-child > #workspaces {
+  margin-left: 0;
+}
+
+.modules-right > widget:last-child > #workspaces {
+  margin-right: 0;
+  box-shadow: 2px 2px 2px #000000;
+}
+
+#clock {
+  background-color: #3c3836;
+  font-weight: bold;
+}
+
+#battery {
+  background-color: #3c3836;
+  font-weight: bold;
+}
+
+#battery.charging, #battery.plugged {
+  background-color: #3c3836;
+}
+
+@keyframes blink {
+  to {
+    background-color: #cc241d;
+    color: #fbf1c7;
+  }
+}
+
+#battery.critical:not(.charging) {
+  background-color: #cc241d;
+  animation-name: blink;
+  animation-duration: 0.25s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+label:focus {
+  background-color: #3c3836;
+}
+
+#cpu {
+  background-color: #3c3836;
+  font-weight: bold;
+}
+
+#memory {
+  background-color: #3c3836;
+  font-weight: bold;
+}
+
+#disk {
+  background-color: #3c3836;
+  font-weight: bold;
+}
+
+#backlight {
+  background-color: #3c3836;
+  font-weight: bold;
+}
+
+#network {
+  background-color: #3c3836;
+  font-weight: bold;
+}
+
+#network.disconnected {
+  background-color: #9d0006;
+  font-weight: bold;
+}
+
+#pulseaudio {
+  background-color: #3c3836;
+}
+
+#pulseaudio.muted {
+  background-color: #9d0006;
+}
+
+#custom-media {
+  background-color: #66cc99;
+  min-width: 100px;
+}
+
+#temperature {
+  background-color: #3c3836;
+  font-weight: bold;
+}
+
+#temperature.critical {
+  background-color: #9d0006;
+  font-weight: bold;
+}
+
+#tray {
+  background-color: #3c3836;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  background-color: #3c3836;
+}
+
+#idle_inhibitor {
+  background-color: #3c3836;
+}
+
+#idle_inhibitor.activated {
+  background-color: #504945;
+}
+
+#language {
+  background: #3c3836;
+  padding: 0 5px;
+  margin: 0 5px;
+  min-width: 16px;
+}
+
+#keyboard-state {
+  background: #3c3836;
+  padding: 0 0px;
+  margin: 0 5px;
+  min-width: 16px;
+}
+
+#keyboard-state > label {
+  padding: 0 5px;
+}
+
+#keyboard-state > label.locked {
+  background: rgba(0, 0, 0, 0.2);
+}

@@ -94,17 +94,11 @@ mode "resize" {
   bindsym Escape  mode "default"
 }
 
-#---------#
-# SWAYBAR #
-#---------#
+#--------#
+# WAYBAR #
+#--------#
 bar {
-  position top
-  status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
-  colors {
-    statusline          #ffffff
-    background          #323232
-    inactive_workspace  #32323200 #32323200 #5c5c5c
-  }
+     swaybar_command waybar
 }
 
 #----------#
@@ -191,3 +185,7 @@ bindsym $mod+Shift+q        exec swaynag -t warning -m 'Exit Sway?' -b 'Yes' 'sw
 # INCLUDES #
 #----------#
 include @sysconfdir@/sway/config.d/*
+
+#-----------#
+# AUTOSTART #
+#-----------#
