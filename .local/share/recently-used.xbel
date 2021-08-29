@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xbel version="1.0"
+      xmlns:bookmark="http://www.freedesktop.org/standards/desktop-bookmarks"
+      xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info"
+>
+  <bookmark href="file:///home/hey/.local/backgrounds/primary.jpg" added="2021-08-28T21:35:42.277940Z" modified="2021-08-28T21:35:42.702638Z" visited="2021-08-28T21:35:42.277942Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/jpeg"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox-wayland %u&apos;" modified="2021-08-28T21:35:42.702634Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/hey/.local/backgrounds/right.jpg" added="2021-08-28T21:39:52.165499Z" modified="2021-08-28T21:39:54.919818Z" visited="2021-08-28T21:39:52.165501Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/jpeg"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox-wayland %u&apos;" modified="2021-08-28T21:39:54.919809Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/hey/downloads/wallhaven-gj6j8e.png" added="2021-08-28T21:41:18.396841Z" modified="2021-08-28T21:41:25.857887Z" visited="2021-08-28T21:41:18.396843Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox-wayland %u&apos;" modified="2021-08-28T21:41:25.857872Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/hey/downloads" added="2021-08-28T21:41:35.182549Z" modified="2021-08-28T21:41:35.182570Z" visited="2021-08-28T21:41:35.182554Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox-wayland %u&apos;" modified="2021-08-28T21:41:35.182564Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/hey/downloads/wallhaven-j38zkq.jpg" added="2021-08-28T21:42:07.260170Z" modified="2021-08-28T21:42:10.360300Z" visited="2021-08-28T21:42:07.260173Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/jpeg"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox-wayland %u&apos;" modified="2021-08-28T21:42:10.360288Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/hey/downloads/wallhaven-j3w3qq.jpg" added="2021-08-28T21:43:38.641768Z" modified="2021-08-28T21:43:42.374072Z" visited="2021-08-28T21:43:38.641771Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/jpeg"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox-wayland %u&apos;" modified="2021-08-28T21:43:42.374058Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+</xbel>
