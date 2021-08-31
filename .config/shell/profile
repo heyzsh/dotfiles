@@ -1,29 +1,29 @@
 #!/bin/sh
 
-#-----------------------#
-# HOME DIR ORGANIZATION #
-#-----------------------#
+#------------------------------#
+# XDG SPECS AND ~ ORGANIZATION #
+#------------------------------#
 ! [ -d "$HOME/.config" ]              && mkdir "$HOME/.config"
 ! [ -d "$HOME/.local/bin" ]           && mkdir -p "$HOME/.local/bin"
 ! [ -d "$HOME/.local/share" ]         && mkdir -p "$HOME/.local/share"
 ! [ -d "$HOME/.local/backgrounds" ]   && mkdir -p "$HOME/.local/backgrounds"
 ! [ -d "$HOME/.cache" ]               && mkdir "$HOME/.cache"
 ! [ -d "$HOME/github" ]               && mkdir "$HOME/github"
+! [ -d "$HOME/pix" ]                  && mkdir "$HOME/pix"
+! [ -d "$HOME/vids" ]                 && mkdir "$HOME/vids"
+! [ -d "$HOME/dox" ]                  && mkdir "$HOME/dox"
+! [ -d "$HOME/dwd" ]            && mkdir "$HOME/downloads"
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 
-export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
-export GTK2_RC_FILES="${XDG_CONFIG_HOME:-$HOME/.config}/gtk-2.0/gtkrc-2.0"
-export LESSHISTFILE="-"
-export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
-export PASSWORD_STORE_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/password-store"
-export HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/history"
-export GNUPGHOME="${XDG_DATA_HOME:-$HOME/.local/share}/gnupg"
-export CARGO_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/cargo"
-# It's causing an issue for some reason, needs to be reported.
-# export ALSA_CONFIG_PATH="${XDG_CONFIG_HOME:-$HOME/.config}/alsa/asoundrc"
+export XDG_DESKTOP_DIR="$HOME/desktop"
+export XDG_DOCUMENTS_DIR="$HOME/dox"
+export XDG_DOWNLOAD_DIR="$HOME/dwd"
+export XDG_MUSIC_DIR="$HOME/music"
+export XDG_PICTURES_DIR="$HOME/pix"
+export XDG_VIDEOS_DIR="$HOME/vids"
 
 #--------------------#
 # PREFERRED PROGRAMS #
@@ -41,7 +41,7 @@ export TERMINAL="/usr/bin/alacritty"
 #--------------#
 # SCRIPTS PATH #
 #--------------#
-export PATH=$PATH:/home/$USER/.local/bin
+export PATH=$PATH:$HOME/.local/bin
 
 #--------------#
 # GOLANG PATHS #
@@ -50,10 +50,57 @@ export GOPATH="${HOME}/github/go"
 export GOBIN="${HOME}/github/go/bin"
 export PATH=$PATH:$GOBIN
 
+#------#
+# RUST #
+#------#
+export CARGO_HOME="${XDG_DATA_HOME:-$HOME/.local}/cargo"
+
+#-----#
+# ZSH #
+#-----#
+export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
+export HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/history"
+
 #-------------#
 # FZF OPTIONS #
 #-------------#
 export FZF_DEFAULT_OPTS="--layout=reverse --height 60%"
+
+#--------#
+# FFMPEG #
+#--------#
+export FFMPEG_DATADIR="${XDG_CONFIG_HOME:-$HOME/.config}/ffmpeg"
+
+#---------#
+# NODE.JS #
+#---------#
+export NODE_REPL_HISTORY="${XDG_DATA_HOME:-$HOME/.local/share}/node_repl_history"
+
+#-----#
+# NVM #
+#-----#
+export NVM_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/nvm"
+
+#------------#
+# POSTGRESQL #
+#------------#
+mkdir -p "${XDG_CONFIG_HOME-:$HOME/.config}/pg"
+mkdir -p "${XDG_CACHE_HOME-:$HOME/.cache}/pg"
+export PSQLRC="${XDG_CONFIG_HOME:-$HOME/.config}/pg/psqlrc"
+export PSQL_HISTORY="${XDG_CACHE_HOME:-$HOME/.cache}/pg/psql_history"
+export PGPASSFILE="${XDG_CONFIG_HOME:-$HOME/.config}/pg/pgpass"
+export PGSERVICEFILE="${XDG_CONFIG_HOME-:$HOME/.config}/pg/pg_service.conf"
+
+#-------#
+# REDIS #
+#-------#
+export REDISCLI_HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/redis/rediscli_history"
+export REDISCLI_RCFILE="${XDG_CONFIG_HOME:-$HOME/.config}/redis/redisclirc"
+
+#-----#
+# GTK #
+#-----#
+export GTK2_RC_FILES="${XDG_CONFIG_HOME:-$HOME/.config}/gtk-2.0/gtkrc-2.0"
 
 #------------#
 # QT OPTIONS #
@@ -113,3 +160,16 @@ if test -z "${XDG_RUNTIME_DIR}"; then
 fi
 # External Monitors Fix
 export WLR_DRM_NO_MODIFIERS=1
+
+#------#
+# WGET #
+#------#
+export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
+[ $(grep -c "hsts-file" "$WGETRC") -gt 0 ] || echo "hsts-file = ${XDG_CACHE_HOME:-$HOME/.cache}/wget-hsts" >> "$WGETRC"
+
+#------------#
+# MISC PATHS #
+#------------#
+export LESSHISTFILE="-"
+export PASSWORD_STORE_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/password-store"
+export GNUPGHOME="${XDG_DATA_HOME:-$HOME/.local/share}/gnupg"
