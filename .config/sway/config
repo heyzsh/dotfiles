@@ -21,7 +21,7 @@ set $right_bg   "$HOME/.local/backgrounds/right.jpg"
 #----------#
 # Multiple Screens
 # Primary
-output HDMI-A-1 {
+output DVI-I-1 {
   pos         0 277
   res         1920x1080
   bg          $primary_bg fill #282828
@@ -38,10 +38,10 @@ output eDP-1 {
   bg          $primary_bg fill #282828
 }
 # Workspaces Desktop
-workspace 1 output HDMI-A-1
-workspace 2 output HDMI-A-1
-workspace 3 output HDMI-A-1
-workspace 4 output HDMI-A-1
+workspace 1 output DVI-I-1
+workspace 2 output DVI-I-1
+workspace 3 output DVI-I-1
+workspace 4 output DVI-I-1
 workspace 5 output DP-1
 workspace 6 output DP-1
 workspace 7 output DP-1
