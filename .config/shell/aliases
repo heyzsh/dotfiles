@@ -66,3 +66,7 @@ alias kernel='cd /usr/src/linux/ && sudo make menuconfig'
 alias die='sudo shutdown -h now'
 alias out='pkill sway'
 
+#------#
+# WGET #
+#------#
+alias wget="wget --hsts-file $HOME/.cache/wget-hsts"
