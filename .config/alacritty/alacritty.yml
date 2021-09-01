@@ -104,7 +104,7 @@ key_bindings:
 schemes:
   gruvbox_material_hard_dark: &gruvbox_material_hard_dark
     primary:
-      background: '0x282828'
+      background: '0x32302F'
       foreground: '0xfbf1c7'
     normal:
       black:   '0x282828'
