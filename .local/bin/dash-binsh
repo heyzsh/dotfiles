@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cd /bin
+sudo ln -sf dash /bin/sh

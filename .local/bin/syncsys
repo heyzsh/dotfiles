@@ -1,0 +1,18 @@
+#!/bin/sh
+
+#-------------------------------------------------------------------#
+# SYNCHRONIZES PORTAGE AND KERNEL CONFIG WITH THE GITHUB REPOSITORY #
+#-------------------------------------------------------------------#
+
+CFG_DIR="$HOME/.local/share/"
+KNL_DIR="${CFG_DIR}/kernel/"
+PRT_DIR="${CFG_DIR}/portage/"
+
+rsync -avr --exclude=*autounmask* --exclude=make.profile --exclude=make.conf.backup --exclude=repo.* --exclude=repos.* --exclude=savedconfig --exclude= /etc/portage "${CFG_DIR}"
+
+cp -pr /usr/src/linux/.config     "${KNL_DIR}"
+
+git --git-dir="$HOME/github/veryretro" --work-tree="$HOME" add "${PRT_DIR}/*"
+git --git-dir="$HOME/github/veryretro" --work-tree="$HOME" add "${KNL_DIR}/.config"
+git --git-dir="$HOME/github/veryretro" --work-tree="$HOME" commit -m "updated system configuration"
+git --git-dir="$HOME/github/veryretro" --work-tree="$HOME" push
