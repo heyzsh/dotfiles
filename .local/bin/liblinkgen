@@ -1,0 +1,11 @@
+#!/bin/sh
+
+UUID=$(uuidgen)
+DIR=${GITHUB_DIR:-$HOME/github}/libri/_/${UUID}
+HREF="https://github.com/heyxsh/libri/tree/master/_/${UUID}"
+
+mkdir -p "$DIR"
+echo "Link: $HREF"
+echo "Dir: $DIR"
+
+wl-copy "$HREF"
