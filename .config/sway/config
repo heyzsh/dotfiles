@@ -188,3 +188,4 @@ include @sysconfdir@/sway/config.d/*
 #-----------#
 # AUTOSTART #
 #-----------#
+exec dunst &
