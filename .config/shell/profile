@@ -147,9 +147,9 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 # WAYLAND #
 #---------#
 export XDG_SESSION_TYPE="wayland"
-export DISPLAY="$WAYLAND_DISPLAY"
+export DISPLAY="wayland-1"
 # It's known to break some programs.
-# export GDK_BACKEND=wayland
+export GDK_BACKEND=wayland
 # Sets the runtime directory for Wayland.
 if test -z "${XDG_RUNTIME_DIR}"; then
     export XDG_RUNTIME_DIR=/tmp/${UID}-runtime-dir
