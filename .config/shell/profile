@@ -12,7 +12,8 @@
 ! [ -d "$HOME/pix" ]                  && mkdir "$HOME/pix"
 ! [ -d "$HOME/vids" ]                 && mkdir "$HOME/vids"
 ! [ -d "$HOME/dox" ]                  && mkdir "$HOME/dox"
-! [ -d "$HOME/dwd" ]            && mkdir "$HOME/downloads"
+! [ -d "$HOME/dwd" ]                  && mkdir "$HOME/dwd"
+! [ -d "$HOME/desktop" ]              && mkdir "$HOME/desktop"
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
