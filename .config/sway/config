@@ -189,3 +189,4 @@ include @sysconfdir@/sway/config.d/*
 # AUTOSTART #
 #-----------#
 exec dunst &
+exec qbittorrent-nox -d &
