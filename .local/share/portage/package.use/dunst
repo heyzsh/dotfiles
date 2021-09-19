@@ -1,0 +1,4 @@
+# required by x11-misc/dunst-1.6.1::gentoo
+# required by virtual/notification-daemon-0::gentoo[-kde,-gnome]
+# required by x11-libs/libnotify-0.7.9::gentoo
+>=x11-libs/pango-1.48.7-r1 X
