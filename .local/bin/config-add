@@ -1,0 +1,10 @@
+#!/bin/sh
+
+! [ -x $(command -v git) ] && echo "git not installed" && exit 1
+
+GIT_DIR="$HOME/github/veryretro"
+CONFIG_DIR="$HOME"
+
+files=$(git --git-dir="$GIT_DIR" --work-tree="$CONFIG_DIR" status -s | awk '{ $1=$1; print $2 }' | xargs echo) 2> /dev/null
+echo "$files"
+git --git-dir="$GIT_DIR" --work-tree="$CONFIG_DIR" add files
