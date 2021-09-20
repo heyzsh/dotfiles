@@ -96,8 +96,8 @@ client.focused_inactive   #a89984 #bdae93 #3c3836 #a89984 #a89984
 client.urgent             #af3013 #fbf1c7 #fbf1c7 #af30a3 #af30a3
 # Resize Mode
 mode "resize" {
-  bindsym $left   resize shrink   width   10px
-  bindsym $down   resize grow     height  10px
+  bindsym $left   resize shrink   width   15px
+  bindsym $down   resize grow     height  15px
   bindsym $up     resize shrink   height  10px
   bindsym $right  resize grow     width   10px
   bindsym Return  mode "default"
