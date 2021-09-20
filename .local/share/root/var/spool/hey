@@ -1,0 +1,1 @@
+30 * * * * rm -rf ~/.python_history ~/Desktop 
