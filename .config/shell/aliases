@@ -2,7 +2,6 @@
 # CONFIGURATION #
 #---------------#
 alias config='/usr/bin/git --git-dir=$HOME/github/veryretro --work-tree=$HOME'
-alias config-add="/usr/bin/git --git-dir=$HOME/github/veryretro --work-tree=$HOME add $(config status -s | awk '{ $1=$1; print $2 }' | xargs echo) 2> /dev/null"
 
 #-----#
 # LSD #
