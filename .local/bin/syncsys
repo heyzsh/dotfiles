@@ -3,16 +3,17 @@
 #-------------------------------------------------------------------#
 # SYNCHRONIZES PORTAGE AND KERNEL CONFIG WITH THE GITHUB REPOSITORY #
 #-------------------------------------------------------------------#
+HOME="/home/hey"
+GIT_DIR="${HOME}/github/veryretro"
 
-CFG_DIR="$HOME/.local/share/"
-KNL_DIR="${CFG_DIR}/kernel/"
-PRT_DIR="${CFG_DIR}/portage/"
+SYSTEM_BAK_DIR="${HOME}/.local/share/root"
+mkdir -p "$SYSTEM_BAK_DIR"
 
-rsync -avr --exclude=*autounmask* --exclude=make.profile --exclude=make.conf.backup --exclude=repo.* --exclude=repos.* --exclude=savedconfig --exclude= /etc/portage "${CFG_DIR}"
+CRON_BAK_DIR="${SYSTEM_BAK_DIR}/var/spool"
+mkdir -p "$CRON_BAK_DIR"
+cp -prf /var/spool/cron/* "$CRON_BAK_DIR"
 
-cp -pr /usr/src/linux/.config     "${KNL_DIR}"
-
-git --git-dir="$HOME/github/veryretro" --work-tree="$HOME" add "${PRT_DIR}/*"
-git --git-dir="$HOME/github/veryretro" --work-tree="$HOME" add "${KNL_DIR}/.config"
-git --git-dir="$HOME/github/veryretro" --work-tree="$HOME" commit -m "updated system configuration"
-git --git-dir="$HOME/github/veryretro" --work-tree="$HOME" push
+cp -rf "${HOME}/.ssh" /root/
+git --git-dir="$GIT_DIR" --work-tree="$HOME" add "${CRON_BAK_DIR}/*"
+git --git-dir="$GIT_DIR" --work-tree="$HOME" commit -m "updated system configuration"
+git --git-dir="$GIT_DIR" --work-tree="$HOME" push
