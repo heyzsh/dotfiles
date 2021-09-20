@@ -1,0 +1,5 @@
+#!/bin/sh
+
+pacman --noconfirm -S cronie
+systemctl enable cronie.service
+systemctl start cronie.service

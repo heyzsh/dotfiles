@@ -1,0 +1,6 @@
+#!/bin/sh
+
+pacman --noconfirm -S networkmanager
+systemctl enable NetworkManager
+systemctl start NetworkManager
+

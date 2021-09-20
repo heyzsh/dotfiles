@@ -1,4 +1,6 @@
 #!/bin/sh
 
+cwd=$(pwd)
 cd /bin
-sudo ln -sf dash /bin/sh
+ln -sf dash /bin/sh
+cd "$cwd"
