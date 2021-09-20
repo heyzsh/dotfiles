@@ -4,18 +4,30 @@
   "height": 24,
   "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
   "modules-center": ["sway/window"],
-  "modules-right": ["network", "cpu", "memory", "temperature", "backlight", "battery", "clock"],
+  "modules-right": ["network", "keyboard-state", "cpu", "memory", "temperature", "backlight", "battery", "pulseaudio", "clock"],
   "clock": {
     "timezone": "Asia/Karachi",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><big>{calendar}</big></tt>",
     "format-alt": "{:%Y-%m-%d}"
   },
+  "keyboard-state": {
+    "numlock": true,
+    "capslock": true,
+    "format": "{name} {icon}",
+    "format-icons": {
+      "locked": "",
+      "unlocked": ""
+    }
+  },
   "cpu": {
     "format": "{usage}% ",
-    "tooltip": true
+    "tooltip": true,
+    "on-click": "alacritty -e htop",
   },
   "memory": {
-    "format": "{}% "
+    "format": "{}% ",
+    // Should enlist top 10 processes by memory
+    "on-click": "alacritty -e htop",
   },
   "temperature": {
     "thermal-zone": 2,
@@ -28,7 +40,7 @@
   "backlight": {
     "device": "acpi_video1",
     "format": "{percent}% {icon}",
-    "format-icons": ["", ""]
+    "format-icons": ["", ""],
   },
   "battery": {
     "states": {
@@ -40,14 +52,34 @@
     "format-charging": "{capacity}% ",
     "format-plugged": "{capacity}% ",
     "format-alt": "{time} {icon}",
-    "format-icons": ["", "", "", "", ""]
+    "format-icons": ["", "", "", "", ""],
   },
   "network": {
-    "format-wifi": "{essid} ({signalStrength}%) ",
-    "format-ethernet": "{ipaddr} ",
+    "format-wifi": "{bandwidthDownBits} ︁ {bandwidthUpBits} ︁",
+    "format-ethernet": "{bandwidthDownBits} ︁ {bandwidthUpBits} ︁",
     "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": "⚠",
-    "format-alt": "{ifname}: {ipaddr}/{cidr}"
-  }
+    "format-disconnected": "︁",
+    "tooltip-format-wifi": "{ifname}: {ipaddr} ︁ \n{essid} ({signalStrength}%) ︁",
+    "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr} ︁",
+    "on-click": "alacritty -e nmtui",
+  },
+  "pulseaudio": {
+    "format": "{volume}% {icon} {format_source}",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": " {format_source}",
+    "format-source": "{volume}% ",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""]
+    },
+    "on-click": "alacritty -e pulsemixer",
+  },
 }
 

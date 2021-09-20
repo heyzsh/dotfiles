@@ -1,5 +1,5 @@
 * {
-  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Source Code Pro", Helvetica, Arial, sans-serif;
   font-size: 13px;
   min-height: 0;
 }
@@ -148,10 +148,12 @@ label:focus {
 
 #pulseaudio {
   background-color: #3c3836;
+  font-weight: bold;
 }
 
 #pulseaudio.muted {
   background-color: #9d0006;
+  font-weight: bold;
 }
 
 #custom-media {
