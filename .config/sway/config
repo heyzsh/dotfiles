@@ -57,12 +57,23 @@ workspace_layout default
 # Containers
 tiling_drag false
 default_orientation horizontal
-# Inputs
+
+#-------#
+# INPUT #
+#-------#
+input type:keyboard {
+  xkb_layout us,de
+  xkb_variant ,nodeadkeys
+  xkb_options grp:shifts_toggle
+  # Capslock key should work as escape key
+  xkb_options caps:escape
+}
+
 # Laptop
 input "2:14:SynPS/2_Synaptics_TouchPad" {
   dwt enabled
   tap enabled
-  natural_scroll enabled
+  natural_scroll disabled
   middle_emulation enabled
 }
 
@@ -97,7 +108,7 @@ mode "resize" {
 # WAYBAR #
 #--------#
 bar {
-     swaybar_command waybar
+  swaybar_command waybar
 }
 
 #----------#
@@ -169,9 +180,9 @@ bindsym $mod+period         focus output left
 # Modes
 bindsym $mod+s              sticky toggle
 bindsym $mod+r              mode "resize"
-bindsym $mod+space          focus mode_toggle
+bindsym $mod+Shift+space    focus mode_toggle
 floating_modifier $mod      normal
-bindsym $mod+shift+space    floating toggle
+bindsym $mod+space          floating toggle
 # Programs
 bindsym $mod+Return         exec $term
 bindsym $mod+w              kill
@@ -179,6 +190,9 @@ bindsym $mod+p              exec $menu
 # Sway
 bindsym $mod+Shift+r        reload
 bindsym $mod+Shift+q        exec swaynag -t warning -m 'Exit Sway?' -b 'Yes' 'swaymsg exit'
+# Layouts
+bindsym $mod+Ctrl+z input "type:keyboard" xkb_layout de
+bindsym $mod+Ctrl+x input "type:keyboard" xkb_layout us
 
 #----------#
 # INCLUDES #

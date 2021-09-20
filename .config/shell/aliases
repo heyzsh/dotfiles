@@ -37,15 +37,13 @@ alias nvmk='sudo nvim /etc/portage/make.conf'
 #--------------------#
 # PORTAGE AND EMERGE #
 #--------------------#
-alias install='sudo emerge -av'
-alias qinstall='sudo emerge -q'
-alias update='sudo emerge -avuND @world'
-alias qupdate='sudo emerge -quND @world'
-alias esync='sudo emerge-webrsync && sudo emerge --sync'
-alias delete='sudo emerge --deselect'
-alias clean='sudo emerge --depclean'
-alias pretend='emerge -pv'
-alias search='emerge -s'
+alias install='paru -S'
+alias qinstall='paru --noconfirm'
+alias update='paru -Syu'
+alias qupdate='paru -Syu --noconfirm'
+alias esync='sudo pacman -Sy'
+alias delete='sudo pacman -Rns'
+alias search='paru -Ss'
 
 #-----------------------#
 # DIRECTORIES SHORTCUTS #

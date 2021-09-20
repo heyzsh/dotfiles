@@ -1,5 +1,5 @@
 * {
-  font-family: "Source Code Pro", Helvetica, Arial, sans-serif;
+  font-family: "Source Code Pro", "Font Awesome 5 Free", "Font Awesome 5 Free Solid";
   font-size: 13px;
   min-height: 0;
 }
@@ -39,7 +39,7 @@ window#waybar.hidden {
 
 #mode {
   background-color: #3c3836;
-  border-bottom: 3px solid #fbf1c7;
+  font-weight: bold;
 }
 
 #clock,
@@ -55,6 +55,7 @@ window#waybar.hidden {
 #tray,
 #mode,
 #idle_inhibitor,
+#language,
 #mpd {
   padding: 0 7px;
   margin: 0 3px;
@@ -67,8 +68,13 @@ window#waybar.hidden {
   margin: 0 4px;
 }
 
-.modules-center {
+#window {
+  font-weight: bold;
+  margin-top: 2px;
   text-shadow: 1px 1px 2px #1d2021; 
+}
+
+.modules-center {
   font-weight: bold;
 }
 
@@ -195,9 +201,8 @@ label:focus {
 
 #language {
   background: #3c3836;
-  padding: 0 5px;
-  margin: 0 5px;
-  min-width: 16px;
+  font-weight: bold;
+  min-width: 40px;
 }
 
 #keyboard-state {
@@ -209,6 +214,7 @@ label:focus {
 
 #keyboard-state > label {
   padding: 0 5px;
+  background: #3c3836;
 }
 
 #keyboard-state > label.locked {
