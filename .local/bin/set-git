@@ -1,0 +1,19 @@
+#!/bin/sh
+
+! [ -x $(command -v git) ] && echo "git is not installed.. installing.." && sudo pacman -S --noconfirm git
+! [ -x $(command -v ssh-keygen) ] && echo "ssh is not installed.. installing.." && sudo pacman -S --noconfirm openssh
+! [ -x $(command -v wl-clipboard) ] && echo "wl-clipboard is not installed.. installing.." && sudo pacman -S --noconfirm wl-clipboard
+
+[ -z $1 ] && echo "Usage: set-git your@email.com your_name" && exit 1
+
+git config --global user.email "$1"
+git config --global user.name "$2"
+
+echo "Generating key"
+ssh-keygen -t ed25519 -C "$1"
+cat $HOME/.ssh/id_ed25519.pub | wl-copy
+
+echo "Public key copied to clipboard"
+echo "Done"
+
+

@@ -34,7 +34,7 @@ output DP-1 {
   bg          $right_bg   fill #282828
 }
 # Laptop
-output eDP-1 {
+output LVDS-1 {
   bg          $primary_bg fill #282828
 }
 # Workspaces Desktop

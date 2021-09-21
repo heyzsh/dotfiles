@@ -1,0 +1,5 @@
+#!/bin/sh
+
+sudo pacman -S tor
+sudo systemctl enable tor
+sudo systemctl start tor
