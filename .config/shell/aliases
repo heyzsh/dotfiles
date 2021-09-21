@@ -48,15 +48,10 @@ alias search='paru -Ss'
 #-----------------------#
 # DIRECTORIES SHORTCUTS #
 #-----------------------#
-alias cfg='cd $HOME/.config'
-alias cdl='cd $HOME/downloads'
-alias cdg='cd $HOME/github'
-alias cds='cd $HOME/.config/shell'
-alias cdp='cd /etc/portage'
-alias cdpu='cd /etc/portage/package.use'
-alias cdb='cd $HOME/.local/backgrounds'
-alias scp='cd $HOME/.local/bin'
-alias kernel='cd /usr/src/linux/ && sudo make menuconfig'
+alias cfg='vifm $HOME/.config'
+alias cdd='vifm $HOME/downloads'
+alias cdg='vifm $HOME/github'
+alias cds='vifm $HOME/.config/shell'
 
 #-------#
 # POWER #
@@ -68,3 +63,9 @@ alias out='pkill sway'
 # WGET #
 #------#
 alias wget="wget --hsts-file $HOME/.cache/wget-hsts"
+
+#------#
+# VIFM #
+#------#
+alias fm='vifm $HOME'
+alias vifm='vifm $HOME'

@@ -1,5 +1,5 @@
 * {
-  font-family: "Source Code Pro", "Font Awesome 5 Free", "Font Awesome 5 Free Solid";
+  font-family: "Sauce Code Pro Nerd Font";
   font-size: 13px;
   min-height: 0;
 }
@@ -17,11 +17,16 @@ window#waybar.hidden {
   padding: 0 5px;
   margin: 0 2px;
   background-color: #3c3836;
-  font-weight: bold;
+  font-weight: bolder;
   color: #fbf1c7;
   border-radius: 0;
   box-shadow: inset 0 -2px #fbf1c7;
   transition: none;
+}
+
+#workspaces button:first-child {
+  padding-right: 7px;
+  padding-left: 3px;
 }
 
 #workspaces button:hover {
