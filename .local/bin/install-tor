@@ -1,5 +1,13 @@
 #!/bin/sh
 
-sudo pacman -S tor
-sudo systemctl enable tor
-sudo systemctl start tor
+sudo pacman -S tor torsocks
+
+read -p "Do you want to enable TOR on start-up? [y/n]" yn
+while true; do
+  read -p "Do you wish to install this program?" yn
+  case $yn in
+    [Yy]* ) sudo systemctl enable tor; sudo systemctl start tor; break;;
+    [Nn]* ) exit;;
+  * ) echo "Please answer y/n..";;
+ esac
+done
