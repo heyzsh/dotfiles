@@ -4,7 +4,7 @@
     "height": 24,
     "modules-left": ["sway/workspaces", "sway/mode", "sway/window", "custom/media"],
     "modules-center": [],
-    "modules-right": ["network", "keyboard-state", "cpu", "memory", "disk", "temperature", "backlight", "battery", "pulseaudio", "sway/language", "clock"],
+    "modules-right": ["network", "cpu", "memory", "disk", "temperature", "backlight", "battery", "pulseaudio", "sway/language", "clock"],
 
     "sway/workspaces": {
       "format": "{icon}",
@@ -14,6 +14,7 @@
         "urgent": "",
       }
     },
+
     "sway/window": {
       "max-length": 128,
       "rewrite": {
@@ -40,42 +41,39 @@
       "tooltip-format": "<big>{:%Y %B}</big>\n<tt><big>{calendar}</big></tt>",
       "format-alt": "{:%Y-%m-%d} ︁",
     },
+
     "disk": {
       "interval": 30,
       "format": "{free} ",
       "path": "/"
     },
-    "keyboard-state": {
-      "numlock": true,
-      "capslock": true,
-      "format": "{name} {icon}",
-      "format-icons": {
-        "locked": "",
-        "unlocked": "",
-      },
-    },
+
     "cpu": {
       "interval": 2,
       "format": "{usage} ︁",
       "tooltip": true,
       "on-click": "alacritty -e htop",
     },
+
     "memory": {
       "interval": 5,
       "format": "{used:0.2f} ",
       "on-click": "alacritty -e htop",
     },
+
     "temperature": {
       "thermal-zone": 2,
       "critical-threshold": 70,
       "format-critical": "{temperatureC}糖 ",
       "format": "{temperatureC}糖  ",
     },
+
     "backlight": {
       "device": "acpi_video0",
       "format": "{percent} {icon}",
       "format-icons": ["", ""],
     },
+
     "battery": {
       "states": {
         "good": 40,
@@ -89,6 +87,7 @@
       "format-icons": ["", "", "", "", ""],
       "on-click-right": "alacritty -e sudo powertop"
     },
+
     "network": {
       "interval": 1,
       "format-wifi": "{bandwidthDownOctets}  {bandwidthUpOctets} 祝",
@@ -99,6 +98,7 @@
       "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr} ︁",
       "on-click": "alacritty -e nmtui",
     },
+
     "pulseaudio": {
       "format": "{volume} {icon} {format_source}",
       "format-bluetooth": "{volume} {icon} {format_source}",
@@ -117,6 +117,7 @@
       },
       "on-click": "alacritty -e pulsemixer",
     },
+
     "sway/language": {
       "format": "{} "
     },

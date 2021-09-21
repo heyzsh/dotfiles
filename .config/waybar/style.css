@@ -4,29 +4,30 @@
   min-height: 0;
 }
 
-window#waybar {
-  background-color: transparent;
-  color: #fbf1c7;
-}
-
-window#waybar.hidden {
-  opacity: 0.2;
+#workspaces {
+  margin: 0;
+  padding: 0;
 }
 
 #workspaces button {
   padding: 0 5px;
   margin: 0 2px;
   background-color: #3c3836;
-  font-weight: bolder;
+  font-weight: bold;
   color: #fbf1c7;
   border-radius: 0;
   box-shadow: inset 0 -2px #fbf1c7;
   transition: none;
 }
 
+#workspaces button:last-child {
+  margin-right: 0;
+}
+
 #workspaces button:first-child {
   padding-right: 7px;
   padding-left: 3px;
+  color: #83a598;
 }
 
 #workspaces button:hover {
@@ -42,8 +43,40 @@ window#waybar.hidden {
   background-color: #665c54;
 }
 
+#window,
+#workspaces {
+  margin: 0 2px;
+}
+
+#window {
+  padding-top: 1px;
+  padding-left: 6px;
+  padding-right: 5px;
+  letter-spacing: -1px;
+  font-weight: bold;
+  font-style: italic;
+  text-shadow: 1px 1px 3px #282828;
+}
+
+window#waybar {
+  background-color: transparent;
+  color: #fbf1c7;
+}
+
+window#waybar.empty #window {
+  opacity: 0;
+}
+
+.modules-left > widget:first-child > #workspaces {
+  margin-left: 0;
+}
+
+.modules-right > widget:last-child > #workspaces {
+  margin-right: 0;
+}
+
 #mode {
-  background-color: #3c3836;
+  background-color: #af3a03;
   font-weight: bold;
 }
 
@@ -63,32 +96,9 @@ window#waybar.hidden {
 #language,
 #mpd {
   padding: 0 7px;
-  margin: 0 3px;
+  margin: 0 2px;
   color: #fbf1c7;
   box-shadow: inset 0 -2px #fbf1c7;
-}
-
-#window,
-#workspaces {
-  margin: 0 4px;
-}
-
-#window {
-  font-weight: bold;
-  margin-top: 2px;
-  text-shadow: 1px 1px 2px #1d2021; 
-}
-
-.modules-center {
-  font-weight: bold;
-}
-
-.modules-left > widget:first-child > #workspaces {
-  margin-left: 0;
-}
-
-.modules-right > widget:last-child > #workspaces {
-  margin-right: 0;
 }
 
 #clock {
@@ -113,8 +123,7 @@ window#waybar.hidden {
 }
 
 #battery.critical:not(.charging) {
-  background-color: #9d0006;
-  box-shadow: inset 0 -2px #9d0006;
+  background-color: #af3a03;
   animation-name: blink;
   animation-duration: 0.25s;
   animation-timing-function: linear;
@@ -152,8 +161,7 @@ label:focus {
 }
 
 #network.disconnected {
-  background-color: #9d0006;
-  box-shadow: inset 0 -2px #9d0006;
+  background-color: #af3a03;
   font-weight: bold;
 }
 
@@ -163,7 +171,7 @@ label:focus {
 }
 
 #pulseaudio.muted {
-  background-color: #9d0006;
+  background-color: #af3a03;
   font-weight: bold;
 }
 
@@ -196,32 +204,8 @@ label:focus {
   background-color: #3c3836;
 }
 
-#idle_inhibitor {
-  background-color: #3c3836;
-}
-
-#idle_inhibitor.activated {
-  background-color: #504945;
-}
-
 #language {
   background: #3c3836;
   font-weight: bold;
   min-width: 40px;
-}
-
-#keyboard-state {
-  background: #3c3836;
-  padding: 0 0px;
-  margin: 0 5px;
-  min-width: 16px;
-}
-
-#keyboard-state > label {
-  padding: 0 5px;
-  background: #3c3836;
-}
-
-#keyboard-state > label.locked {
-  background: rgba(0, 0, 0, 0.2);
 }
