@@ -34,9 +34,9 @@ alias nva='nvim $HOME/.config/shell/aliases'
 alias nvp='nvim $HOME/.config/shell/profile'
 alias nvmk='sudo nvim /etc/portage/make.conf'
 
-#--------------------#
-# PORTAGE AND EMERGE #
-#--------------------#
+#-------------------#
+# PACKAGE MANGEMENT #
+#-------------------#
 alias install='paru -S'
 alias qinstall='paru --noconfirm'
 alias update='paru -Syu'
@@ -45,13 +45,14 @@ alias esync='sudo pacman -Sy'
 alias delete='sudo pacman -Rns'
 alias search='paru -Ss'
 
-#-----------------------#
-# DIRECTORIES SHORTCUTS #
-#-----------------------#
+#----------------------#
+# NAVIGATION SHORTCUTS #
+#----------------------#
 alias cfg='vifm $HOME/.config'
 alias cdd='vifm $HOME/downloads'
 alias cdg='vifm $HOME/github'
 alias cds='vifm $HOME/.config/shell'
+alias nvpk='nvim $HOME/.local/share/packages'
 
 #-------#
 # POWER #
