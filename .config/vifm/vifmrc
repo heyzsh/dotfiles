@@ -422,4 +422,4 @@ nnoremap <c-u> <c-w>x
 
 " --------------------------
 
-source favicons.vifm
+source "$HOME/.config/vifm/favicons.vifm"
