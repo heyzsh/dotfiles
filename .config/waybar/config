@@ -27,7 +27,8 @@
         "(.*).epub": "龎 1.epub",
         "(.*).djvu": " $1.djvu",
         "(.*).mobi": "龎 $1.mobi",
-        "(.*).zathura": " zathura",
+        "(.*).zathura": "  zathura",
+        "(.*)Steam": "  Steam",
       },
     },
 
