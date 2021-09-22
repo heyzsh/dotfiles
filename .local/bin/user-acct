@@ -1,4 +1,0 @@
-#!/bin/sh
-
-sudo useradd -G wheel -m hey -s /bin/zsh
-passwd hey

@@ -186,8 +186,7 @@ label:focus {
 }
 
 #temperature.critical {
-  background-color: #9d0006;
-  box-shadow: inset 0 -2px #9d0006;
+  background-color: #af3a03;
   font-weight: bold;
 }
 

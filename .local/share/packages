@@ -59,7 +59,11 @@ docx2txt
 catdoc
 highlight
 nerd-fonts-source-code-pro
-xorg-xwayland
-steam-fonts
-steam
 glfw-wayland
+links
+gdu
+dust
+s-tui
+up
+termshark
+brightnessctl
