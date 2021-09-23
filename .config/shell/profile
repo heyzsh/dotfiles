@@ -161,7 +161,6 @@ if test -z "${XDG_RUNTIME_DIR}"; then
     fi
 fi
 export WLR_DRM_NO_MODIFIERS=1
-export SDL_VIDEODRIVER=wayland
 
 #------#
 # WGET #
