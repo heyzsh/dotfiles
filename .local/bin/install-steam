@@ -1,0 +1,7 @@
+#!/bin/sh
+
+echo "[multilib]" | sudo tee -a /etc/pacman.conf
+echo "Include = /etc/pacman.d/mirrorlist" | sudo tee -a /etc/pacman.conf
+sudo paru -S steam steam-fonts steam-native-runtime xorg-xwayland
+
+echo "Please, reboot and then launch Steam"

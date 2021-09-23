@@ -1,0 +1,4 @@
+#!/bin/sh
+
+sudo useradd -G wheel,video -m hey -s /bin/zsh
+passwd hey
