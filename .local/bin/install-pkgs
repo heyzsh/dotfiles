@@ -3,7 +3,9 @@
 PKGS="$HOME/.local/share/packages"
 
 while IFS= read -r p; do
-  paru --noconfirm -S $p
+  paru --needed --noconfirm --removemake -S $p
 done < "$PKGS"
+
+sudo pacman --noconfirm -Scc
 
 
