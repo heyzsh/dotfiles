@@ -6,4 +6,4 @@ while IFS= read -r p; do
   paru --noconfirm -S $p
 done < "$PKGS"
 
-
+sudo pacman -Scc
