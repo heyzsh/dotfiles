@@ -12,7 +12,7 @@
         "1": "",
         "5": "",
         "urgent": "",
-      }
+      },
     },
 
     "sway/window": {
@@ -29,6 +29,7 @@
         "(.*).mobi": "龎 $1.mobi",
         "(.*).zathura": "  zathura",
         "(.*)Steam": "  Steam",
+        "Tixati (.*)": " Tixati",
       },
     },
 

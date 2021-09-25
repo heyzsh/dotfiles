@@ -104,6 +104,7 @@ export REDISCLI_RCFILE="${XDG_CONFIG_HOME:-$HOME/.config}/redis/redisclirc"
 # GTK #
 #-----#
 export GTK2_RC_FILES="${XDG_CONFIG_HOME:-$HOME/.config}/gtk-2.0/gtkrc-2.0"
+export GTK_THEME=Gruvbox-Material-Dark
 
 #------------#
 # QT OPTIONS #
@@ -167,6 +168,13 @@ export WLR_DRM_NO_MODIFIERS=1
 #------#
 export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
 [ $(grep -c "hsts-file" "$WGETRC") -gt 0 ] || echo "hsts-file = ${XDG_CACHE_HOME:-$HOME/.cache}/wget-hsts" >> "$WGETRC"
+
+#-----#
+# TIG #
+#-----#
+mkdir -p "${XDG_CONFIG_HOME:-$HOME/.config}/tig"
+mkdir -p "${XDG_DATA_HOME:-$HOME/.local/share}/tig"
+export TIGRC_USER="${XDG_CONFIG_HOME:-$HOME/.config}/tig/config"
 
 #------------#
 # MISC PATHS #
