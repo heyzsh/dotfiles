@@ -6,6 +6,10 @@ while IFS= read -r p; do
   paru --needed --noconfirm --removemake -S $p
 done < "$PKGS"
 
+<<<<<<< HEAD
+sudo pacman -Scc
+=======
 sudo pacman --noconfirm -Scc
 
 
+>>>>>>> 62d0999fd94c6ae3047d095837b1180928f27bde
