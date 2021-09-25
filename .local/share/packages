@@ -68,11 +68,10 @@ up
 termshark
 brightnessctl
 noto-fonts-emoji
-ttf-computer-moden-fonts
+ttf-computer-modern-fonts
 ttf-linux-libertine
 slack-term
 tig
-docui-git
 tixati
 xorg-xwayland
 gruvbox-material-gtk-theme-git
