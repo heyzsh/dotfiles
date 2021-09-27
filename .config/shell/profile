@@ -8,7 +8,7 @@
 ! [ -d "$HOME/.local/share" ]         && mkdir -p "$HOME/.local/share"
 ! [ -d "$HOME/.local/backgrounds" ]   && mkdir -p "$HOME/.local/backgrounds"
 ! [ -d "$HOME/.cache" ]               && mkdir "$HOME/.cache"
-! [ -d "$HOME/.cache/qBittorrent" ]   && mkdir "$HOME/.cache/qBittorrent"
+! [ -d "$HOME/.cache/tixati" ]        && mkdir "$HOME/.cache/tixati"
 ! [ -d "$HOME/github" ]               && mkdir "$HOME/github"
 ! [ -d "$HOME/pix" ]                  && mkdir "$HOME/pix"
 ! [ -d "$HOME/vids" ]                 && mkdir "$HOME/vids"
@@ -16,6 +16,10 @@
 ! [ -d "$HOME/dwd" ]                  && mkdir "$HOME/dwd"
 ! [ -d "$HOME/desktop" ]              && mkdir "$HOME/desktop"
 ! [ -d "$HOME/p2p" ]                  && mkdir "$HOME/p2p"
+! [ -d "$HOME/music" ]                && mkdir "$HOME/music"
+
+rm -rf "$HOME/Downloads"
+rm -rf "$HOME/Desktop"
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
