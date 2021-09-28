@@ -47,8 +47,8 @@ workspace 6 output DP-1
 workspace 7 output DP-1
 workspace 8 output DP-1
 # Mouse
-mouse_warping none
-focus_follows_mouse always
+mouse_warping output
+focus_follows_mouse yes
 # Fullscreen
 popup_during_fullscreen ignore
 # Workspace Behavior
