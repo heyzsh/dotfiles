@@ -22,13 +22,13 @@ if [ "$1" = "up" ]; then
   rclone sync   "$LOCAL_MUSIC"    "$REMOTE_MUSIC"
   rclone sync   "$LOCAL_PIX"      "$REMOTE_PIX"
   rclone sync   "$LOCAL_VIDS"     "$REMOTE_VIDS"
-  notify-send "MEGA Sync" "Remote synced with local"
+  notify-send "מּ MEGA Sync" "Remote synced with local"
   echo "Done"
 elif [ "$1" = "down" ]; then
   rclone sync   "$REMOTE_DOX"     "$LOCAL_DOX"
   rclone sync   "$REMOTE_MUSIC"   "$LOCAL_MUSIC"
   rclone sync   "$REMOTE_PIX"     "$LOCAL_PIX"
   rclone sync   "$REMOTE_VIDS"    "$LOCAL_VIDS"
-  notify-send "MEGA Sync" "Local synced with remote"
+  notify-send "מּ MEGA Sync" "Local synced with remote"
   echo "Done"
 fi
