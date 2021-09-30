@@ -1,0 +1,101 @@
+#!/bin/sh
+
+! [ -x "$(command -v grim)" ]     && notify-send " Screenshot" "grim is not installed"           && exit 1
+! [ -x "$(command -v slurp)" ]    && notify-send " Screenshot" "slurp is not installed"          && exit 1
+! [ -x "$(command -v wl-copy)" ]  && notify-send " Screenshot" "wl-clipboard is not installed"   && exit 1
+
+usage() {
+  echo "Usage: screenshot [OPTIONS]..."
+  echo "Takes screenshot of a region or a screen and saves it into a file by default."
+  echo "If -c option is specified then image is copied to clipboard and saved to disk."
+  echo "Pictures are saved to the one of the following directories in order:"
+  echo " GRIM_DEFULAT_DIR"
+  echo " XDG_PICTURES_DIR"
+  echo " ~/Pictures/screenshots"
+  echo
+  echo " -c, --clipboard\tCopies image to clipboard"
+  echo " -r, --region\t\tTake screenhot of a region" 
+  echo " -s, --screen\t\tTake screenhot of an output or lets you select an output" 
+  echo " -a, --all\t\tTake screenshot of all outputs" 
+  exit 1
+}
+
+while [ $# -gt 0 ]; do
+  case $1 in
+    -c|--clipboard) cb=1 ;; 
+    -s|--screen)    sc=1 ;; 
+    -r|--region)    rg=1 ;; 
+    -a|--all)       all=1 ;; 
+    *)              usage && exit 1 ;;
+  esac
+  shift
+done
+
+if ! [ -z "$GRIM_DEFAULT_DIR" ]; then
+  SAVE_DIR="$GRIM_DEFAULT_DIR"
+elif ! [ -z "$XDG_PICTURES_DIR" ]; then
+  SAVE_DIR="$XDG_PICTURES_DIR/screenshots"
+else 
+  SAVE_DIR="${HOME}/Pictures/screenshots"
+fi
+
+mkdir -p "$SAVE_DIR"
+
+filename="$(uuidgen).png"
+filepath="${SAVE_DIR}/${filename}"
+
+echo "cb=$cb sc=$sc rg=$rg all=$all"
+
+region() {
+  grim -t png -g "$(slurp)" "$filepath"
+  status="$?"
+  if [ "$status" -eq 0 ] && [ "$cb" ]; then
+    cat "$filepath" | wl-copy
+    notify-send " Screenshot" "$filename copied to clipboard"
+  elif [ "$status" -eq 0 ]; then
+    notify-send " Screenshot" "$filename saved to disk"
+  fi
+}
+
+screen() {
+  if [ "$all" ]; then
+    grim -t png "$filepath"
+    status="$?"
+  elif [ "$sc" ]; then
+    if [ "$(swaymsg -pt get_outputs | grep Output | wc -l)" -gt 1 ]; then
+      grim -t png -g "$(slurp -o)" "$filepath"
+      status="$?"
+    else
+      grim -t png "$filepath"
+      status="$?"
+    fi
+  fi
+
+  if [ "$status" -eq 0 ] && [ "$cb" ]; then
+    cat "$filepath" | wl-copy
+    notify-send " Screenshot" "$filename copied to clipboard"
+  else
+    notify-send " Screenshot" "$filename saved to disk"
+  fi
+}
+
+if [ "$sc" ] && [ "$all" ]; then
+  echo "Cant use both"
+  exit 1
+  # usage
+elif [ "$rg" ] && [ "$sc" -o "$all" ]; then
+  echo "Cant use region with screen opts"
+  exit 1
+  # usage
+fi
+
+if [ "$rg" ]; then
+  region
+elif [ "$sc" -o "$all" ]; then
+  echo "one of em is defined"
+  screen
+else 
+  echo "no screen or region is defined"
+  exit 1
+  # usage
+fi

@@ -190,9 +190,18 @@ bindsym $mod+p              exec $menu
 # Sway
 bindsym $mod+Shift+r        reload
 bindsym $mod+Shift+q        exec swaynag -t warning -m 'Exit Sway?' -b 'Yes' 'swaymsg exit'
-# Layouts
+
+#------------------#
+# KEYBOARD LAYOUTS #
+#------------------#
 bindsym $mod+Ctrl+z input "type:keyboard" xkb_layout de
 bindsym $mod+Ctrl+x input "type:keyboard" xkb_layout us
+
+#------------#
+# SCREENSHOT #
+#------------#
+bindsym $mod+Shift+z exec "$HOME/.local/bin/screenshot" -s -c 
+bindsym $mod+Shift+x exec "$HOME/.local/bin/screenshot" -r -c 
 
 #----------#
 # INCLUDES #

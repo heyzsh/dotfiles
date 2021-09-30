@@ -78,6 +78,12 @@ export FZF_DEFAULT_OPTS="--layout=reverse --height 60%"
 #--------#
 export FFMPEG_DATADIR="${XDG_CONFIG_HOME:-$HOME/.config}/ffmpeg"
 
+#------#
+# GRIM #
+#------#
+GRIM_DEFAULT_DIR="${XDG_PICTURES_DIR:-$HOME/pix}/screenshots}"
+mkdir -p "$GRIM_DEFAULT_DIR"
+
 #---------#
 # NODE.JS #
 #---------#
