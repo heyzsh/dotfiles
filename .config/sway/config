@@ -214,7 +214,7 @@ bindsym Mod1+Shift+Next   exec "$HOME/.local/bin/volume" -i -v -2
 bindsym Mod1+Shift+Prior  exec "$HOME/.local/bin/volume" -i -v +2
 bindsym Mod1+Shift+End    exec "$HOME/.local/bin/volume" -i -m
 
-bindsym $mod+Shift+Home    exec "$HOME/.local/bin/volume" -i -o -m
+bindsym $mod+Shift+Home   exec "$HOME/.local/bin/volume" -i -o -m
 
 #----------#
 # INCLUDES #

@@ -39,8 +39,8 @@ using_pulseaudio() {
   fi
 
   if ! [ -z "$volume" ]; then
-    ! [ -z "$output" ] && pactl set-sink-volume    @DEFAULT_SINK@   "${volume}%"
-    ! [ -z "$input" ]  && pactl set-source-volume  @DEFAULT_SOURCE@ "${volume}%"
+    ! [ -z "$output" ] && pactl set-sink-volume   @DEFAULT_SINK@   "${volume}%"
+    ! [ -z "$input" ]  && pactl set-source-volume @DEFAULT_SOURCE@ "${volume}%"
   fi
 }
 
