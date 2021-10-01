@@ -6,7 +6,7 @@
 
 usage() {
   echo "Usage: screenshot [OPTIONS]..."
-  echo "Takes screenshot of a region or a screen and saves it into a file by default."
+  echo "Takes screenshot of a region or a screen(s)."
   echo "If -c option is specified then image is copied to clipboard and saved to disk."
   echo "Pictures are saved to the one of the following directories in order:"
   echo " GRIM_DEFULAT_DIR"
@@ -17,6 +17,7 @@ usage() {
   echo " -r, --region\t\tTake screenhot of a region" 
   echo " -s, --screen\t\tTake screenhot of an output or lets you select an output" 
   echo " -a, --all\t\tTake screenshot of all outputs" 
+  echo " -h, --help\t\tPrints this useful text" 
   exit 1
 }
 
@@ -40,11 +41,8 @@ else
 fi
 
 mkdir -p "$SAVE_DIR"
-
 filename="$(uuidgen).png"
 filepath="${SAVE_DIR}/${filename}"
-
-echo "cb=$cb sc=$sc rg=$rg all=$all"
 
 region() {
   grim -t png -g "$(slurp)" "$filepath"
@@ -80,22 +78,15 @@ screen() {
 }
 
 if [ "$sc" ] && [ "$all" ]; then
-  echo "Cant use both"
-  exit 1
-  # usage
+  usage
 elif [ "$rg" ] && [ "$sc" -o "$all" ]; then
-  echo "Cant use region with screen opts"
-  exit 1
-  # usage
+  usage
 fi
 
 if [ "$rg" ]; then
   region
 elif [ "$sc" -o "$all" ]; then
-  echo "one of em is defined"
   screen
 else 
-  echo "no screen or region is defined"
-  exit 1
-  # usage
+  usage
 fi

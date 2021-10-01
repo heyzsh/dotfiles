@@ -1,0 +1,64 @@
+#!/bin/sh
+
+usage() {
+  echo "Usage: volume [OPTIONS]"
+  echo "Adjust volume for alsa or pulseaudio."
+  echo ""
+  echo " -i|--input\tSet the volume for input device"
+  echo " -o|--output\tSet the volume for output device"
+  echo " -m|--mute\tToggle mute device"
+  echo " -v|--volume\t The volume value to set e.g. -30, +10, 0"
+  echo " -h|--help\tPrint this useful text"
+  exit 1
+}
+
+while [ "$#" -gt 0 ]; do
+  case $1 in
+    -i|--input)   input=1 ;;
+    -o|--output)  output=1 ;;
+    -m|--mute)    mute=1 ;;
+    -v|--volume)  volume="$2" shift ;;
+    --)           shift break;;
+    *)            usage && exit 1 ;;
+  esac
+  shift
+done
+
+if [ -z "$input" ] && [ -z "$output" ]; then usage; fi
+if ! [ -z "$volume" ]; then
+ [ "$(echo $volume | grep -wcE '^(\+|-)[0-9]*$')" -eq 0 ] && usage
+elif [ -z "$mute" ]; then
+ usage 
+fi
+ 
+using_pulseaudio() {
+  if ! [ -x "$(command -v pactl)" ]; then notify-send " Sound" "pulseaudio is not installed"; exit 1; fi
+  if ! [ -z $mute ]; then
+    ! [ -z "$output" ] && pactl set-sink-mute   @DEFAULT_SINK@   toggle
+    ! [ -z "$input" ]  && pactl set-source-mute @DEFAULT_SOURCE@ toggle
+  fi
+
+  if ! [ -z "$volume" ]; then
+    ! [ -z "$output" ] && pactl set-sink-volume    @DEFAULT_SINK@   "${volume}%"
+    ! [ -z "$input" ]  && pactl set-source-volume  @DEFAULT_SOURCE@ "${volume}%"
+  fi
+}
+
+using_alsa() {
+  if ! [ -x "$(command -v amixer)" ]; then notify-send " Sound" "alsa-utils is not installed"; exit 1; fi
+  if ! [ -z $mute ]; then
+    ! [ -z "$output" ] && amixer sset Master  toggle
+    ! [ -z "$input" ]  && amixer sset Capture toggle
+  fi
+  v="$(echo $volume | grep -o '[0-9]*')"
+  s="$(echo $volume | cut -c1)"
+  ! [ -z "$output" ] && amixer sset Master   "${v}%${s}"
+  ! [ -z "$input" ]  && amixer sset Capture  "${v}%${s}"
+}
+
+pulseaudio --check > /dev/null
+if [ "$?" -eq 0 ]; then
+  using_pulseaudio
+else
+  using_alsa
+fi

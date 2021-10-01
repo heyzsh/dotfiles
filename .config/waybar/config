@@ -110,7 +110,7 @@
       "format": "{volume} {icon} {format_source}",
       "format-bluetooth": "{volume} {icon} {format_source}",
       "format-bluetooth-muted": "﫾 {icon} {format_source}",
-      "format-muted": "ﱝ {format_source}",
+      "format-muted": "婢 {format_source}",
       "format-source": "{volume} ",
       "format-source-muted": "",
       "format-icons": {
@@ -123,6 +123,8 @@
         "default": ["", "", ""],
       },
       "on-click": "alacritty -e pulsemixer",
+      "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+      "on-click-middle": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
     },
 
     "sway/language": {
