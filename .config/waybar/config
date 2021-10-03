@@ -19,6 +19,7 @@
       "max-length": 128,
       "rewrite": {
         "(.*) — Mozilla Firefox": "  $1",
+        "(.*)Mozilla Firefox": "  $1",
         "(.*) GIMP": " $0",
         "Alacritty": " $0",
         "pulsemixer": "醙 $0",

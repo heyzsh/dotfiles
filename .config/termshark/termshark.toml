@@ -1,3 +1,4 @@
+
 [main]
   color-tsharks = ["/usr/bin/tshark"]
   last-used-tshark = "/usr/bin/tshark"

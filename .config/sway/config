@@ -216,6 +216,11 @@ bindsym Mod1+Shift+End    exec "$HOME/.local/bin/volume" -i -m
 
 bindsym $mod+Shift+Home   exec "$HOME/.local/bin/volume" -i -o -m
 
+#----------------#
+# PROGRAM LAUNCH #
+#----------------#
+bindsym $mod+Ctrl+c       exec alacritty -e calc
+
 #----------#
 # INCLUDES #
 #----------#
