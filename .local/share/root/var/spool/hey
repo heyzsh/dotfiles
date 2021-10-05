@@ -1,2 +1,2 @@
-@reboot $HOME/.local/bin/sync-mega down
-@hourly $HOME/.local/bin/sync-mega up
+@reboot DISPLAY=:0 XDG_RUNTIME_DIR=/run/user/$(id -u) $HOME/.local/bin/sync-mega down
+@hourly DISPLAY=:0 XDG_RUNTIME_DIR=/run/user/$(id -u) $HOME/.local/bin/sync-mega up
