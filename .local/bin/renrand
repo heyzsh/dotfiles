@@ -1,0 +1,50 @@
+#!/bin/sh
+
+usage() {
+  printf "Usage: renrand [OPTIONS]\n"
+  printf "Rename files in a directory to UUID.\n"
+  printf "\n"
+  printf " -d --directory\tSpecify the directory\n"
+  printf " -n --dry-run\tMake no changes to filenames\n"
+  printf " -v --verbose\tVerbose output\n"
+  printf " -h --help\tPrint this useful text\n"
+  exit 1
+}
+
+while [ "$#" -gt 0 ]; do
+  case $1 in
+    -d|--directory) dir=$2 shift ;;
+    -n|--dry-run) dry=1 ;;
+    -v|--verbose) verbose=1 ;;
+    -h|--help) usage ;;
+  esac
+  shift
+done
+
+[ -z "$dir" ] && usage
+[ ! -d "$dir" ] && printf "Directory does not exist\n" && exit 1
+
+for file in "$dir"/*; do
+  ! [ -f "$file" ] && continue
+  uuid=$(uuidgen)
+  ext=$(basename "$file" | rev | cut -d'.' -f1 | rev)
+  if [ "$ext" = "$(basename $file)" ]; then
+    ext=
+  fi
+  if [ "$dry" ]; then
+    # echo "$file => $dir/$uuid.$ext"
+    if [ -n "$ext" ]; then
+      echo "$(basename "$file") => $uuid.$ext"
+    else 
+      echo "$(basename "$file") => $uuid"
+    fi
+  else
+    if [ -n "$ext" ]; then
+      mv "$file" "${dir}/${uuid}.${ext}"
+      [ -n "$verbose" ] && echo "$(basename "$file") => $uuid.$ext"
+    else
+      mv "$file" "${dir}/${uuid}"
+      [ -n "$verbose" ] && echo "$(basename "$file") => $uuid"
+    fi
+  fi
+done
