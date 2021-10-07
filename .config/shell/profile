@@ -187,6 +187,11 @@ mkdir -p "${XDG_CONFIG_HOME:-$HOME/.config}/tig"
 mkdir -p "${XDG_DATA_HOME:-$HOME/.local/share}/tig"
 export TIGRC_USER="${XDG_CONFIG_HOME:-$HOME/.config}/tig/config"
 
+#------#
+# CALC #
+#------#
+export CALCRC="${XDG_CONFIG_HOME:-$HOME/.config}/calc/calcrc"
+
 #------------#
 # MISC PATHS #
 #------------#
