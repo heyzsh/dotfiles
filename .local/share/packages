@@ -83,3 +83,5 @@ rclone
 wev
 figlet
 testdisk
+gallery-dl-git
+wget

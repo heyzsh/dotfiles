@@ -1,0 +1,31 @@
+#!/bin/sh
+
+usage() {
+  printf "Usage: gen-note-link [OPTIONS]\n"
+  printf "\n"
+  printf " -n|--name\tFilename for the title\n"
+  printf " -h|--help\tPrint this useful text\n"
+  printf "\n"
+  exit 1
+}
+
+while [ "$#" -gt 0 ]; do
+  case "$1" in
+    -n|--name|--title) title="$2" shift ;;
+    -h|--help|) usage ;;
+  esac
+done
+
+if ! [ "$title" ] && usage
+$title=$(echo "$title" | sed 's/ /-/g')
+
+DIR="${GITHUB_DIR:-$HOME/github}/libri/_/${title}"
+HREF="https://github.com/heyxsh/libri/tree/master/_/${title}"
+
+mkdir -p "$DIR"
+echo "$title" > "${DIR}/README.md"
+
+wl-copy "$HREF"
+
+echo "Copied: $HREF"
+echo "Dir: $DIR"
