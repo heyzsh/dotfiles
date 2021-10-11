@@ -206,15 +206,15 @@ bindsym $mod+Shift+x exec "$HOME/.local/bin/screenshot" -r -c
 #-------#
 # SOUND #
 #-------#
-bindsym $mod+Shift+Next   exec "$HOME/.local/bin/volume" -o -v -2
-bindsym $mod+Shift+Prior  exec "$HOME/.local/bin/volume" -o -v +2
-bindsym $mod+Shift+End    exec "$HOME/.local/bin/volume" -o -m
+bindsym $mod+Next   exec "$HOME/.local/bin/volume" -o -v -2
+bindsym $mod+Prior  exec "$HOME/.local/bin/volume" -o -v +2
+bindsym $mod+End    exec "$HOME/.local/bin/volume" -o -m
 
-bindsym Mod1+Shift+Next   exec "$HOME/.local/bin/volume" -i -v -2
-bindsym Mod1+Shift+Prior  exec "$HOME/.local/bin/volume" -i -v +2
-bindsym Mod1+Shift+End    exec "$HOME/.local/bin/volume" -i -m
+bindsym $mod+Shift+Next   exec "$HOME/.local/bin/volume" -i -v -2
+bindsym $mod+Shift+Prior  exec "$HOME/.local/bin/volume" -i -v +2
+bindsym $mod+Shift+End    exec "$HOME/.local/bin/volume" -i -m
 
-bindsym $mod+Shift+Home   exec "$HOME/.local/bin/volume" -i -o -m
+bindsym $mod+Home   exec "$HOME/.local/bin/volume" -i -o -m
 
 #----------------#
 # PROGRAM LAUNCH #
