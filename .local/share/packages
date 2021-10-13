@@ -89,3 +89,5 @@ qt5-wayland
 qt5-styleplugins
 megasync-bin
 speedcrunch
+jq
+pup

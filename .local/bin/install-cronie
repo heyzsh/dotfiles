@@ -2,6 +2,6 @@
 
 sudo pacman --needed --noconfirm -S cronie
 sudo systemctl enable cronie.service
-sudo sed -i "s/ExecStart=\/usr\/bin\/crond -n$/ExecStart=\/usr\/bin\/crond -n -P/" cronie.service
+sudo sed -i "s/ExecStart=\/usr\/bin\/crond -n$/ExecStart=\/usr\/bin\/crond -n -P/" /usr/lib/systemd/system/cronie.service
 sudo systemctl daemon-reload
 sudo systemctl start cronie.service
