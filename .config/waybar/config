@@ -4,7 +4,7 @@
     "height": 24,
     "modules-left": ["sway/workspaces", "sway/mode", "sway/window", "custom/media"],
     "modules-center": [],
-    "modules-right": ["network", "cpu", "memory", "disk", "temperature", "backlight", "battery", "pulseaudio", "sway/language", "clock"],
+    "modules-right": ["network", "cpu", "memory", "disk", "temperature", "backlight", "battery", "pulseaudio", "sway/language", "clock", "tray"],
 
     "sway/workspaces": {
       "format": "{icon}",
@@ -31,6 +31,7 @@
         "(.*).zathura": "  zathura",
         "(.*)Steam": "  Steam",
         "Tixati (.*)": " Tixati",
+        "MEGAsync": " MEGAsync",
       },
     },
 
@@ -130,5 +131,11 @@
 
     "sway/language": {
       "format": "{} "
+    },
+
+    "tray": {
+      "icon-size": 14,
+      "spacing": 5,
+      "show-passive-items": true,
     },
 }

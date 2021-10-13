@@ -221,6 +221,11 @@ bindsym $mod+Home   exec "$HOME/.local/bin/volume" -i -o -m
 #----------------#
 bindsym $mod+Ctrl+c       exec alacritty -e calc
 
+#-----------------------#
+# FLOATING APPLICATIONS #
+#-----------------------#
+for_window [class="MEGAsync"] floating enable
+
 #----------#
 # INCLUDES #
 #----------#
