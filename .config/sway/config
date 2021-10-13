@@ -194,14 +194,14 @@ bindsym $mod+Shift+q        exec swaynag -t warning -m 'Exit Sway?' -b 'Yes' 'sw
 #------------------#
 # KEYBOARD LAYOUTS #
 #------------------#
-bindsym $mod+Ctrl+z input "type:keyboard" xkb_layout de
-bindsym $mod+Ctrl+x input "type:keyboard" xkb_layout us
+#bindsym $mod+Ctrl+z input "type:keyboard" xkb_layout de
+#bindsym $mod+Ctrl+x input "type:keyboard" xkb_layout us
 
 #------------#
 # SCREENSHOT #
 #------------#
-bindsym $mod+Shift+z exec "$HOME/.local/bin/screenshot" -s -c 
-bindsym $mod+Shift+x exec "$HOME/.local/bin/screenshot" -r -c 
+bindsym $mod+x exec "$HOME/.local/bin/screenshot" -r -c 
+bindsym $mod+Shift+x exec "$HOME/.local/bin/screenshot" -s -c 
 
 #-------#
 # SOUND #
@@ -210,8 +210,8 @@ bindsym $mod+Next   exec "$HOME/.local/bin/volume" -o -v -2
 bindsym $mod+Prior  exec "$HOME/.local/bin/volume" -o -v +2
 bindsym $mod+End    exec "$HOME/.local/bin/volume" -o -m
 
-bindsym $mod+Shift+Next   exec "$HOME/.local/bin/volume" -i -v -2
-bindsym $mod+Shift+Prior  exec "$HOME/.local/bin/volume" -i -v +2
+bindsym $mod+Shift+Next   exec "$HOME/.local/bin/volume" -i -v -1
+bindsym $mod+Shift+Prior  exec "$HOME/.local/bin/volume" -i -v +1
 bindsym $mod+Shift+End    exec "$HOME/.local/bin/volume" -i -m
 
 bindsym $mod+Home   exec "$HOME/.local/bin/volume" -i -o -m
@@ -237,5 +237,5 @@ include @sysconfdir@/sway/config.d/*
 #-----------#
 # AUTOSTART #
 #-----------#
-exec dunst &
+exec pgrep dunst || dunst &
 exec pulseaudio --kill && pulseaudio --start
