@@ -86,3 +86,5 @@ testdisk
 gallery-dl-git
 wget
 iotop
+megasync-bin
+qt5-wayland
