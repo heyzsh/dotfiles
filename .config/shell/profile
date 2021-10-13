@@ -94,7 +94,6 @@ export NODE_REPL_HISTORY="${XDG_DATA_HOME:-$HOME/.local/share}/node_repl_history
 #-----#
 export NVM_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/nvm"
 
-
 #------------#
 # POSTGRESQL #
 #------------#
@@ -120,9 +119,7 @@ export GTK_THEME=Gruvbox-Material-Dark
 #------------#
 # QT OPTIONS #
 #------------#
-# Force QT to Use GTK Theme
-# export QT_QPA_PLATFORMTHEME="gtk2"
-# Force Wayland for QT Programs
+export QT_QPA_PLATFORMTHEME=gtk2
 # export QT_QPA_PLATFORM="wayland"
 export QT_WAYLAND_FORCE_DPI=physical
 export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
@@ -188,11 +185,6 @@ export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
 mkdir -p "${XDG_CONFIG_HOME:-$HOME/.config}/tig"
 mkdir -p "${XDG_DATA_HOME:-$HOME/.local/share}/tig"
 export TIGRC_USER="${XDG_CONFIG_HOME:-$HOME/.config}/tig/config"
-
-#------#
-# CALC #
-#------#
-export CALCRC="${XDG_CONFIG_HOME:-$HOME/.config}/calc/calcrc"
 
 #------------#
 # MISC PATHS #

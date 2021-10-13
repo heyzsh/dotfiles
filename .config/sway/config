@@ -219,7 +219,9 @@ bindsym $mod+Home   exec "$HOME/.local/bin/volume" -i -o -m
 #----------------#
 # PROGRAM LAUNCH #
 #----------------#
-bindsym $mod+Ctrl+c   exec speedcrunch
+bindsym $mod+Ctrl+c         exec speedcrunch
+bindsym $mod+Ctrl+f         exec firefox
+bindsym $mod+Ctrl+Shift+f   exec firefox --private-window
 
 #-----------------------#
 # FLOATING APPLICATIONS #

@@ -45,7 +45,6 @@ ntfs-3g
 shellcheck
 fzf
 bc
-calc
 nodejs
 npm
 python-pip
@@ -86,5 +85,7 @@ testdisk
 gallery-dl-git
 wget
 iotop
-megasync-bin
 qt5-wayland
+qt5-styleplugins
+megasync-bin
+speedcrunch
