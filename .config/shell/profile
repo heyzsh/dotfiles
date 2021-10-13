@@ -121,9 +121,9 @@ export GTK_THEME=Gruvbox-Material-Dark
 # QT OPTIONS #
 #------------#
 # Force QT to Use GTK Theme
-export QT_QPA_PLATFORMTHEME="gtk2"
+# export QT_QPA_PLATFORMTHEME="gtk2"
 # Force Wayland for QT Programs
-export QT_QPA_PLATFORM=wayland
+# export QT_QPA_PLATFORM="wayland"
 export QT_WAYLAND_FORCE_DPI=physical
 export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 
@@ -173,6 +173,8 @@ if test -z "${XDG_RUNTIME_DIR}"; then
     fi
 fi
 export WLR_DRM_NO_MODIFIERS=1
+# For Waybar Tray
+export XDG_CURRENT_DESKTOP=Unity
 
 #------#
 # WGET #
