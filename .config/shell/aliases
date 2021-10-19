@@ -61,6 +61,19 @@ alias nvpk='nvim $HOME/.local/share/packages'
 alias die='sudo shutdown -h now'
 alias out='pkill sway'
 
+#-----------#
+# PROTONVPN #
+#-----------#
+sudo pvpni='sudo protonvpn init'
+sudo pvpnc='sudo protonvpn connect -f'
+
+#---------#
+# SYSTEMD #
+#---------#
+alias sstart='sudo systemctl start'
+alias sstop='sudo systemctl stop'
+alias ssres='sudo systemctl restart'
+
 #------#
 # WGET #
 #------#
@@ -69,5 +82,4 @@ alias wget="wget --hsts-file $HOME/.cache/wget-hsts"
 #------#
 # VIFM #
 #------#
-alias fm='vifm $HOME'
-alias vifm='vifm $HOME'
+alias fm='vifm'
