@@ -64,15 +64,17 @@ alias out='pkill sway'
 #-----------#
 # PROTONVPN #
 #-----------#
-sudo pvpni='sudo protonvpn init'
-sudo pvpnc='sudo protonvpn connect -f'
+alias vpni="sudo protonvpn init"
+alias vpnc="sudo protonvpn connect"
+alias vpnd="sudo protonvpn disconnect"
+alias vpnr="sudo protonvpn reconnect"
 
 #---------#
 # SYSTEMD #
 #---------#
-alias sstart='sudo systemctl start'
-alias sstop='sudo systemctl stop'
-alias ssres='sudo systemctl restart'
+alias sstart="sudo systemctl start"
+alias sstop="sudo systemctl stop"
+alias ssres="sudo systemctl restart"
 
 #------#
 # WGET #
