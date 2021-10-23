@@ -9,7 +9,7 @@ highlight   TopLineSel	  cterm=none          ctermfg=253	      ctermbg=238
 
 highlight   Win		        cterm=none	        ctermfg=223	      ctermbg=236
 highlight   OtherWin      cterm=none	        ctermfg=248	      ctermbg=236
-highlight   Directory	    cterm=bold	        ctermfg=66	      ctermbg=default
+highlight   Directory	    cterm=bold	        ctermfg=178	      ctermbg=default
 highlight   CurrLine	    cterm=bold,inverse	ctermfg=default	  ctermbg=default
 highlight   OtherLine	    cterm=bold	        ctermfg=default	  ctermbg=237
 highlight   Selected	    cterm=none	        ctermfg=250       ctermbg=238

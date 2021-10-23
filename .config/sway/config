@@ -206,15 +206,26 @@ bindsym $mod+Shift+x exec "$HOME/.local/bin/screenshot" -s -c
 #-------#
 # SOUND #
 #-------#
-bindsym $mod+Next   exec "$HOME/.local/bin/volume" -o -v -2
-bindsym $mod+Prior  exec "$HOME/.local/bin/volume" -o -v +2
-bindsym $mod+End    exec "$HOME/.local/bin/volume" -o -m
+# Any
+bindsym $mod+Next             exec "$HOME/.local/bin/volume" -o -v -2
+bindsym $mod+Prior            exec "$HOME/.local/bin/volume" -o -v +2
+bindsym $mod+End              exec "$HOME/.local/bin/volume" -o -m
+# Laptop
+bindsym XF86AudioRaiseVolume  exec "$HOME/.local/bin/volume" -o -v +2
+bindsym XF86AudioLowerVolume  exec "$HOME/.local/bin/volume" -o -v -2
+bindsym XF86AudioMute         exec "$HOME/.local/bin/volume" -o -m
+# Mic
+bindsym $mod+Shift+Next       exec "$HOME/.local/bin/volume" -i -v -1
+bindsym $mod+Shift+Prior      exec "$HOME/.local/bin/volume" -i -v +1
+bindsym $mod+Shift+End        exec "$HOME/.local/bin/volume" -i -m
+# All
+bindsym $mod+Home             exec "$HOME/.local/bin/volume" -i -o -m
 
-bindsym $mod+Shift+Next   exec "$HOME/.local/bin/volume" -i -v -1
-bindsym $mod+Shift+Prior  exec "$HOME/.local/bin/volume" -i -v +1
-bindsym $mod+Shift+End    exec "$HOME/.local/bin/volume" -i -m
-
-bindsym $mod+Home   exec "$HOME/.local/bin/volume" -i -o -m
+#------------#
+# BRIGHTNESS #
+#------------#
+bindsym XF86MonBrightnessUp   exec brightnessctl s +5%
+bindsym XF86MonBrightnessDown exec brightnessctl s 5%-
 
 #----------------#
 # PROGRAM LAUNCH #
@@ -223,6 +234,7 @@ bindsym $mod+Ctrl+c         exec speedcrunch
 bindsym $mod+Ctrl+f         exec firefox
 bindsym $mod+Ctrl+Shift+f   exec firefox --private-window
 bindsym $mod+b              exec swaylock
+bindsym $mod+e              exec alacritty -e vifm "$HOME"
 
 #-----------------------#
 # FLOATING APPLICATIONS #

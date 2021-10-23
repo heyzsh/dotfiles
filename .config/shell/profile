@@ -191,6 +191,6 @@ export TIGRC_USER="${XDG_CONFIG_HOME:-$HOME/.config}/tig/config"
 #------------#
 export LESSHISTFILE="-"
 export PASSWORD_STORE_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/password-store"
-export GNUPGHOME="${XDG_DATA_HOME:-$HOME/.local/share}/gnupg"
+#export GNUPGHOME="${XDG_DATA_HOME:-$HOME/.local/share}/gnupg"
 
 exec sway
