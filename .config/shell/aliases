@@ -69,12 +69,19 @@ alias vpnc="sudo protonvpn connect"
 alias vpnd="sudo protonvpn disconnect"
 alias vpnr="sudo protonvpn reconnect"
 
+#------------#
+# WINDSCRIBE #
+#------------#
+alias wndc="windscribe connect"
+alias wndd="windscribe disconnect"
+
 #---------#
 # SYSTEMD #
 #---------#
 alias sstart="sudo systemctl start"
 alias sstop="sudo systemctl stop"
-alias ssres="sudo systemctl restart"
+alias sres="sudo systemctl restart"
+alias sstat="sudo systemctl status"
 
 #------#
 # WGET #
@@ -85,3 +92,21 @@ alias wget="wget --hsts-file $HOME/.cache/wget-hsts"
 # VIFM #
 #------#
 alias fm='vifm'
+
+#-----------------#
+# MOUNT & UNMOUNT #
+#-----------------#
+alias mount="sudo mount"
+alias unmount="sudo umount"
+
+#---------#
+# NEXTDNS #
+#---------#
+alias nextstart="sudo nextdns start && sudo nextdns activate"
+alias nextstop="sudo nextdns stop && sudo nextdns deactivate"
+alias nextstatus="sudo nextdns status"
+
+#-------#
+# LSBLK #
+#-------#
+alias lsb="lsblk"
