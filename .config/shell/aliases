@@ -97,7 +97,7 @@ alias fm='vifm'
 # MOUNT & UNMOUNT #
 #-----------------#
 alias mount="sudo mount"
-alias unmount="sudo umount"
+alias umount="sudo umount"
 
 #---------#
 # NEXTDNS #
