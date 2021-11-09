@@ -12,14 +12,12 @@ endif
 
 " Install the plugins
 call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"'))
-	" Plug 'easymotion/vim-easymotion'
 	Plug 'fatih/vim-go'
 	Plug 'kien/ctrlp.vim'
 	Plug 'morhetz/gruvbox'
 	Plug 'plasticboy/vim-markdown'
 	Plug 'preservim/nerdtree'
   Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-	" Plug 'tpope/vim-fugitive'
   Plug 'ryanoasis/vim-devicons'
 	Plug 'tpope/vim-unimpaired'
 	Plug 'vim-airline/vim-airline'
@@ -203,10 +201,11 @@ set wrap "Wrap lines
 " ========================================
 
 " Smart way to move between windows
-nnoremap <C-j> <C-W>j
-nnoremap <C-k> <C-W>k
-nnoremap <C-h> <C-W>h
-nnoremap <C-l> <C-W>l
+map <C-L> <C-W>l
+map <C-l> <C-W>l
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
 
 " Close the current buffer
 map <leader>bd :Bclose<cr>:tabclose<cr>gT
@@ -258,8 +257,8 @@ set laststatus=2
 " Move a line of text using ALT+[jk] or Command+[jk] on mac
 nmap <M-j> mz:m+<cr>`z
 nmap <M-k> mz:m-2<cr>`z
-vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
 vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
+vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
 
 " Above mappings for macOS 
 if has("mac") || has("macunix")

@@ -110,3 +110,9 @@ alias nextstatus="sudo nextdns status"
 # LSBLK #
 #-------#
 alias lsb="lsblk"
+
+#---------#
+# NETWORK #
+#---------#
+alias p="ping google.com"
+alias nres="sudo systemctl restart NetworkManager"

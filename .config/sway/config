@@ -96,10 +96,10 @@ client.focused_inactive   #a89984 #bdae93 #3c3836 #a89984 #a89984
 client.urgent             #af3013 #fbf1c7 #fbf1c7 #af30a3 #af30a3
 # Resize Mode
 mode "resize" {
-  bindsym $left   resize shrink   width   15px
-  bindsym $down   resize grow     height  15px
-  bindsym $up     resize shrink   height  10px
-  bindsym $right  resize grow     width   10px
+  bindsym $left   resize shrink   width   20px
+  bindsym $down   resize grow     height  20px
+  bindsym $up     resize shrink   height  20px
+  bindsym $right  resize grow     width   20px
   bindsym Return  mode "default"
   bindsym Escape  mode "default"
 }
@@ -233,7 +233,7 @@ bindsym XF86MonBrightnessDown exec brightnessctl s 5%-
 bindsym $mod+Ctrl+c         exec speedcrunch
 bindsym $mod+Ctrl+f         exec firefox
 bindsym $mod+Ctrl+Shift+f   exec firefox --private-window
-bindsym $mod+b              exec swaylock
+bindsym $mod+b              exec swaylock --color 282828
 bindsym $mod+e              exec alacritty -e vifm "$HOME"
 
 #-----------------------#
@@ -241,6 +241,8 @@ bindsym $mod+e              exec alacritty -e vifm "$HOME"
 #-----------------------#
 for_window [title="MEGAsync"]     floating enable
 for_window [title="SpeedCrunch"]  floating enable
+for_window [title="mpv"]          floating enable
+for_window [title="mpv"]          resize set width 720 height 480
 
 #----------#
 # INCLUDES #
