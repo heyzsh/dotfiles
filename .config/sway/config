@@ -252,5 +252,6 @@ include @sysconfdir@/sway/config.d/*
 #-----------#
 # AUTOSTART #
 #-----------#
-exec pgrep dunst || dunst &
+exec pgrep dunst    || dunst &
+exec pgrep redshift || redshift -c $HOME/.config/redshift/config.conf &
 exec pulseaudio --kill && pulseaudio --start
