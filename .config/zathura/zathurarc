@@ -34,7 +34,7 @@ set highlight-color             "#fabd2f" # bright:yellow
 set highlight-active-color      "#fe8019" # bright:orange
 
 set default-bg                  "#282828" # bg
-set default-fg                  "#ebdbb2" # fg
+set default-fg                  "#fabd2f" # fg
 set render-loading              true
 set render-loading-bg           "#282828" # bg
 set render-loading-fg           "#ebdbb2" # fg
