@@ -59,7 +59,6 @@ catdoc
 highlight
 nerd-fonts-source-code-pro
 glfw-wayland
-links
 gdu
 dust
 s-tui
@@ -98,3 +97,4 @@ protonvpn-cli-ng
 nextdns
 windscribe-cli
 redshift-wayland-git
+qutebrowser
