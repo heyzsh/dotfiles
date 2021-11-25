@@ -1,6 +1,0 @@
-#!/bin/sh
-
-sudo pacman --noconfirm --needed -S rclone
-rclone config
-# Should source the .profile first before carrying this step out
-. $HOME/.local/bin/sync-mega down
