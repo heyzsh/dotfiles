@@ -1,4 +1,0 @@
-#!/bin/sh
-
-pacman --noconfirm -S pulseaudio-alsa pulsemixer pamixer
-mkdir /etc/pulse/default.pa.d

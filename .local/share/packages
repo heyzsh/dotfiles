@@ -66,7 +66,10 @@ up
 termshark
 brightnessctl
 noto-fonts-emoji
-ttf-computer-modern-fonts
+ttf-cmu-serif
+ttf-cmu-sans-serif
+ttf-cmu-typewriter
+ttf-cm-unicode
 ttf-linux-libertine
 slack-term
 tig
@@ -77,7 +80,6 @@ gruvbox-material-icon-theme-git
 tor
 torsocks
 dosfstools
-rclone
 wev
 figlet
 testdisk
@@ -97,4 +99,6 @@ protonvpn-cli-ng
 nextdns
 windscribe-cli
 redshift-wayland-git
-qutebrowser
+android-studio
+discord
+linux-headers

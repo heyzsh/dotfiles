@@ -1,0 +1,22 @@
+#!/bin/sh
+
+#-----------------#
+# INSTALL DARLING #
+#-----------------#
+
+sudo pacman -S --needed make cmake clang flex bison icu fuse linux-headers gcc-multilib lib32-gcc-libs pkg-config fontconfig cairo libtiff python2 mesa llvm libbsd libxkbfile libxcursor libxext libxkbcommon libxrandr
+
+cwd=$(pwd)
+tmp=$(mkdir -d)
+cd "$tmp"
+git clone --recursive https://github.com/darlinghq/darling.git
+cd darling/
+git pull
+git submodule init
+git submodule update
+mkdir -p build && cd build
+cmake ..
+make
+sudo make install
+make lkm
+sudo make lkm_install
