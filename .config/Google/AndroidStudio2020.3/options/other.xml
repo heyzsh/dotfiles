@@ -1,0 +1,12 @@
+<application>
+  <component name="PropertiesComponent">
+    <property name="AndroidInitConfigurator.V1" value="true" />
+    <property name="AndroidInitConfigurator.V3" value="true" />
+    <property name="AndroidInitConfigurator.V5" value="true" />
+    <property name="NonModalCommitCustomization.IsApplied" value="true" />
+    <property name="ask.about.ctrl.y.shortcut.v2" value="true" />
+    <property name="file.chooser.recent.files" value="$USER_HOME$/.local/share/android&#10;/home/hey/.local" />
+    <property name="last_opened_file_path" value="$USER_HOME$/.local/share/android" />
+    <property name="tasks.pass.word.conversion.enforced" value="true" />
+  </component>
+</application>

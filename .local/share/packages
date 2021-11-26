@@ -69,7 +69,6 @@ noto-fonts-emoji
 ttf-cmu-serif
 ttf-cmu-sans-serif
 ttf-cmu-typewriter
-ttf-cm-unicode
 ttf-linux-libertine
 slack-term
 tig
@@ -102,3 +101,4 @@ redshift-wayland-git
 android-studio
 discord
 linux-headers
+jdk-openjdk
