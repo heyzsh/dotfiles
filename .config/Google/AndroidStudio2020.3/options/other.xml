@@ -1,12 +1,33 @@
 <application>
+  <component name="ProjectPluginTrackerManager">
+    <option name="trackers">
+      <map>
+        <entry key="21SZkRGkBqkegBI3S9lVvcw6I2f">
+          <value>
+            <ProjectPluginTrackerState />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="PropertiesComponent">
     <property name="AndroidInitConfigurator.V1" value="true" />
     <property name="AndroidInitConfigurator.V3" value="true" />
     <property name="AndroidInitConfigurator.V5" value="true" />
+    <property name="MobileminApi" value="19" />
     <property name="NonModalCommitCustomization.IsApplied" value="true" />
+    <property name="SAVED_ANDROID_NPW_ASKED_LANGUAGE" value="true" />
+    <property name="SAVED_ANDROID_NPW_LANGUAGE" value="Kotlin" />
+    <property name="SAVED_ANDROID_PACKAGE" value="com.example" />
     <property name="ask.about.ctrl.y.shortcut.v2" value="true" />
-    <property name="file.chooser.recent.files" value="$USER_HOME$/.local/share/android&#10;/home/hey/.local" />
-    <property name="last_opened_file_path" value="$USER_HOME$/.local/share/android" />
+    <property name="build.toolwindow.Sync.selection.state" value="com.intellij.build.BuildTreeConsoleView" />
+    <property name="file.chooser.recent.files" value="$USER_HOME$/github&#10;/home/hey/.local/share/android&#10;/home/hey/.local" />
+    <property name="fileTypeChangedCounter" value="2" />
+    <property name="ide.updates.previous.build.number" value="AI-203.7717.56.2031.7784292" />
+    <property name="installed.kotlin.plugin.version" value="203-1.5.20-release-289-AS7717.8" />
+    <property name="kotlin-gradle-user-dirs" value="$USER_HOME$/.gradle" />
+    <property name="kotlin.plugin.releaseDate" value="203-1.5.20-release-289-AS7717.8:2021-06-24" />
+    <property name="last_opened_file_path" value="$USER_HOME$/github" />
     <property name="tasks.pass.word.conversion.enforced" value="true" />
   </component>
 </application>
