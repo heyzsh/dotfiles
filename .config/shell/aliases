@@ -82,6 +82,8 @@ alias sstart="sudo systemctl start"
 alias sstop="sudo systemctl stop"
 alias sres="sudo systemctl restart"
 alias sstat="sudo systemctl status"
+alias ssenable="sudo systemctl enable"
+alias ssdisable="sudo systemctl disable"
 
 #------#
 # WGET #

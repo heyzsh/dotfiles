@@ -1,7 +1,7 @@
 {
   "BACKGROUND_COLOR": "#202225",
   "OPEN_ON_STARTUP": false,
-  "IS_MAXIMIZED": false,
+  "IS_MAXIMIZED": true,
   "IS_MINIMIZED": false,
   "WINDOW_BOUNDS": {
     "x": 1930,
