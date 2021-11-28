@@ -5,7 +5,7 @@
 #--------------------------#
 
 echo "Enabling usbmuxd service"
-sudo systemctl start usbmuxd.service
+sudo -A systemctl start usbmuxd.service
 LOG=$(mktemp)
 echo "Starting droidcam on port 4747"
 stdbuf -i0 -o0 -e0 droidcam-cli -a -v ios 4747 $@ >$LOG 2>&1 &

@@ -159,6 +159,11 @@ export BEMENU_OPTS="
 export MOZ_ENABLE_WAYLAND=1
 
 #------#
+# SUDO #
+#------#
+export SUDO_ASKPASS="$HOME/.local/bin/askpass"
+
+#------#
 # JAVA #
 #------#
 # Wayland Fix for Java Programs
