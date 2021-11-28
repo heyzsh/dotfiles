@@ -132,6 +132,11 @@ export QT_QPA_PLATFORMTHEME=gtk2
 export QT_WAYLAND_FORCE_DPI=physical
 export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 
+#------#
+# SUDO #
+#------#
+# export SUDO_ASKPASS=/usr/X11R6/bin/ssh-askpass
+
 #--------#
 # BEMENU #
 #--------#
