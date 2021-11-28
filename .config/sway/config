@@ -255,3 +255,4 @@ include @sysconfdir@/sway/config.d/*
 exec pgrep dunst    || dunst &
 exec pgrep redshift || redshift -c $HOME/.config/redshift/config.conf &
 exec pulseaudio --kill && pulseaudio --start
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1

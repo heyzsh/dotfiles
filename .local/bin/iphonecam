@@ -5,6 +5,7 @@
 #--------------------------#
 
 echo "Enabling usbmuxd service"
+sudo systemctl stop usbmuxd.service
 sudo systemctl start usbmuxd.service
 LOG=$(mktemp)
 echo "Starting droidcam on port 4747"
@@ -15,6 +16,7 @@ sleep 5
 ps -p $pid > /dev/null
 if [ $? -eq 0 ]; then
         audio_device=$(grep -oE "hw:[0-9],[0-9],[0-9]" $LOG)
+        echo "Loading audio module for input"
         pacmd load-module module-alsa-source device=$audio_device
         wait
         pacmd unload-module module-alsa-source
