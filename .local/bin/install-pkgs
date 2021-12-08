@@ -2,8 +2,11 @@
 
 PKGS="$HOME/.local/share/packages"
 
+sudo pacman -Syy
+
 while IFS= read -r p; do
-  paru --needed --noconfirm --removemake -S $p
+  [ "$(echo "$p" | grep -ic "#")" -gt 0 ] && continue
+  paru --needed --noconfirm --removemake -S "$p"
 done < "$PKGS"
 
 sudo pacman --noconfirm -Scc

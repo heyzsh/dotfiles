@@ -1,13 +1,13 @@
+adb
 alacritty
 alsa-utils
-android-studio
+#android-studio
 base-devel
 bc
 bemenu-wayland
 brightnessctl
 catdoc
 curlftpfs
-dash
 discord
 docx2txt
 dosfstools
@@ -34,7 +34,6 @@ imv
 iotop
 jdk-openjdk
 jq
-kotlin
 libnotify
 linux-headers
 lsd
@@ -107,3 +106,4 @@ zathura-ps
 zip
 zoom-system-qt
 zsh
+ntp
