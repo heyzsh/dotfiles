@@ -8,7 +8,6 @@ bemenu-wayland
 brightnessctl
 catdoc
 curlftpfs
-discord
 docx2txt
 dosfstools
 droidcam
@@ -107,3 +106,4 @@ zip
 zoom-system-qt
 zsh
 ntp
+js-beautify
