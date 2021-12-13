@@ -4,6 +4,7 @@ usage() {
   printf "Usage: gen-note-link [OPTIONS]\n"
   printf "\n"
   printf " -n --name\tFilename for the title\n"
+  printf " -f --file\tFile related to the title\n"
   printf " -h --help\tPrint this useful text\n"
   printf "\n"
   exit 1
@@ -12,12 +13,14 @@ usage() {
 while [ "$#" -gt 0 ]; do
   case "$1" in
     -n|--name|--title) title="$2" shift ;;
+    -f|--file) f="$2" shift ;;
     -h|--help) usage ;;
   esac
   shift 
 done
 
 [ -z "$title" ] && usage
+[ -z "$f" ]     && usage
 title=$(echo "$title" | sed -E 's/\:|\?|!|#|\/|\\|@|\;|//g')
 title=$(echo "$title" | sed 's/ /-/g')
 
@@ -26,10 +29,10 @@ echo "Generating: $title"
 DIR="${GITHUB_DIR:-$HOME/github}/libri/_/${title}"
 HREF="https://github.com/heyxsh/libri/tree/master/_/${title}"
 
+EXT="$(echo $f | rev | cut -d'.' -f1 | rev)"
+
 mkdir -p "$DIR"
-echo "$title" > "${DIR}/README.md"
-
+cp "$f" "${DIR}/${title}.${EXT}"
 wl-copy "$HREF"
-
 echo "Copied: $HREF"
 echo "Dir: $DIR"
