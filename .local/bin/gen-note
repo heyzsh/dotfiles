@@ -32,7 +32,7 @@ HREF="https://github.com/heyxsh/libri/tree/master/_/${title}"
 EXT="$(echo $f | rev | cut -d'.' -f1 | rev)"
 
 mkdir -p "$DIR"
-cp "$f" "${DIR}/${title}.${EXT}"
+mv "$f" "${DIR}/${title}.${EXT}"
 wl-copy "$HREF"
 echo "Copied: $HREF"
 echo "Dir: $DIR"
