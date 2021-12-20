@@ -223,7 +223,6 @@ export WINEPREFIX="${XDG_DATA_HOME:-$HOME/.local/share}/wineprefixes/default"
 export FREETYPE_PROPERTIES="truetype:interpreter-version=35"
 export WINEDLLOVERRIDES="mscoree=d;mshtml=d"
 cd "${WINEPREFIX}/drive_c/windows/Fonts" && for i in /usr/share/fonts/**/*.{ttf,otf}; do ln -sf "$i" ; done
-lib32-gst-plugins-ugly
 cd ~
 
 

@@ -695,13 +695,13 @@ WINE REGISTRY Version 2
 "OpenWithIcon"="3365_wordpad.0"
 "ProgID"="wrifile"
 
-[Software\\Wine\\Fonts] 1640007461
-#time=1d7f5a6c303ef74
+[Software\\Wine\\Fonts] 1640008504
+#time=1d7f5a930b48798
 "Codepages"="1252,437"
 "LogPixels"=dword:00000060
 
-[Software\\Wine\\Fonts\\External Fonts] 1640006985
-#time=1d7f5a5a787ebca
+[Software\\Wine\\Fonts\\External Fonts] 1640008018
+#time=1d7f5a80ef67dce
 "@Noto Sans CJK HK (TrueType)"="Z:\\usr\\share\\fonts\\noto-cjk\\NotoSansCJK-Regular.ttc"
 "@Noto Sans CJK HK Black (TrueType)"="Z:\\usr\\share\\fonts\\noto-cjk\\NotoSansCJK-Black.ttc"
 "@Noto Sans CJK HK Bold (TrueType)"="Z:\\usr\\share\\fonts\\noto-cjk\\NotoSansCJK-Bold.ttc"
@@ -882,6 +882,16 @@ WINE REGISTRY Version 2
 "Sauce Code Pro Semibold Italic Nerd Font Complete Mono (TrueType)"="Z:\\usr\\share\\fonts\\TTF\\Sauce Code Pro Semibold Italic Nerd Font Complete Mono.ttf"
 "Sauce Code Pro Semibold Nerd Font Complete (TrueType)"="Z:\\usr\\share\\fonts\\TTF\\Sauce Code Pro Semibold Nerd Font Complete.ttf"
 "Sauce Code Pro Semibold Nerd Font Complete Mono (TrueType)"="Z:\\usr\\share\\fonts\\TTF\\Sauce Code Pro Semibold Nerd Font Complete Mono.ttf"
+"Segoe UI (TrueType)"="Z:\\usr\\share\\fonts\\TTF\\segoeui.ttf"
+"Segoe UI Bold (TrueType)"="Z:\\usr\\share\\fonts\\TTF\\segoeuib.ttf"
+"Segoe UI Bold Italic (TrueType)"="Z:\\usr\\share\\fonts\\TTF\\segoeuiz.ttf"
+"Segoe UI Italic (TrueType)"="Z:\\usr\\share\\fonts\\TTF\\segoeuii.ttf"
+"Segoe UI Light (TrueType)"="Z:\\usr\\share\\fonts\\TTF\\segoeuil.ttf"
+"Segoe UI Light Italic (TrueType)"="Z:\\usr\\share\\fonts\\TTF\\seguili.ttf"
+"Segoe UI Semibold (TrueType)"="Z:\\usr\\share\\fonts\\TTF\\seguisb.ttf"
+"Segoe UI Semibold Italic (TrueType)"="Z:\\usr\\share\\fonts\\TTF\\seguisbi.ttf"
+"Segoe UI Semilight (TrueType)"="Z:\\usr\\share\\fonts\\TTF\\segoeuisl.ttf"
+"Segoe UI Semilight Italic (TrueType)"="Z:\\usr\\share\\fonts\\TTF\\seguisli.ttf"
 "Source Code Pro (TrueType)"="Z:\\usr\\share\\fonts\\adobe-source-code-pro\\SourceCodePro-Regular.otf"
 "Source Code Pro Black (TrueType)"="Z:\\usr\\share\\fonts\\adobe-source-code-pro\\SourceCodePro-Black.otf"
 "Source Code Pro Black Italic (TrueType)"="Z:\\usr\\share\\fonts\\adobe-source-code-pro\\SourceCodePro-BlackIt.otf"
@@ -914,12 +924,20 @@ WINE REGISTRY Version 2
 "Wingdings (TrueType)"="Z:\\usr\\share\\wine\\fonts\\wingding.ttf"
 "Z003-MediumItalic (TrueType)"="Z:\\usr\\share\\fonts\\gsfonts\\Z003-MediumItalic.otf"
 
-[Software\\Wine\\MenuFiles] 1640006986
-#time=1d7f5a5a8150bc2
+[Software\\Wine\\MenuFiles] 1640007782
+#time=1d7f5a7822305a2
+"\\\\?\\unix\\home\\hey\\.config\\menus\\applications-merged\\wine-Programs-FireFly Studios-Stronghold Crusader HD Enhanced Edition-Stronghold Crusader HD Enhanced Edition.menu"="C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\FireFly Studios\\Stronghold Crusader HD Enhanced Edition\\Stronghold Crusader HD Enhanced Edition.lnk"
+"\\\\?\\unix\\home\\hey\\.config\\menus\\applications-merged\\wine-Programs-FireFly Studios-Stronghold Crusader HD Enhanced Edition-Stronghold Crusader HD Extreme Enhanced Edition.menu"="C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\FireFly Studios\\Stronghold Crusader HD Enhanced Edition\\Stronghold Crusader HD Extreme Enhanced Edition.lnk"
+"\\\\?\\unix\\home\\hey\\.config\\menus\\applications-merged\\wine-Programs-FireFly Studios-Stronghold Crusader HD Enhanced Edition-Uninstall Stronghold Crusader HD Enhanced Edition.menu"="C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\FireFly Studios\\Stronghold Crusader HD Enhanced Edition\\Uninstall Stronghold Crusader HD Enhanced Edition.lnk"
+"\\\\?\\unix\\home\\hey\\.local\\share\\applications\\wine\\Programs\\FireFly Studios\\Stronghold Crusader HD Enhanced Edition\\Stronghold Crusader HD Enhanced Edition.desktop"="C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\FireFly Studios\\Stronghold Crusader HD Enhanced Edition\\Stronghold Crusader HD Enhanced Edition.lnk"
+"\\\\?\\unix\\home\\hey\\.local\\share\\applications\\wine\\Programs\\FireFly Studios\\Stronghold Crusader HD Enhanced Edition\\Stronghold Crusader HD Extreme Enhanced Edition.desktop"="C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\FireFly Studios\\Stronghold Crusader HD Enhanced Edition\\Stronghold Crusader HD Extreme Enhanced Edition.lnk"
+"\\\\?\\unix\\home\\hey\\.local\\share\\applications\\wine\\Programs\\FireFly Studios\\Stronghold Crusader HD Enhanced Edition\\Uninstall Stronghold Crusader HD Enhanced Edition.desktop"="C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\FireFly Studios\\Stronghold Crusader HD Enhanced Edition\\Uninstall Stronghold Crusader HD Enhanced Edition.lnk"
+"C:\\users\\hey\\Desktop\\Stronghold Crusader HD Enhanced Edition.desktop"="C:\\users\\Public\\Desktop\\Stronghold Crusader HD Enhanced Edition.lnk"
+"C:\\users\\hey\\Desktop\\Stronghold Crusader HD Extreme Enhanced Edition.desktop"="C:\\users\\Public\\Desktop\\Stronghold Crusader HD Extreme Enhanced Edition.lnk"
 
-[Software\\Wine\\X11 Driver] 1640007433
-#time=1d7f5a6b233e668
-"ClientSideWithRender"="N"
+[Software\\Wine\\X11 Driver] 1640008490
+#time=1d7f5a9287f6250
+"ClientSideWithRender__"="N"
 
 [Volatile Environment] 1640006393
 #time=1d7f5a44669b658
