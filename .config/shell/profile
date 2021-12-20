@@ -220,5 +220,11 @@ export PASSWORD_STORE_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/password-store"
 #------#
 mkdir -p "${XDG_DATA_HOME:-$HOME/.local/share}/wineprefixes"
 export WINEPREFIX="${XDG_DATA_HOME:-$HOME/.local/share}/wineprefixes/default"
+export FREETYPE_PROPERTIES="truetype:interpreter-version=35"
+export WINEDLLOVERRIDES="mscoree=d;mshtml=d"
+cd "${WINEPREFIX}/drive_c/windows/Fonts" && for i in /usr/share/fonts/**/*.{ttf,otf}; do ln -sf "$i" ; done
+lib32-gst-plugins-ugly
+cd ~
+
 
 exec sway

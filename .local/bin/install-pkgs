@@ -4,9 +4,14 @@ PKGS="$HOME/.local/share/packages"
 
 sudo pacman -Syy
 
+TOTAL="$(wc -l $PKGS | awk '{print $1}')"
+COUNT=1
+
 while IFS= read -r p; do
-  [ "$(echo "$p" | grep -ic "#")" -gt 0 ] && continue
+  echo "[$COUNT/$TOTAL] $p"
+  [ "$(echo $p | grep -ic "#")" -gt 0 ] && echo "$p is commented out" && continue
   paru --needed --noconfirm --removemake -S "$p"
+  COUNT=$((COUNT+1))
 done < "$PKGS"
 
 sudo pacman --noconfirm -Scc
