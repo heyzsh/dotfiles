@@ -107,3 +107,7 @@ zoom-system-qt
 zsh
 ntp
 js-beautify
+wine
+winetricks
+lib32-pulse
+lib32-wavpack

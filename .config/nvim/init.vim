@@ -87,6 +87,12 @@ set whichwrap+=<,>,h,l
 "Always show current position
 set ruler
 
+"Always show line numbers
+set nu
+
+"Always show highlight cursor line
+set cursorline
+
 " Height of the command bar
 set cmdheight=1
 
