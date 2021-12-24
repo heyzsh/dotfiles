@@ -14,7 +14,7 @@ PLUGINS_DIR="${ZDOTDIR}/plugins"
 ! [ -d "$PLUGINS_DIR" ] && mkdir -p "$PLUGINS_DIR"
 
 # Create Plugins Directory
-git clone https://github.com/zdharma/fast-syntax-highlighting "${PLUGINS_DIR}/fsh"
+git clone https://github.com/zdharma-continuum/fast-syntax-highlighting "${PLUGINS_DIR}/fsh"
 
 echo "cleaning up"
 rm -rf "${PLUGINS_DIR}/fsh/.git" && echo "done"

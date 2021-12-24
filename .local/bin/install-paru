@@ -9,7 +9,7 @@ cd __tmp
 git clone https://aur.archlinux.org/paru.git
 cd paru
 echo "Building paru"
-sudo makepkg --noconfirm --skippgpcheck -r -si
+makepkg --noconfirm --skippgpcheck -r -si
 
 cd "$cwd" 
 rm -rf $HOME/__tmp

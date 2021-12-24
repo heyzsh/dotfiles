@@ -1,7 +1,7 @@
 #---------------#
 # CONFIGURATION #
 #---------------#
-alias config='/usr/bin/git --git-dir=$HOME/github/veryretro --work-tree=$HOME'
+alias config='/usr/bin/git --git-dir=$HOME/github/my-dotfiles --work-tree=$HOME'
 
 #-----#
 # LSD #

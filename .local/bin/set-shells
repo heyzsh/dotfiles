@@ -2,5 +2,6 @@
 
 cwd=$(pwd)
 cd /bin
-ln -sf dash /bin/sh
+sudo ln -sf dash /bin/sh
 cd "$cwd"
+chsh -s /usr/bin/zsh
