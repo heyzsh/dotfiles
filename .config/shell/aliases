@@ -49,10 +49,10 @@ alias search='paru -Ss'
 #----------------------#
 # NAVIGATION SHORTCUTS #
 #----------------------#
-alias cfg='vifm $HOME/.config'
-alias cdd='vifm $HOME/downloads'
-alias cdg='vifm $HOME/github'
-alias cds='vifm $HOME/.config/shell'
+alias cfg='vifmrun $HOME/.config'
+alias cdd='vifmrun $HOME/downloads'
+alias cdg='vifmrun $HOME/github'
+alias cds='vifmrun $HOME/.config/shell'
 alias nvpk='nvim $HOME/.local/share/packages'
 
 #-------#
@@ -93,7 +93,8 @@ alias wget="wget --hsts-file $HOME/.cache/wget-hsts"
 #------#
 # VIFM #
 #------#
-alias fm='vifm'
+alias vifm='vifmrun'
+alias fm='vifmrun'
 
 #-----------------#
 # MOUNT & UNMOUNT #
