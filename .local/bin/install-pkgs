@@ -10,7 +10,7 @@ COUNT=1
 while IFS= read -r p; do
   echo "[$COUNT/$TOTAL] $p"
   echo "--------------"
-  [ "$(echo $p | grep -ic "#")" -gt 0 ] && echo "$p is commented out" && continue
+  [ "$(echo $p | grep -ic "#")" -gt 0 ] && echo "$p is commented out" && clear && continue
   echo "--------------"
   paru --needed --noconfirm --removemake -S "$p"
   COUNT=$((COUNT+1))
