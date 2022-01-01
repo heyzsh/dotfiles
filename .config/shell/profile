@@ -60,9 +60,11 @@ export PATH=$PATH:$GOBIN
 #---------#
 # ANDROID #
 #---------#
+mkdir -p ${XDG_DATA_HOME:-$HOME/.local/share}/android
 export ANDROID_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/android"
-export PATH=$PATH:${ANDROID_HOME}/tools
-export PATH=$PATH:${ANDROID_HOME}/platform-tools
+export ANDROID_SDK_ROOT="${XDG_DATA_HOME:-$HOME/.local/share}/android"
+export PATH=$PATH:${ANDROID_SDK_ROOT}/tools
+export PATH=$PATH:${ANDROID_SDK_ROOT}/platform-tools
 
 #------#
 # RUST #
@@ -131,11 +133,7 @@ export QT_QPA_PLATFORMTHEME=gtk2
 # export QT_QPA_PLATFORM="wayland"
 export QT_WAYLAND_FORCE_DPI=physical
 export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
-
-#------#
-# SUDO #
-#------#
-# export SUDO_ASKPASS=/usr/X11R6/bin/ssh-askpass
+export QT_AUTO_SCREEN_SCALE_FACTOR=0
 
 #--------#
 # BEMENU #
@@ -162,11 +160,6 @@ export BEMENU_OPTS="
 #-----------------#
 # Enable Wayland for Mozilla Firefox
 export MOZ_ENABLE_WAYLAND=1
-
-#------#
-# SUDO #
-#------#
-export SUDO_ASKPASS="$HOME/.local/bin/askpass"
 
 #------#
 # JAVA #
@@ -200,13 +193,6 @@ export XDG_CURRENT_DESKTOP=Unity
 #------#
 export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
 [ $(grep -c "hsts-file" "$WGETRC") -gt 0 ] || echo "hsts-file = ${XDG_CACHE_HOME:-$HOME/.cache}/wget-hsts" >> "$WGETRC"
-
-#-----#
-# TIG #
-#-----#
-mkdir -p "${XDG_CONFIG_HOME:-$HOME/.config}/tig"
-mkdir -p "${XDG_DATA_HOME:-$HOME/.local/share}/tig"
-export TIGRC_USER="${XDG_CONFIG_HOME:-$HOME/.config}/tig/config"
 
 #------------#
 # MISC PATHS #

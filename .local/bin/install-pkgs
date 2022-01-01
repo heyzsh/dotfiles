@@ -2,18 +2,19 @@
 
 PKGS="$HOME/.local/share/packages"
 
-sudo pacman -Syy
+sudo pacman -Sy
+sudo pacman -S --noconfirm go rust
 
 TOTAL="$(wc -l $PKGS | awk '{print $1}')"
-COUNT=1
+COUNT=0
 
 while IFS= read -r p; do
-  echo "[$COUNT/$TOTAL] $p"
-  echo "--------------"
-  [ "$(echo $p | grep -ic "#")" -gt 0 ] && echo "$p is commented out" && clear && continue
-  echo "--------------"
-  paru --needed --noconfirm --removemake -S "$p"
   COUNT=$((COUNT+1))
+  echo "---------------------------"
+  echo "[$COUNT/$TOTAL] $p"
+  echo "---------------------------"
+  [ "$(echo $p | grep -ic "#")" -gt 0 ] && echo "$p is commented out" && clear && continue
+  paru --needed --noconfirm --removemake -S "$p"
 done < "$PKGS"
 
 sudo pacman --noconfirm -Scc
