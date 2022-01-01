@@ -1,0 +1,27 @@
+<application>
+  <component name="ProjectPluginTrackerManager">
+    <option name="trackers">
+      <map>
+        <entry key="Default (Template) Project">
+          <value>
+            <ProjectPluginTrackerState />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="AndroidInitConfigurator.V1" value="true" />
+    <property name="AndroidInitConfigurator.V3" value="true" />
+    <property name="AndroidInitConfigurator.V5" value="true" />
+    <property name="Darcula.SavedEditorTheme" value="_@user_Darcula" />
+    <property name="Default.SavedEditorTheme" value="_@user_Default" />
+    <property name="MarketplacePluginsSearchHistory" value="/tag:Keymap&#10;vim" />
+    <property name="NonModalCommitCustomization.IsApplied" value="true" />
+    <property name="ask.about.ctrl.y.shortcut.v2" value="true" />
+    <property name="file.chooser.recent.files" value="$USER_HOME$/.local/share/android&#10;/opt/android-sdk" />
+    <property name="last_opened_file_path" value="$USER_HOME$/.local/share/android" />
+    <property name="newly.installed.api.level" value="31" />
+    <property name="tasks.pass.word.conversion.enforced" value="true" />
+  </component>
+</application>

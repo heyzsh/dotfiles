@@ -1,0 +1,22 @@
+<application>
+  <component name="ActionsLocalSummary">
+    <e n="FileChooser.NewFolder">
+      <i c="1" l="1640872688992" />
+    </e>
+    <e n="WelcomeScreen.CreateNewProject">
+      <i c="1" l="1640881639863" />
+    </e>
+    <e n="WelcomeScreen.RunAndroidAvdManager">
+      <i c="1" l="1640888277303" />
+    </e>
+    <e n="com.intellij.application.options.schemes.AbstractSchemeActions$CopyAction">
+      <i c="1" l="1640881326410" />
+    </e>
+    <e n="com.intellij.application.options.schemes.AbstractSchemesPanel$ShowSchemesActionsListAction">
+      <i c="1" l="1640881325161" />
+    </e>
+    <e n="com.intellij.ui.CommonActionsPanel$AddButton">
+      <i c="1" l="1640881775815" />
+    </e>
+  </component>
+</application>
