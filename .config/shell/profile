@@ -207,4 +207,8 @@ export PASSWORD_STORE_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/password-store"
 export TIXATI_USER_DATA_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/tixati"
 export TIXATI_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}/tixati"
 
+if test -n "$DESKTOP_SESSION"; then
+  eval -x $(gnome-keyring-session --start)
+  export SSH_AUTH_SOCK
+fi
 exec sway
