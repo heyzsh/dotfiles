@@ -5,7 +5,7 @@ mkdir -p $HOME/.local/backgrounds
 cd $HOME/.local/backgrounds
 
 echo "Downloading wallpapers..."
-curl -L "https://w.wallhaven.cc/full/r7/wallhaven-r7lo91.jpg" -o primary.jpg
+curl -L "https://w.wallhaven.cc/full/e7/wallhaven-e7ek7k.jpg" -o primary.jpg
 curl -L "https://w.wallhaven.cc/full/28/wallhaven-28yzwy.jpg" -o right.jpg
 
 cd $cwd

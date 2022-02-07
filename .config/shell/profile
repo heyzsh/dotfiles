@@ -57,6 +57,12 @@ export GOPATH="${HOME}/github/go"
 export GOBIN="${HOME}/github/go/bin"
 export PATH=$PATH:$GOBIN
 
+#----------#
+# HUBSTAFF #
+#----------#
+export HUBSTAFF_PATH="${XDG_DATA_HOME:-$HOME/.local/share}/Hubstaff"
+export PATH=$PATH:$HUBSTAFF_PATH
+
 #---------#
 # ANDROID #
 #---------#
@@ -208,7 +214,7 @@ export TIXATI_USER_DATA_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/tixati"
 export TIXATI_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}/tixati"
 
 if test -n "$DESKTOP_SESSION"; then
-  eval -x $(gnome-keyring-session --start)
+  export GNOME_KEYRING_CONTROL GNOME_KEYRING_PID
   export SSH_AUTH_SOCK
 fi
 exec sway
