@@ -4,7 +4,7 @@
       <i c="1" l="1640872688992" />
     </e>
     <e n="WelcomeScreen.CreateNewProject">
-      <i c="1" l="1640881639863" />
+      <i c="3" l="1645126422443" />
     </e>
     <e n="WelcomeScreen.RunAndroidAvdManager">
       <i c="1" l="1640888277303" />
@@ -14,6 +14,9 @@
     </e>
     <e n="com.intellij.application.options.schemes.AbstractSchemesPanel$ShowSchemesActionsListAction">
       <i c="1" l="1640881325161" />
+    </e>
+    <e n="com.intellij.openapi.wm.impl.ToolWindowHeader$HideAction">
+      <i c="1" l="1645126465352" />
     </e>
     <e n="com.intellij.ui.CommonActionsPanel$AddButton">
       <i c="1" l="1640881775815" />

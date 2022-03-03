@@ -99,6 +99,7 @@
     },
 
     "network": {
+      "interface": "enp0s20f0u2",
       "interval": 1,
       "format-wifi": "{bandwidthDownOctets}  {bandwidthUpOctets} 祝",
       "format-ethernet": "{bandwidthDownOctets}  {bandwidthUpOctets} 祝",

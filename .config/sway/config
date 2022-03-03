@@ -69,6 +69,11 @@ input type:keyboard {
   xkb_options caps:escape
 }
 
+input "4292:33032:YSPRINGTECH_USB_OPTICAL_MOUSE" {
+  accel_profile "flat"
+  pointer_accel -0.25
+}
+
 # Laptop
 input "2:14:SynPS/2_Synaptics_TouchPad" {
   dwt enabled
