@@ -12,7 +12,6 @@ endif
 
 " Install the plugins
 call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"'))
-	Plug 'fatih/vim-go'
 	Plug 'kien/ctrlp.vim'
 	Plug 'morhetz/gruvbox'
 	Plug 'plasticboy/vim-markdown'

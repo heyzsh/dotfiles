@@ -3,7 +3,6 @@
 PKGS="$HOME/.local/share/packages"
 
 sudo pacman -Sy
-sudo pacman -S --noconfirm go rust
 
 TOTAL="$(wc -l $PKGS | awk '{print $1}')"
 COUNT=0
@@ -15,6 +14,7 @@ while IFS= read -r p; do
   echo "---------------------------"
   [ "$(echo $p | grep -ic "#")" -gt 0 ] && echo "$p is commented out" && clear && continue
   paru --needed --noconfirm --removemake -S "$p"
+  clear
 done < "$PKGS"
 
 sudo pacman --noconfirm -Scc
