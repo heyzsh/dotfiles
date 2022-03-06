@@ -165,3 +165,5 @@ if test -n "$DESKTOP_SESSION"; then
   export GNOME_KEYRING_CONTROL GNOME_KEYRING_PID
   export SSH_AUTH_SOCK
 fi
+
+startx

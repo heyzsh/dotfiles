@@ -1,7 +1,7 @@
 #---------------#
 # CONFIGURATION #
 #---------------#
-alias config='/usr/bin/git --git-dir=$HOME/github/my-dotfiles --work-tree=$HOME'
+alias config='/usr/bin/git --git-dir=$HOME/GitHub/my-dotfiles --work-tree=$HOME'
 
 #-----#
 # LSD #
@@ -33,7 +33,6 @@ alias nv='nvim'
 alias nvc='nvim $HOME/.config/init.vim'
 alias nva='nvim $HOME/.config/shell/aliases'
 alias nvp='nvim $HOME/.config/shell/profile'
-alias nvmk='sudo nvim /etc/portage/make.conf'
 
 #-------------------#
 # PACKAGE MANGEMENT #
@@ -59,7 +58,7 @@ alias nvpk='nvim $HOME/.local/share/packages'
 # POWER #
 #-------#
 alias die='sudo shutdown -h now'
-alias out='pkill sway'
+alias out='pkill x'
 
 #-----------#
 # PROTONVPN #

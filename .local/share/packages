@@ -1,8 +1,7 @@
 #elixir
-adb
+#adb
 alacritty
-android-file-transfer
-android-studio
+#android-studio
 base-devel
 bemenu-wayland
 brightnessctl
