@@ -104,9 +104,8 @@ autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
 # ======
-# syntax
+# Syntax
 # ======
 
 # Load syntax highlighting; should be last.
 source "${ZDOTDIR}/plugins/fsh/fast-syntax-highlighting.plugin.zsh" 2>/dev/null
-
