@@ -1,21 +1,56 @@
-#! /bin/sh
+#!/bin/sh
 
-pgrep -x sxhkd > /dev/null || sxhkd &
+#-----------------------#
+# MONITORS AND DESKTOPS #
+#-----------------------#
+multi_mon=false
+primary="DVI-I-1"
+right="DP-1"
+if [ "$(bspc query -M --names)" -gt 1 ]; then
+  ./monitors.sh
+  bspc monitor "$primary" -d 1 2 3 4 5 6 7 8
+  bspc monitor "$right"   -d 1 2 3 4 5 6 7 8
+  multi_mon=true
+else 
+  bspc monitor -d 1 2 3 4 5 6 7 8 9
+fi
 
-bspc monitor -d I II III IV V VI VII VIII IX X
+#--------#
+# VISUAL #
+#--------#
 
-bspc config border_width         2
-bspc config window_gap          12
+bspc config border_width          2
+bspc config window_gap            8
 
-bspc config split_ratio          0.52
-bspc config borderless_monocle   true
-bspc config gapless_monocle      true
+bspc config split_ratio           0.52
+bspc config borderless_monocle    true
+bspc config gapless_monocle       true
+
+#----------#
+# BINDINGS #
+#----------#
+
+
+#-------#
+# RULES #
+#-------#
 
 bspc rule -a Gimp desktop='^8' state=floating follow=on
 bspc rule -a Chromium desktop='^2'
-bspc rule -a mplayer2 state=floating
-bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
-# Launch Polybar
-. "$HOME/.config/polybar/launch.sh"
+#-----------#
+# AUTOSTART #
+#-----------#
+
+# sxhkd
+pgrep sxhkd || sxhkd &
+
+# polybar
+killall -q polybar
+if [ "$multi_mon" ]; then
+  MONITOR="$primary"  polybar main  2>&1 | tee -a /tmp/polybar.log & disown
+  MONITOR="$right"    polybar right 2>&1 | tee -a /tmp/polybar.log & disown
+else
+  polybar main 2>&1 | tee -a /tmp/polybar.log & disown
+fi
