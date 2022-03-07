@@ -67,5 +67,12 @@ typescript
 redshift
 xorg-server
 xorg-xinit
-awesome
 picom
+bspwm
+sxhkd
+polybar
+dunst
+rofi
+rofi-emoji
+rofimoji
+rofi-calc
