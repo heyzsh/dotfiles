@@ -6,10 +6,11 @@
 multi_mon=false
 primary="DVI-I-1"
 right="DP-1"
-if [ "$(bspc query -M --names)" -gt 1 ]; then
-  ./monitors.sh
-  bspc monitor "$primary" -d 1 2 3 4 5 6 7 8
-  bspc monitor "$right"   -d 1 2 3 4 5 6 7 8
+if [ "$(bspc query -M --names | wc -l )" -gt 1 ]; then
+  echo "Multi monitors detected"
+  $HOME/.config/bspwm/monitors.sh &
+  bspc monitor "$primary" -d 1 2 3 4 5
+  bspc monitor "$right"   -d 6 7 8
   multi_mon=true
 else 
   bspc monitor -d 1 2 3 4 5 6 7 8 9
@@ -49,8 +50,8 @@ pgrep sxhkd || sxhkd &
 # polybar
 killall -q polybar
 if [ "$multi_mon" ]; then
-  MONITOR="$primary"  polybar main  2>&1 | tee -a /tmp/polybar.log & disown
-  MONITOR="$right"    polybar right 2>&1 | tee -a /tmp/polybar.log & disown
+  MONITOR="$primary"  polybar main  2>&1 | tee -a /tmp/polybar.log &
+  MONITOR="$right"    polybar right 2>&1 | tee -a /tmp/polybar.log &
 else
-  polybar main 2>&1 | tee -a /tmp/polybar.log & disown
+  polybar main 2>&1 | tee -a /tmp/polybar.log &
 fi
