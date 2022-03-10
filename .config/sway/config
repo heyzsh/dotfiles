@@ -10,8 +10,8 @@ set $right    l
 set $br       bracketright
 set $bl       bracketleft
 # Programs
-set $term     alacritty
-set $menu     /usr/bin/bemenu-run | xargs swaymsg exec --
+set $term       alacritty
+set $bemenu     /usr/bin/bemenu-run | xargs swaymsg exec --
 # Wallpapers
 set $primary_bg "$HOME/.local/share/bg/primary.jpg"  
 set $right_bg   "$HOME/.local/share/bg/right.jpg"  
@@ -191,7 +191,6 @@ bindsym $mod+space          floating toggle
 # Programs
 bindsym $mod+Return         exec $term
 bindsym $mod+w              kill
-bindsym $mod+p              exec $menu
 # Sway
 bindsym $mod+Shift+r        reload
 bindsym $mod+Shift+q        exec swaynag -t warning -m 'Exit Sway?' -b 'Yes' 'swaymsg exit'
@@ -235,11 +234,16 @@ bindsym XF86MonBrightnessDown exec brightnessctl s 5%-
 #----------------#
 # PROGRAM LAUNCH #
 #----------------#
-bindsym $mod+Ctrl+c         exec speedcrunch
+bindsym $mod+p              exec wofi
+bindsym $mod+Shift+p        exec $bemenu
+bindsym $mod+b              exec swaylock --color 282828
 bindsym $mod+Ctrl+f         exec firefox
 bindsym $mod+Ctrl+Shift+f   exec firefox --private-window
-bindsym $mod+b              exec swaylock --color 282828
-bindsym $mod+e              exec alacritty -e vifm "$HOME"
+bindsym $mod+e              exec alacritty -e nnn "$HOME"
+bindsym $mod+Ctrl+c         exec speedcrunch
+bindsym $mod+Shift+p        exec $bemenu
+bindsym $mod+Ctrl+p         exec wofi-emoji
+
 
 #-----------------------#
 # FLOATING APPLICATIONS #
