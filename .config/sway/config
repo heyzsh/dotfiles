@@ -13,8 +13,8 @@ set $bl       bracketleft
 set $term     alacritty
 set $menu     /usr/bin/bemenu-run | xargs swaymsg exec --
 # Wallpapers
-set $primary_bg "$HOME/.local/backgrounds/primary.jpg"  
-set $right_bg   "$HOME/.local/backgrounds/right.jpg"  
+set $primary_bg "$HOME/.local/share/bg/primary.jpg"  
+set $right_bg   "$HOME/.local/share/bg/right.jpg"  
 
 #----------#
 # BEHAVIOR #
@@ -22,7 +22,7 @@ set $right_bg   "$HOME/.local/backgrounds/right.jpg"
 # Multiple Screens
 # Primary
 output DVI-I-1 {
-  pos         0 277
+  pos         0 360
   res         1920x1080
   bg          $primary_bg fill #282828
 }

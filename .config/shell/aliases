@@ -1,7 +1,7 @@
 #---------------#
 # CONFIGURATION #
 #---------------#
-alias config='/usr/bin/git --git-dir=$HOME/github/my-dotfiles --work-tree=$HOME'
+alias config='/usr/bin/git --git-dir=$HOME/GitHub/my-dotfiles --work-tree=$HOME'
 
 #-----#
 # LSD #
@@ -50,8 +50,8 @@ alias search='paru -Ss'
 # NAVIGATION SHORTCUTS #
 #----------------------#
 alias cfg='cd $HOME/.config'
-alias cdd='cd $HOME/downloads'
-alias cdg='cd $HOME/github'
+alias cdd='cd $HOME/Downloads'
+alias cdg='cd $HOME/GitHub'
 alias cds='cd $HOME/.config/shell'
 alias nvpk='nvim $HOME/.local/share/packages'
 

@@ -1,78 +1,48 @@
 [global]
-    monitor = 0
-    follow = none
-    geometry = "250x7-30+35"
-    progress_bar = true
-    progress_bar_height = 5
-    progress_bar_frame_width = 1
-    progress_bar_min_width = 150
-    progress_bar_max_width = 300
-    indicate_hidden = yes
-    shrink = no
-    transparency = 0
-    notification_height = 0
-    separator_height = 3
-    padding = 10
-    horizontal_padding = 8
-    text_icon_padding = 1
-    frame_width = 2
-    frame_color = "#d79921"
-    separator_color = frame
+    font = "Source Code Pro 8"
+    allow_markup = yes
+    format = "<b><i>%s</i></b>\n%b"
     sort = yes
-    idle_threshold = 120
-    font = Source Code Pro 9
-    line_height = 0
-    markup = full
-    format = "<b>%s</b>\n%b"
+    indicate_hidden = yes
     alignment = left
-    vertical_alignment = center
-    show_age_threshold = -1
+    bounce_freq = 0
+    show_age_threshold = 60
     word_wrap = yes
-    ellipsize = middle
     ignore_newline = no
-    stack_duplicates = false
-    hide_duplicate_count = false
-    show_indicators = yes
-    icon_position = left
-    min_icon_size = 0
-    max_icon_size = 32
-    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+    width = 240
+    height = 300
+    offset = 20x24
+    transparency = 0
+    idle_threshold = 120
+    monitor = 1
+    follow = mouse
     sticky_history = yes
-    history_length = 20
-    dmenu = /usr/bin/dmenu -p dunst:
-    browser = /usr/bin/firefox -new-tab
-    always_run_script = true
-    title = Notification
-    class = Dunst
+    line_height = 0
+    separator_height = 2
+    padding = 8
+    horizontal_padding = 8
+    separator_color = "#585858"
     startup_notification = false
-    verbosity = mesg
-    corner_radius = 0
-    ignore_dbusclose = false
-    force_xinerama = false
-    mouse_left_click = close_current
-    mouse_middle_click = do_action, close_current
-    mouse_right_click = close_all
+    # https://github.com/knopwob/dunst/issues/26#issuecomment-36159395
+    icon_position = left
+    icon_folders = /usr/share/icons/Gruvbox-Material-Dark/
+    background = "#282828"
+    foreground = "#ebdbb2"
 
-[experimental]
-    per_monitor_dpi = false
+[frame]
+    width = 1
+    color = "#665c54"
+
+[shortcuts]
+    close_all = ctrl+super+space
+    history = ctrl+grave
+    context = ctrl+shift+period
 
 [urgency_low]
-    background = "#3c3836"
-    foreground = "#b57614"
-    frame_color = "#b57614"
     timeout = 3
-    # icon = /path/to/icon
 
 [urgency_normal]
-    background = "#3c3836"
-    foreground = "#d79921"
-    frame_color = "#d79921"
-    timeout = 5
-    # icon = /path/to/icon
+    timeout = 8
 
 [urgency_critical]
-    background = "#3c3836"
-    foreground = "#fe8019"
-    frame_color = "#fe8019"
-    timeout = 12
-    # icon = /path/to/icon
+    timeout = 0

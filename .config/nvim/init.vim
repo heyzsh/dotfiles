@@ -12,7 +12,6 @@ endif
 
 " Install the plugins
 call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"'))
-	Plug 'fatih/vim-go'
 	Plug 'kien/ctrlp.vim'
 	Plug 'morhetz/gruvbox'
 	Plug 'plasticboy/vim-markdown'
@@ -207,11 +206,21 @@ set wrap "Wrap lines
 " ========================================
 
 " Smart way to move between windows
-map <C-L> <C-W>l
-map <C-l> <C-W>l
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
+nmap <silent> <c-k> <C-w><up><CR>
+nmap <silent> <c-j> <C-w><down><CR>
+nmap <silent> <c-h> <C-w><left><CR>
+nmap <silent> <c-l> <C-w><right><CR>
+
+map <up>    <C-w><up>
+map <down>  <C-w><down>
+map <left>  <C-w><left>
+map <right> <C-w><right>
+
+" Move the splits arround
+nmap <silent> <c-s-k> <C-W>k                                                                                                                       
+nmap <silent> <c-s-j> <C-W>j                                                                                                                       
+nmap <silent> <c-s-h> <C-W>h                                                                                                                       
+nmap <silent> <c-s-l> <C-W>l
 
 " Close the current buffer
 map <leader>bd :Bclose<cr>:tabclose<cr>gT
