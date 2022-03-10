@@ -1,0 +1,10 @@
+show=drun
+width=480
+height=360
+term=alacritty
+insensitive=true
+allow_images=false
+allow_markup=true
+no_actions=true
+style="style.css"
+gtk-dark=true
