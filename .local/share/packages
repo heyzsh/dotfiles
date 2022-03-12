@@ -6,6 +6,7 @@
 #noto-fonts-cjk
 adb
 alacritty
+archlinux-keyring
 base-devel
 bemenu-wayland
 brightnessctl
@@ -39,8 +40,6 @@ nodejs
 npm
 onefetch
 pamixer
-pipewire-jack
-pipewire-media-session
 powertop
 protonvpn-cli-ng
 pulseaudio-alsa
@@ -50,6 +49,7 @@ qt5-styleplugins
 qt5-wayland
 radeontop
 redshift-wayland-git
+rust
 shellcheck
 slurp
 speedcrunch
@@ -71,6 +71,8 @@ waybar
 wev
 wget
 wl-clipboard
+wofi
+wofi-emoji-git
 xclicker
 xdg-desktop-portal-wlr
 xorg-xwayland
@@ -83,6 +85,3 @@ zathura-ps
 zip
 zoom-system-qt
 zsh
-wofi
-wofi-emoji-git
-archlinux-keyring

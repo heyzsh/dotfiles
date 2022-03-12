@@ -88,7 +88,7 @@ mouse_bindings:
 key_bindings:
   - { key: V,         mods: Control|Shift,                        action: Paste                 }
   - { key: C,         mods: Control|Shift,                        action: Copy                  }
-  - { key: L,         mods: Control,                              action: ClearLogNotice        }
+    # - { key: L,         mods: Control,                              action: ClearLogNotice        }
   - { key: K,         mods: Alt,              mode: ~Alt,         action: ScrollPageUp,         }
   - { key: J,         mods: Alt,              mode: ~Alt,         action: ScrollPageDown,       }
   - { key: PageUp,    mods: Shift,            mode: ~Alt,         action: ScrollPageUp          }

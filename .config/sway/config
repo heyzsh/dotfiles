@@ -154,7 +154,7 @@ bindsym $mod+o              layout default
 bindsym $mod+i              layout splith
 bindsym $mod+u              layout splitv
 bindsym $mod+y              layout stacking
-bindsym $mod+Shift+p        layout tabbed
+#bindsym $mod+Shift+p        layout tabbed
 bindsym $mod+Ctrl+period    layout toggle split
 bindsym $mod+Ctrl+comma     layout toggle all
 bindsym $mod+Ctrl+$right    split vertical
@@ -241,7 +241,6 @@ bindsym $mod+Ctrl+f         exec firefox
 bindsym $mod+Ctrl+Shift+f   exec firefox --private-window
 bindsym $mod+e              exec alacritty -e nnn "$HOME"
 bindsym $mod+Ctrl+c         exec speedcrunch
-bindsym $mod+Shift+p        exec $bemenu
 bindsym $mod+Ctrl+p         exec wofi-emoji
 
 
@@ -261,8 +260,17 @@ include @sysconfdir@/sway/config.d/*
 #-----------#
 # AUTOSTART #
 #-----------#
-exec pgrep dunst    || dunst &
-exec pgrep redshift || redshift -c $HOME/.config/redshift/config.conf &
+exec pgrep dunst || dunst &
 exec pulseaudio --kill && pulseaudio --start
+exec pgrep redshift || redshift -c $HOME/.config/redshift/config.conf &
+
+#----------#
+# SERVICES #
+#----------#
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+exec systemctl --user start pipewire.socket
+exec systemctl --user start xdg-desktop-portal
+exec systemctl --user start pipewire-media-session
+exec pgrep pipewire || pipewire &
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec /usr/bin/gnome-keyring-daemon --start --components=secrets
