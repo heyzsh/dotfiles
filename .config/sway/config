@@ -261,7 +261,6 @@ include @sysconfdir@/sway/config.d/*
 # AUTOSTART #
 #-----------#
 exec pgrep dunst || dunst &
-exec pulseaudio --kill && pulseaudio --start
 exec pgrep redshift || redshift -c $HOME/.config/redshift/config.conf &
 
 #----------#
@@ -271,6 +270,6 @@ exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DE
 exec systemctl --user start pipewire.socket
 exec systemctl --user start xdg-desktop-portal
 exec systemctl --user start pipewire-media-session
-exec pgrep pipewire || pipewire &
+exec pgrep pipewire-pulse || pipewire-pulse &
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec /usr/bin/gnome-keyring-daemon --start --components=secrets

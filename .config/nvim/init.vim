@@ -16,8 +16,10 @@ call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"
 	Plug 'morhetz/gruvbox'
 	Plug 'plasticboy/vim-markdown'
 	Plug 'preservim/nerdtree'
-  Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+  Plug 'Xuyuanp/nerdtree-git-plugin'
+  Plug 'romgrk/barbar.nvim'
   Plug 'ryanoasis/vim-devicons'
+  Plug 'kyazdani42/nvim-web-devicons'
 	Plug 'tpope/vim-unimpaired'
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
@@ -58,6 +60,7 @@ command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 " Avoid garbled characters in Chinese language windows OS
 let $LANG='en' 
 set langmenu=en
+set termguicolors
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 
@@ -206,34 +209,16 @@ set wrap "Wrap lines
 " ========================================
 
 " Smart way to move between windows
-nmap <silent> <c-k> <C-w><up><CR>
-nmap <silent> <c-j> <C-w><down><CR>
-nmap <silent> <c-h> <C-w><left><CR>
-nmap <silent> <c-l> <C-w><right><CR>
+nnoremap <silent> <c-k> <c-w>k<CR>
+nnoremap <silent> <c-j> <c-w>j<CR>
+nnoremap <silent> <c-h> <c-w>h<CR>
+nnoremap <silent> <c-l> <c-w>l<CR>
 
-map <up>    <C-w><up>
-map <down>  <C-w><down>
-map <left>  <C-w><left>
-map <right> <C-w><right>
-
-" Move the splits arround
-nmap <silent> <c-s-k> <C-W>k                                                                                                                       
-nmap <silent> <c-s-j> <C-W>j                                                                                                                       
-nmap <silent> <c-s-h> <C-W>h                                                                                                                       
-nmap <silent> <c-s-l> <C-W>l
-
-" Close the current buffer
-map <leader>bd :Bclose<cr>:tabclose<cr>gT
-
-" Close all the buffers
-map <leader>ba :bufdo bd<cr>
-
-" Useful mappings for managing tabs
-map <leader>tn :tabnew<cr>
-map <leader>to :tabonly<cr>
-map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove 
-map <leader>t<leader> :tabnext 
+" Move the splits around
+nnoremap <silent> <c-s-k> <C-W>k
+nnoremap <silent> <c-s-j> <C-W>j
+nnoremap <silent> <c-s-h> <C-W>h
+nnoremap <silent> <c-s-l> <C-W>l
 
 " Let 'tl' toggle between this and the last accessed tab
 let g:lasttab = 1
@@ -257,6 +242,8 @@ endtry
 
 " Return to last edit position when opening files
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+"
+"
 
 " ===============
 " => STATUS LINE 
@@ -293,15 +280,15 @@ inoremap $e ""<esc>i
 
 " Delete trailing white space on save, useful for some filetypes ;)
 fun! CleanExtraSpaces()
-    let save_cursor = getpos(".")
-    let old_query = getreg('/')
-    silent! %s/\s\+$//e
-    call setpos('.', save_cursor)
-    call setreg('/', old_query)
+  let save_cursor = getpos(".")
+  let old_query = getreg('/')
+  silent! %s/\s\+$//e
+  call setpos('.', save_cursor)
+  call setreg('/', old_query)
 endfun
 
 if has("autocmd")
-    autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
+  autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
 endif
 
 " ===================
@@ -337,43 +324,43 @@ let @c = "I# \<Esc>A #\<Esc>yyPVr-r#$r#yyjp"
 " Don't close window, when deleting a buffer
 command! Bclose call <SID>BufcloseCloseIt()
 function! <SID>BufcloseCloseIt()
-    let l:currentBufNum = bufnr("%")
-    let l:alternateBufNum = bufnr("#")
+  let l:currentBufNum = bufnr("%")
+  let l:alternateBufNum = bufnr("#")
 
-    if buflisted(l:alternateBufNum)
-        buffer #
-    else
-        bnext
-    endif
+  if buflisted(l:alternateBufNum)
+    buffer #
+  else
+    bnext
+  endif
 
-    if bufnr("%") == l:currentBufNum
-        new
-    endif
+  if bufnr("%") == l:currentBufNum
+    new
+  endif
 
-    if buflisted(l:currentBufNum)
-        execute("bdelete! ".l:currentBufNum)
-    endif
+  if buflisted(l:currentBufNum)
+    execute("bdelete! ".l:currentBufNum)
+  endif
 endfunction
 
 function! CmdLine(str)
-    call feedkeys(":" . a:str)
+  call feedkeys(":" . a:str)
 endfunction 
 
 function! VisualSelection(direction, extra_filter) range
-    let l:saved_reg = @"
-    execute "normal! vgvy"
+  let l:saved_reg = @"
+  execute "normal! vgvy"
 
-    let l:pattern = escape(@", "\\/.*'$^~[]")
-    let l:pattern = substitute(l:pattern, "\n$", "", "")
+  let l:pattern = escape(@", "\\/.*'$^~[]")
+  let l:pattern = substitute(l:pattern, "\n$", "", "")
 
-    if a:direction == 'gv'
-        call CmdLine("Ack '" . l:pattern . "' " )
-    elseif a:direction == 'replace'
-        call CmdLine("%s" . '/'. l:pattern . '/')
-    endif
+  if a:direction == 'gv'
+    call CmdLine("Ack '" . l:pattern . "' " )
+  elseif a:direction == 'replace'
+    call CmdLine("%s" . '/'. l:pattern . '/')
+  endif
 
-    let @/ = l:pattern
-    let @" = l:saved_reg
+  let @/ = l:pattern
+  let @" = l:saved_reg
 endfunction
 
 " ===========
@@ -399,12 +386,38 @@ let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
 " => Nerd Tree
 " =============
 
+" Position of the tree
 let g:NERDTreeWinPos = "left"
-let NERDTreeShowHidden=0
-let g:NERDTreeWinSize=35
-map <leader>nn :NERDTreeToggle<cr>
-map <leader>nb :NERDTreeFromBookmark<Space>
+
+" Show hidden files
+let NERDTreeShowHidden = 0
+
+" NERDTree width
+let g:NERDTreeWinSize = 30
+
+" Ignore these files and directories
+let g:NERDTreeIgnore = ['^node_modules$', '^.git$']
+
+" Case insensitive sort
+let g:NERDTreeCaseSensitiveSort = 0
+
+" Disable lines in the tree
+let g:NERDTreeShowLineNumbers = 0
+
+" Disbable bookmarks and help text
+let g:NERDTreeMinimalUI = 1 
+
+" Toggle NERDTree
+nmap <C-n> :NERDTreeToggle<CR>
+
+" Find files in the NERDTree
 map <leader>nf :NERDTreeFind<cr>
+
+" Start NERDTree and put the cursor back in the other window.
+autocmd VimEnter * NERDTree | wincmd p
+
+" Exit Vim if NERDTree is the only window remaining in the only tab.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
 " ================
 " => Vim Markdown 
@@ -437,7 +450,7 @@ let g:mkdp_refresh_slow = 1
 " => Airline Themes 
 " ====================
 
-let g:airline_theme='peaksea'
+let g:airline_theme='gruvbox'
 
 " =========================
 " => Conquer of Completion
@@ -446,16 +459,74 @@ let g:airline_theme='peaksea'
 let g:go_def_mapping_enabled = 0
 " Add automatic installation of coc-json coc-html coc-sh, coc-css, graphql, coc-tsserver and coc-go if not available
 
-" ===================
-" => Vim Go
-" ====================
+" ==========
+" => Barbar
+" ==========
 
-function DetectGoHtmlTmpl()
-    if expand('%:e') == "gohtml"
-        set filetype=gohtmltmpl 
-    endif
-endfunction
+" Move to previous/next
+nnoremap <silent> <tab> :BufferNext<CR>
+nnoremap <silent> <s-tab> :BufferPrevious<CR>
+" Re-order to previous/next
+nnoremap <silent> <a-s-<> :BufferMovePrevious<CR>
+nnoremap <silent> <a-s->> :BufferMoveNext<CR>
+" Goto buffer in position...
+nnoremap <silent> <A-1> :BufferGoto 1<CR>
+nnoremap <silent> <A-2> :BufferGoto 2<CR>
+nnoremap <silent> <A-3> :BufferGoto 3<CR>
+nnoremap <silent> <A-4> :BufferGoto 4<CR>
+nnoremap <silent> <A-5> :BufferGoto 5<CR>
+" Useful mappings for managing tabs
+nnoremap <silent> <c-t> :tabnew<cr>
+" nnoremap <leader>to :tabonly<cr>
+" nnoremap <leader>tc :tabclose<cr>
+" nnoremap <leader>tm :tabmove 
+" nnoremap <leader>t<leader> :tabnext 
+" Pin/unpin buffer
+nnoremap <silent> <a-s-p> :BufferPin<CR>
+" Close buffer
+nnoremap <silent> <a-w> :BufferClose<CR>
+nnoremap <leader>s :BufferClose<CR>
+" Wipeout buffer:
+" :BufferWipeout<CR>
+" Close commands
+nnoremap <silent> <a-s-w> :wqa<CR>
+nnoremap <silent> <a-s-c> :BufferCloseAllButCurrent<CR>
+nnoremap <silent> <a-s-x> :BufferCloseAllButPinned<CR>
+nnoremap <silent> <a-s-h> :BufferCloseBuffersLeft<CR>
+nnoremap <silent> <a-s-l> :BufferCloseBuffersRight<CR>
+" Magic buffer-picking mode
+" nnoremap <silent> <c-S> :BufferPick<CR>
+" Sort automatically by...
+nnoremap <silent> <leader>bl :BufferOrderByLanguage<CR>
 
-augroup filetypedetect
-    au! BufRead,BufNewFile * call DetectGoHtmlTmpl()
-augroup END
+" NOTE: If barbar's option dict isn't created yet, create it
+let bufferline = get(g:, 'bufferline', {})
+
+" New tabs are opened next to the currently selected tab.
+" Enable to insert them in buffer number order.
+let bufferline.add_in_buffer_number_order = v:false
+
+" Enable/disable animations
+let bufferline.animation = v:false
+
+" Enable/disable close button
+let bufferline.closable = v:true
+
+" Enables/disable clickable tabs
+"  - left-click: go to buffer
+"  - middle-click: delete buffer
+let bufferline.clickable = v:true
+
+" Enable/disable icons
+" if set to 'buffer_number', will show buffer number in the tabline
+" if set to 'numbers', will show buffer index in the tabline
+" if set to 'both', will show buffer index and icons in the tabline
+let bufferline.icons = v:true
+
+" Configure icons on the bufferline.
+let bufferline.icon_separator_active = '▎'
+let bufferline.icon_separator_inactive = '▎'
+let bufferline.icon_close_tab = ''
+let bufferline.icon_close_tab_modified = '●'
+let bufferline.icon_pinned = '車'
+
