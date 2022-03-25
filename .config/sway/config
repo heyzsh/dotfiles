@@ -271,5 +271,6 @@ exec systemctl --user start pipewire.socket
 exec systemctl --user start xdg-desktop-portal
 exec systemctl --user start pipewire-media-session
 exec pgrep pipewire-pulse || pipewire-pulse &
+exec pgrep easyeffects || easyeffects -w &
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec /usr/bin/gnome-keyring-daemon --start --components=secrets
