@@ -396,7 +396,7 @@ let NERDTreeShowHidden = 0
 let g:NERDTreeWinSize = 30
 
 " Ignore these files and directories
-let g:NERDTreeIgnore = ['^node_modules$', '^.git$']
+let g:NERDTreeIgnore = ['^node_modules$', '^.git$', "^package-lock.json"]
 
 " Case insensitive sort
 let g:NERDTreeCaseSensitiveSort = 0

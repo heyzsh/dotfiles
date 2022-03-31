@@ -1,5 +1,6 @@
 adb
 alacritty
+android-studio
 archlinux-keyring
 base-devel
 bemenu-wayland
@@ -85,3 +86,7 @@ easyeffects
 nlohmann-json
 trash-cli
 cmatrix
+docker
+reflector
+postman-bin
+gallery-dl
