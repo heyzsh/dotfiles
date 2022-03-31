@@ -1,0 +1,14 @@
+{
+    "workbench.startupEditor": "none",
+    "workbench.colorTheme": "Gruvbox Dark Medium",
+    "workbench.iconTheme": "vscode-icons",
+    "editor.fontFamily": "'monospace', monospace",
+    "editor.fontSize": 16,
+    "editor.fontWeight": "600",
+    "editor.minimap.enabled": false,
+    "editor.cursorSmoothCaretAnimation": false,
+    "terminal.integrated.tabs.enableAnimation": false,
+    "editor.tabSize": 2,
+    "vscode-neovim.neovimInitVimPaths.linux": "/home/hey/.config/nvim/init.vim",
+    "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim"
+}
