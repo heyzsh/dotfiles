@@ -90,3 +90,5 @@ docker
 reflector
 postman-bin
 gallery-dl
+csvkit
+pup
