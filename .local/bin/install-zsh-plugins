@@ -16,7 +16,7 @@ mkdir -p "$PLUGINS_DIR/nnn"
 
 # Create Plugins Directory
 git clone https://github.com/zdharma-continuum/fast-syntax-highlighting "${PLUGINS_DIR}/fsh"
-curl -Ls https://github.com/jarun/nnn/tree/master/misc/auto-completion/zsh "${PLUGINS_DIR}/nnn/_nnn"
+curl -Ls https://github.com/jarun/nnn/raw/master/misc/auto-completion/zsh/_nnn -o "${PLUGINS_DIR}/nnn/_nnn"
 
 echo "cleaning up"
 rm -rf "${PLUGINS_DIR}/fsh/.git" && echo "done"

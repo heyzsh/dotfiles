@@ -109,4 +109,4 @@ bindkey '^e' edit-command-line
 
 # Load syntax highlighting; should be last.
 source "${ZDOTDIR}/plugins/fsh/fast-syntax-highlighting.plugin.zsh" 2>/dev/null
-
+source "${ZDOTDIR}/plugins/nnn/_nnn" 2> /dev/null
