@@ -1,0 +1,20 @@
+#!/bin/sh
+
+cwd="$(pwd)"
+tmp="$(mktemp -d)"
+
+cd "$tmp"
+git clone --depth=1 "https://github.com/jarun/nnn" nnn
+
+cd nnn
+sudo make O_NERD=1
+
+mkdir -p "${XDG_CONFIG_HOME:-$HOME/.config}/nnn/plugins"
+echo "Installing plugins.."
+cp -r ./plugins/* "${XDG_CONFIG_HOME:-$HOME/.config}/nnn/plugins"
+
+echo "Installing nnn.."
+sudo make install
+echo "Cleaning out.."
+cd "$cwd"
+rm -rf "$tmp"

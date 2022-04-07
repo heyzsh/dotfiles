@@ -1,0 +1,27 @@
+#!/bin/sh
+
+#---------------------------------------#
+# install fast syntax highlight for zsh #
+#---------------------------------------#
+
+! [ -x $(command -v git) ] && echo "git not installed" && exit 1
+! [ -x $(command -v zsh) ] && echo "make sure you have zsh installed"
+
+[ -z "$ZDOTDIR" ] && export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
+
+PLUGINS_DIR="${ZDOTDIR}/plugins"
+
+! [ -d "$PLUGINS_DIR" ] && mkdir -p "$PLUGINS_DIR"
+mkdir -p "$PLUGINS_DIR/nnn"
+
+# Create Plugins Directory
+git clone https://github.com/zdharma-continuum/fast-syntax-highlighting "${PLUGINS_DIR}/fsh"
+curl -Ls https://github.com/jarun/nnn/tree/master/misc/auto-completion/zsh "${PLUGINS_DIR}/nnn/_nnn"
+
+echo "cleaning up"
+rm -rf "${PLUGINS_DIR}/fsh/.git" && echo "done"
+
+echo "sourcing the plugin"
+source "${PLUGINS_DIR}/fsh/fast-syntax-highlighting.plugin.zsh"
+source "${PLUGINS_DIR}/nnn/_nnn"
+
