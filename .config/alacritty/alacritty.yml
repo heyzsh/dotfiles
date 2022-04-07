@@ -20,10 +20,10 @@ scrolling:
 
 font:
   normal:
-    family: "Sauce Code Pro Nerd Font"
+    family: "monospace"
     style: SemiBold
   bold:
-    family: "Sauce Code Pro Nerd Font"
+    family: "monospace"
     style: SemiBold
   size: 11.0
   offset:
