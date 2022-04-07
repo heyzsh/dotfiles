@@ -113,3 +113,8 @@ alias lsb="lsblk"
 #---------#
 alias p="ping google.com"
 alias nres="sudo systemctl restart NetworkManager"
+
+#--------#
+# YT-DLP #
+#--------#
+alias yt="yt-dlp"

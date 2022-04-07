@@ -3,20 +3,20 @@
 #------------------------------#
 # XDG SPECS AND ~ ORGANIZATION #
 #------------------------------#
-[ -d "$HOME/.config" ]                && mkdir "$HOME/.config"
+[ -d "$HOME/.config" ]                && mkdir -p "$HOME/.config"
 ! [ -d "$HOME/.local/bin" ]           && mkdir -p "$HOME/.local/bin"
 ! [ -d "$HOME/.local/share" ]         && mkdir -p "$HOME/.local/share"
 ! [ -d "$HOME/.local/backgrounds" ]   && mkdir -p "$HOME/.local/backgrounds"
-! [ -d "$HOME/.cache" ]               && mkdir "$HOME/.cache"
-! [ -d "$HOME/.cache/tixati" ]        && mkdir "$HOME/.cache/tixati"
-! [ -d "$HOME/GitHub" ]               && mkdir "$HOME/GitHub"
-! [ -d "$HOME/Pictures" ]             && mkdir "$HOME/Pictures"
-! [ -d "$HOME/Videos" ]               && mkdir "$HOME/Videos"
-! [ -d "$HOME/Documents" ]            && mkdir "$HOME/Documents"
-! [ -d "$HOME/Downloads" ]            && mkdir "$HOME/Downloads"
-! [ -d "$HOME/Desktop" ]              && mkdir "$HOME/Desktop"
-! [ -d "$HOME/P2P" ]                  && mkdir "$HOME/P2P"
-! [ -d "$HOME/Music" ]                && mkdir "$HOME/Music"
+! [ -d "$HOME/.cache" ]               && mkdir -p "$HOME/.cache"
+! [ -d "$HOME/.cache/tixati" ]        && mkdir -p "$HOME/.cache/tixati"
+! [ -d "$HOME/GitHub" ]               && mkdir -p "$HOME/GitHub"
+! [ -d "$HOME/Pictures" ]             && mkdir -p "$HOME/Pictures"
+! [ -d "$HOME/Videos" ]               && mkdir -p "$HOME/Videos"
+! [ -d "$HOME/Documents" ]            && mkdir -p "$HOME/Documents"
+! [ -d "$HOME/Downloads" ]            && mkdir -p "$HOME/Downloads"
+! [ -d "$HOME/Desktop" ]              && mkdir -p "$HOME/Desktop"
+! [ -d "$HOME/P2P" ]                  && mkdir -p "$HOME/P2P"
+! [ -d "$HOME/Music" ]                && mkdir -p "$HOME/Music"
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
@@ -41,6 +41,11 @@ export IMAGE_VIEWER="/usr/bin/imv"
 export MAIL="/usr/bin/mutt"
 export PLAYER="/usr/bin/mpv"
 export TERMINAL="/usr/bin/alacritty"
+
+#--------#
+# LOCALE #
+#--------#
+export LANG=en_US.UTF-8
 
 #--------------#
 # SCRIPTS PATH #
@@ -100,8 +105,8 @@ mkdir -p "$GRIM_DEFAULT_DIR"
 #---------#
 # NODE.JS #
 #---------#
-export NODE_REPL_HISTORY="${XDG_DATA_HOME:-$HOME/.local/share}/node_repl_history"
-export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/npm/npmrc"
+export NODE_REPL_HISTORY="$HOME/.cache/node_repl_history"
+export NPM_CONFIG_USERCONFIG="$HOME/.config/npm/npmrc"
 
 #-----#
 # NVM #
@@ -129,6 +134,16 @@ export REDISCLI_RCFILE="${XDG_CONFIG_HOME:-$HOME/.config}/redis/redisclirc"
 #-----#
 export GTK2_RC_FILES="${XDG_CONFIG_HOME:-$HOME/.config}/gtk-2.0/gtkrc-2.0"
 export GTK_THEME=Gruvbox-Material-Dark
+
+#-----#
+# NNN #
+#-----#
+export NNN_FIFO="/tmp/nnn.fifo"
+export NNN_PLUG="o:fzopen;p:preview-tui;t:preview-tabbed;i:imgview;v:vidthumb;"
+export NNN_USE_EDITOR=1
+export NNN_TRASH=1
+export NNN_COLORS='6125'
+export NNN_ARCHIVE="\\.(7z|a|ace|alz|arc|arj|bz|bz2|cab|cpio|deb|gz|jar|lha|lz|lzh|lzma|lzo|rar|rpm|rz|t7z|tar|tbz|tbz2|tgz|tlz|txz|tZ|tzo|war|xpi|xz|Z|zip)$"
 
 #------------#
 # QT OPTIONS #
@@ -201,7 +216,7 @@ export XDG_SESSION_TYPE="wayland"
 if test -z "${XDG_RUNTIME_DIR}"; then
   export XDG_RUNTIME_DIR=/tmp/${UID}-runtime-dir
 if ! test -d "${XDG_RUNTIME_DIR}"; then
-  mkdir "${XDG_RUNTIME_DIR}"
+  mkdir -p "${XDG_RUNTIME_DIR}"
   chmod 0700 "${XDG_RUNTIME_DIR}"
   fi
 fi
