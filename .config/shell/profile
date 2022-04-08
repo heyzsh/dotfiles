@@ -37,7 +37,7 @@ export DOCUMENT_VIEWER="/usr/bin/zathura"
 export EDITOR="/usr/bin/nvim"
 export FILE_MANAGER="/usr/bin/nnn"
 export IMAGE_EDITOR="/usr/bin/gimp"
-export IMAGE_VIEWER="/usr/bin/imv"
+export IMAGE_VIEWER="/usr/bin/sxiv"
 export MAIL="/usr/bin/mutt"
 export PLAYER="/usr/bin/mpv"
 export TERMINAL="/usr/bin/alacritty"
@@ -139,10 +139,11 @@ export GTK_THEME=Gruvbox-Material-Dark
 # NNN #
 #-----#
 export NNN_FIFO="/tmp/nnn.fifo"
-export NNN_PLUG="o:fzopen;p:preview-tui;t:preview-tabbed;i:imgview;v:vidthumb;"
+export NNN_PLUG="a:autojump;c:chksum;d:dragndrop;f:fzcd;F:fzopen;q:fixname;g:gitroot;G:getplugs;I:imgur;i:imgview;m:mimelist;M:mtpmount;n:nuke;N:nmount;o:organize;O:oldbigfile;P:preview-tab;p:preview-tui;r:rename;R:rsync;s:suedit;t:togglex;u:unmounttree;x:x2sel;X:xdgdefault;"
 export NNN_USE_EDITOR=1
 export NNN_TRASH=1
-export NNN_COLORS='6125'
+BLK="04" CHR="04" DIR="04" EXE="00" REG="00" HARDLINK="00" SYMLINK="06" MISSING="00" ORPHAN="01" FIFO="0F" SOCK="0F" OTHER="02"
+export NNN_FCOLORS="$BLK$CHR$DIR$EXE$REG$HARDLINK$SYMLINK$MISSING$ORPHAN$FIFO$SOCK$OTHER"
 export NNN_ARCHIVE="\\.(7z|a|ace|alz|arc|arj|bz|bz2|cab|cpio|deb|gz|jar|lha|lz|lzh|lzma|lzo|rar|rpm|rz|t7z|tar|tbz|tbz2|tgz|tlz|txz|tZ|tzo|war|xpi|xz|Z|zip)$"
 
 #------------#

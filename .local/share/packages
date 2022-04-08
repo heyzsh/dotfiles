@@ -98,7 +98,9 @@ poppler
 gnome-epub-thumbnailer
 glow
 lynx
-
+jump
+gvfs-mtp
+rsync
 
 # Fonts
 ttf-urdufonts

@@ -1,12 +1,19 @@
 #!/bin/sh
 
 cwd=$(pwd)
-mkdir -p $HOME/.local/share/bg
-cd $HOME/.local/share/bg
 
-echo "Downloading wallpapers..."
+BG_DIR="$HOME/.local/share/bg"
+mkdir -p "$BG_DIR"
+cd "$BG_DIR" || exit
+
+echo "Downloading wallpaper(s).."
+
 curl -L "https://w.wallhaven.cc/full/6o/wallhaven-6olw9x.jpg" -o primary.jpg
 curl -L "https://w.wallhaven.cc/full/j3/wallhaven-j3w3qq.jpg" -o right.jpg
 
-cd $cwd
-echo "Done"
+echo "Optimizing wallpaper(s) for lock screen.."
+
+[ -f primary.jpg ] && convert -scale 10% -blur 0x2.5 -resize 1000% primary.jpg primary.lck.jpg
+[ -f right.jpg ] && convert -scale 10% -blur 0x2.5 -resize 1000% right.jpg right.lck.jpg
+
+cd "$cwd" || exit

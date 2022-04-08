@@ -236,13 +236,17 @@ bindsym XF86MonBrightnessDown exec brightnessctl s 5%-
 #----------------#
 bindsym $mod+p              exec wofi
 bindsym $mod+Shift+p        exec $bemenu
-bindsym $mod+b              exec swaylock --color 282828
+bindsym $mod+b              exec swaylock
 bindsym $mod+Ctrl+f         exec firefox
 bindsym $mod+Ctrl+Shift+f   exec firefox --private-window
 bindsym $mod+e              exec alacritty -e nnn "$HOME"
 bindsym $mod+Ctrl+c         exec speedcrunch
 bindsym $mod+Ctrl+p         exec wofi-emoji
 
+#-------------#
+# SCREEN LOCK #
+#-------------#
+exec swayidle -w timeout 60 'swaylock' timeout 1200 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' before-sleep 'swaylock' lock 'swaylock'
 
 #-----------------------#
 # FLOATING APPLICATIONS #
