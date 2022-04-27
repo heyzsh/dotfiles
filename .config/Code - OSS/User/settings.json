@@ -7,7 +7,7 @@
   "editor.fontSize": 14,
   "editor.fontWeight": "500",
   "editor.formatOnPaste": true,
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
   "editor.roundedSelection": false,
   "editor.scrollBeyondLastLine": true,
   "editor.suggestSelection": "first",
@@ -43,7 +43,6 @@
     "**/CVS": true,
     "**/.DS_Store": true,
     "**/tmp": true,
-    "**/node_modules": true,
     "**/bower_components": true
   },
   "files.watcherExclude": {
@@ -106,5 +105,9 @@
   "explorer.confirmDelete": false,
   "workbench.activityBar.visible": false,
   "security.workspace.trust.untrustedFiles": "open",
-  "window.zoomLevel": 1
+  "window.zoomLevel": 1,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
