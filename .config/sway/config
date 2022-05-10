@@ -259,7 +259,7 @@ for_window [title="mpv"]          floating enable
 #----------#
 # INCLUDES #
 #----------#
-include @sysconfdir@/sway/config.d/*
+# include @sysconfdir@/sway/config.d/*
 
 #-----------#
 # AUTOSTART #

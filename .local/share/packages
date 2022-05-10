@@ -60,6 +60,7 @@ ventoy-bin
 waybar
 wev
 wget
+nautilus
 wl-clipboard
 wofi
 wofi-emoji-git
@@ -102,17 +103,15 @@ jump
 gvfs-mtp
 rsync
 pigz
+gimp
+blender
 
 # Fonts
-ttf-urdufonts
-ttf-x2
 ttf-joypixels
 ttf-linux-libertine
 nerd-fonts-source-code-pro
-sahel-fonts
-ttf-amiri
 ttf-roboto
-ttf-hannom
-ttf-sazanami
-ttf-baekmuk
-ttf-heuristica
+gentium-plus-fonts
+noto-fonts
+noto-fonts-cjk
+noto-fonts-extra
