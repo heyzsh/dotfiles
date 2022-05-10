@@ -254,7 +254,7 @@ exec swayidle -w timeout 60 'swaylock' timeout 1200 'swaymsg "output * dpms off"
 for_window [title="MEGAsync"]     floating enable
 for_window [title="SpeedCrunch"]  floating enable
 for_window [title="mpv"]          floating enable
-for_window [title="mpv"]          resize set width 720 height 480
+# for_window [title="mpv"]          resize set width 720 height 480
 
 #----------#
 # INCLUDES #

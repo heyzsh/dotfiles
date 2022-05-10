@@ -101,6 +101,7 @@ lynx
 jump
 gvfs-mtp
 rsync
+pigz
 
 # Fonts
 ttf-urdufonts
