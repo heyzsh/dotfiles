@@ -10,8 +10,6 @@ set $right    l
 set $br       bracketright
 set $bl       bracketleft
 # Programs
-set $term       alacritty
-set $bemenu     /usr/bin/bemenu-run | xargs swaymsg exec --
 # Wallpapers
 set $primary_bg "$HOME/.local/share/bg/primary.jpg"  
 set $right_bg   "$HOME/.local/share/bg/right.jpg"  
@@ -189,7 +187,7 @@ bindsym $mod+Shift+space    focus mode_toggle
 floating_modifier $mod      normal
 bindsym $mod+space          floating toggle
 # Programs
-bindsym $mod+Return         exec $term
+bindsym $mod+Return         exec alacritty
 bindsym $mod+w              kill
 # Sway
 bindsym $mod+Shift+r        reload
@@ -234,11 +232,11 @@ bindsym XF86MonBrightnessDown exec brightnessctl s 5%-
 #----------------#
 # PROGRAM LAUNCH #
 #----------------#
-bindsym $mod+p              exec $bemenu
+bindsym $mod+p              exec /usr/bin/bemenu-run | xargs swaymsg exec --
 bindsym $mod+b              exec swaylock
 bindsym $mod+Ctrl+f         exec firefox
 bindsym $mod+Ctrl+Shift+f   exec firefox --private-window
-bindsym $mod+e              exec alacritty -e nnn "$HOME"
+bindsym $mod+e              exec pcmanfm
 bindsym $mod+Ctrl+c         exec speedcrunch
 
 #-------------#
