@@ -15,7 +15,6 @@
 ! [ -d "$HOME/Documents" ]            && mkdir -p "$HOME/Documents"
 ! [ -d "$HOME/Downloads" ]            && mkdir -p "$HOME/Downloads"
 ! [ -d "$HOME/Desktop" ]              && mkdir -p "$HOME/Desktop"
-! [ -d "$HOME/P2P" ]                  && mkdir -p "$HOME/P2P"
 ! [ -d "$HOME/Music" ]                && mkdir -p "$HOME/Music"
 
 export XDG_CONFIG_HOME="$HOME/.config"

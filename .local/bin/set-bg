@@ -10,10 +10,10 @@ cd "$BG_DIR" || exit 1
 echo "Downloading wallpaper(s).."
 
 curl -L "https://w.wallhaven.cc/full/nm/wallhaven-nmy29y.jpg" -o primary.jpg
-# curl -L "https://www.teahub.io/photos/full/38-383391_fight-club..jpg" -o right.jpg
-echo "Optimizing wallpaper(s) for lock screen.."
+curl -L "https://www.teahub.io/photos/full/38-383391_fight-club..jpg" -o right.jpg
 
+echo "Optimizing wallpaper(s) for lock screen.."
 [ -f primary.jpg ] && convert -scale 10% -blur 0x5 -resize 1000% primary.jpg primary.lck.jpg
-# [ -f right.jpg ] && convert -scale 10% -blur 0x5 -resize 1000% right.jpg right.lck.jpg
+[ -f right.jpg ] && convert -scale 10% -blur 0x5 -resize 1000% right.jpg right.lck.jpg
 
 cd "$cwd" || exit

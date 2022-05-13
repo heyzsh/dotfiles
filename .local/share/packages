@@ -14,11 +14,10 @@ firefox
 fzf
 gallery-dl
 gdu
-gentium-plus-fonts
+gentium-plus-font
+cronie
 glow
 grim
-gruvbox-material-gtk-theme-git
-gruvbox-material-icon-theme-git
 htop
 imagemagick
 iotop
@@ -27,7 +26,6 @@ libnotify
 lsd
 man-db
 mediainfo
-megasync-bin
 mpv
 neovim
 nerd-fonts-source-code-pro
@@ -40,7 +38,6 @@ npm
 pcmanfm
 pipewire-pulse
 powertop
-protonvpn
 pulsemixer
 pup
 python-pip
@@ -84,3 +81,5 @@ zip
 zsh
 xarchiver
 gvfs-mtp
+protonvpn
+megasync-bin
