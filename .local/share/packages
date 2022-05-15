@@ -4,6 +4,9 @@ archlinux-keyring
 base-devel
 bemenu-wayland
 brightnessctl
+p7zip
+lua
+libunrar
 code
 dash
 docker
@@ -17,6 +20,9 @@ gdu
 gentium-plus-font
 cronie
 glow
+gruvbox-material-icon-theme-git
+gruvbox-material-gtk-theme
+gtk-engine-murrine
 grim
 htop
 imagemagick
@@ -83,3 +89,4 @@ xarchiver
 gvfs-mtp
 protonvpn
 megasync-bin
+network-manager-applet

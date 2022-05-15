@@ -247,10 +247,15 @@ exec swayidle -w timeout 60 'swaylock' timeout 1200 'swaymsg "output * dpms off"
 #-----------------------#
 # FLOATING APPLICATIONS #
 #-----------------------#
-for_window [title="MEGAsync"]     floating enable
-for_window [title="SpeedCrunch"]  floating enable
-for_window [title="mpv"]          floating enable
-for_window [class="Pcmanfm"]      floating enable
+for_window [title="MEGAsync"]                       floating enable
+for_window [title="SpeedCrunch"]                    floating enable
+for_window [title="mpv"]                            floating enable
+for_window [class="Pcmanfm"]                        floating enable
+for_window [class="ProtonVPN"]                      floating enable
+for_window [class="protonvpn"]                      floating enable
+for_window [class="Hubstaff"]                       floating enable
+for_window [class="Tixati"]                         floating enable
+for_window [app_id="com.github.wwmm.easyeffects"]   floating enable
 
 #----------#
 # INCLUDES #
@@ -262,6 +267,7 @@ for_window [class="Pcmanfm"]      floating enable
 #-----------#
 exec pgrep dunst || dunst &
 exec pgrep redshift || redshift -c $HOME/.config/redshift/config.conf &
+exec pgrep nm-applet || nm-applet --indicator &
 
 #----------#
 # SERVICES #
