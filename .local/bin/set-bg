@@ -9,8 +9,8 @@ cd "$BG_DIR" || exit 1
 
 echo "Downloading wallpaper(s).."
 
-curl -L "https://w.wallhaven.cc/full/nm/wallhaven-nmy29y.jpg" -o primary.jpg
-curl -L "https://www.teahub.io/photos/full/38-383391_fight-club..jpg" -o right.jpg
+curl -L "https://w.wallhaven.cc/full/1k/wallhaven-1ko533.jpg" -o primary.jpg
+curl -L "https://w.wallhaven.cc/full/md/wallhaven-mdyqv9.jpg" -o right.jpg
 
 echo "Optimizing wallpaper(s) for lock screen.."
 [ -f primary.jpg ] && convert -scale 10% -blur 0x5 -resize 1000% primary.jpg primary.lck.jpg

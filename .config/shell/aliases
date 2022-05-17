@@ -64,10 +64,11 @@ alias out='pkill sway'
 #-----------#
 # PROTONVPN #
 #-----------#
-alias vpni="protonvpn-cli init"
-alias vpnc="protonvpn-cli connect"
-alias vpnd="protonvpn-cli disconnect"
-alias vpnr="protonvpn-cli reconnect"
+alias vpni="sudo protonvpn init"
+alias vpnc="sudo protonvpn c"
+alias vpnf="sudo protonvpn c -f"
+alias vpnd="sudo protonvpn disconnect"
+alias vpnr="sudo protonvpn reconnect"
 
 #------------#
 # WINDSCRIBE #

@@ -242,7 +242,11 @@ bindsym $mod+Ctrl+c         exec speedcrunch
 #-------------#
 # SCREEN LOCK #
 #-------------#
-exec swayidle -w timeout 60 'swaylock' timeout 1200 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' before-sleep 'swaylock' lock 'swaylock'
+set screensaver swayidle -w timeout 60 'swaylock' timeout 1200 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' before-sleep 'swaylock' lock 'swaylock'
+exec screensaver
+
+bindsym $mod+Shift+b        exec killall swayidle && notify-send "Swayidle" "Screensaver disabled"
+bindsym $mod+Shift+Ctrl+b   exec screensaver && notify-send "Swayidle "Screensaver enabled"
 
 #-----------------------#
 # FLOATING APPLICATIONS #
