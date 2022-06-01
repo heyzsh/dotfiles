@@ -1,3 +1,4 @@
 #!/bin/sh
 
 sudo sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
+echo "Defaults      timestamp_timeout=60" | sudo tee -a /etc/sudoers
