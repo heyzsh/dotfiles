@@ -1,5 +1,6 @@
 adb
 gparted
+telegram-desktop
 alacritty
 archlinux-keyring
 base-devel
@@ -94,3 +95,4 @@ p7zip
 network-manager-applet
 gimp
 usbutils
+sxiv
