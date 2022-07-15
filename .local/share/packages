@@ -1,6 +1,5 @@
 adb
 gparted
-telegram-desktop
 alacritty
 archlinux-keyring
 base-devel
@@ -53,7 +52,6 @@ qt5-styleplugins
 qt5-wayland
 redshift-wayland-git
 reflector
-rust
 shellcheck
 slurp
 speedcrunch
@@ -69,7 +67,6 @@ tree
 ttf-joypixels
 ttf-linux-libertine
 ttf-roboto
-typescript
 unrar
 unzip
 ventoy-bin
@@ -90,9 +87,8 @@ zsh
 xarchiver
 gvfs-mtp
 protonvpn-cli-ng
-megasync-bin
 p7zip
 network-manager-applet
 gimp
 usbutils
-sxiv
+ristretto
