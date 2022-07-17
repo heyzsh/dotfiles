@@ -20,8 +20,6 @@
   // Window
   "window.title": "${folderName}/${activeEditorShort}",
   "window.menuBarVisibility": "toggle",
-  // Workbench
-  "workbench.colorTheme": "Gruvbox Dark Medium",
   "workbench.editor.enablePreview": false,
   "workbench.commandPalette.history": 1024,
   "workbench.editor.showTabs": true,
@@ -103,11 +101,12 @@
   ],
   "json.maxItemsComputed": 32768,
   "explorer.confirmDelete": false,
-  "workbench.activityBar.visible": false,
   "security.workspace.trust.untrustedFiles": "open",
   "window.zoomLevel": 1,
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "vscode-neovim.neovimInitVimPaths.linux": "/usr/bin/nvim",
+  "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim"
 }

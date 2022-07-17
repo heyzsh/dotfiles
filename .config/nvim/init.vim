@@ -16,17 +16,18 @@ call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"
 	Plug 'morhetz/gruvbox'
 	Plug 'plasticboy/vim-markdown'
 	Plug 'preservim/nerdtree'
-  Plug 'Xuyuanp/nerdtree-git-plugin'
-  Plug 'romgrk/barbar.nvim'
-  Plug 'ryanoasis/vim-devicons'
-  Plug 'kyazdani42/nvim-web-devicons'
 	Plug 'tpope/vim-unimpaired'
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
 	Plug 'vim-syntastic/syntastic'
+  Plug 'Xuyuanp/nerdtree-git-plugin'
+  Plug 'cdelledonne/vim-cmake'
+  Plug 'kyazdani42/nvim-web-devicons'
   Plug 'mzlogin/vim-markdown-toc'
-  Plug 'radenling/vim-dispatch-neovim'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'radenling/vim-dispatch-neovim'
+  Plug 'romgrk/barbar.nvim'
+  Plug 'ryanoasis/vim-devicons'
 call plug#end()
 "
 " ===================

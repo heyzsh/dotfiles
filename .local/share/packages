@@ -17,6 +17,8 @@ exfat-utils
 firefox
 fzf
 clang
+conan-git
+cmake
 gallery-dl
 gdu
 gentium-plus-font
