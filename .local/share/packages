@@ -8,7 +8,6 @@ brightnessctl
 p7zip
 lua
 libunrar
-code
 dash
 docker
 dunst
@@ -90,7 +89,6 @@ zsh
 xarchiver
 gvfs-mtp
 protonvpn-cli-ng
-p7zip
 network-manager-applet
 gimp
 usbutils
