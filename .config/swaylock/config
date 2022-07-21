@@ -2,8 +2,8 @@ font=mono
 font-size=10
 color=000000
 inside-color=282828
-image=DVI-I-1:~/.local/share/bg/primary.lck.jpg
+image=DP-1:~/.local/share/bg/primary.lck.jpg
+image=DVI-I-1:~/.local/share/bg/right.lck.jpg
 image=LVDS-1:~/.local/share/bg/primary.lck.jpg
-image=DP-1:~/.local/share/bg/right.lck.jpg
 ignore-empty-password
 daemonize

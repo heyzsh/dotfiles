@@ -19,8 +19,10 @@ clang
 conan-git
 cmake
 gallery-dl
-gdu
+ncdu
+ntp
 gentium-plus-font
+gdb
 cronie
 glow
 gruvbox-material-icon-theme-git
