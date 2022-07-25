@@ -8,5 +8,3 @@ code --install-extension ms-vscode.cmake-tools
 code --install-extension vscodevim.vim 
 code --install-extension eamodio.gitlens
 code --install-extension CoenraadS.bracket-pair-colorizer
-code --install-extension franneck94.c-cpp-runner
-
