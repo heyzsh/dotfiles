@@ -3,7 +3,6 @@
 PKGS="$HOME/.local/share/packages"
 
 sudo pacman -Sy
-sudo pacman -S --noconfirm go rust
 
 TOTAL="$(wc -l $PKGS | awk '{print $1}')"
 COUNT=0

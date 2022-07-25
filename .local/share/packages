@@ -1,13 +1,16 @@
 adb
 gparted
 alacritty
+zsh-completions
 archlinux-keyring
 base-devel
 bemenu-wayland
 brightnessctl
 p7zip
 lua
+luarocks
 libunrar
+code
 dash
 docker
 dunst
