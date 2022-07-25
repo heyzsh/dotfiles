@@ -1,0 +1,11 @@
+code --install-extension timonwong.shellcheck
+code --install-extension llvm-vs-code-extensions.vscode-clangd
+code --install-extension jdinhlife.gruvbox
+code --install-extension ms-python.python
+code --install-extension esbenp.prettier-vscode
+code --install-extension ms-vscode.makefile-tools
+code --install-extension ms-vscode.cmake-tools
+code --install-extension vscodevim.vim 
+code --install-extension eamodio.gitlens
+code --install-extension CoenraadS.bracket-pair-colorizer
+
