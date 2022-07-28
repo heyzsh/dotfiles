@@ -86,7 +86,6 @@ input "2:14:SynPS/2_Synaptics_TouchPad" {
 # Borders
 default_border            pixel 2
 default_floating_border   pixel 2
-smart_borders             off
 # Gaps
 gaps inner  4
 smart_gaps  off
@@ -257,6 +256,7 @@ for_window [class="protonvpn"]                      floating enable
 for_window [class="Hubstaff"]                       floating enable
 for_window [class="Tixati"]                         floating enable
 for_window [app_id="com.github.wwmm.easyeffects"]   floating enable
+for_window [app_id="Alacritty"]                     border pixel 2
 
 #----------#
 # INCLUDES #

@@ -119,3 +119,12 @@ alias nres="sudo systemctl restart NetworkManager"
 # YT-DLP #
 #--------#
 alias yt="yt-dlp"
+alias yb="yt-dlp -f b"
+alias yq="yt-dlp -F"
+
+#-----#
+# MPV #
+#-----#
+mpvb="mpv --ytdl--format=best"
+mpvm="mpv --ytdl--format=480p"
+mpvw="mpv --ytdl--format=worst"

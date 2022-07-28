@@ -10,8 +10,10 @@ p7zip
 lua
 luarocks
 nicotine+
+gifsicle
 libunrar
-code
+qtcreator
+wt
 dash
 docker
 dunst
@@ -99,3 +101,4 @@ network-manager-applet
 gimp
 usbutils
 ristretto
+megasync-bin
