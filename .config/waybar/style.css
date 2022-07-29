@@ -1,6 +1,8 @@
 * {
   font-family: "monospace";
   font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
   min-height: 0;
 }
 
@@ -53,9 +55,8 @@
   padding-top: 1px;
   padding-left: 6px;
   padding-right: 5px;
-  letter-spacing: -1px;
-  font-weight: bold;
-  font-style: italic;
+  font-weight: bolder;
+  letter-spacing: 0;
   text-shadow: 1px 1px 3px #282828;
 }
 
@@ -193,6 +194,7 @@ label:focus {
 
 #tray {
   background-color: #3c3836;
+  letter-spacing: 0;
 }
 
 #tray > .passive {

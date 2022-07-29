@@ -173,6 +173,15 @@ set background=dark
 
 " Color scheme
 try
+  let g:gruvbox_contrast_dark = 'hard'
+  let g:gruvbox_bold = 1
+  let g:gruvbox_italic = 1
+  let g:gruvbox_underline = 1
+  let g:gruvbox_undercurl = 1
+  let g:gruvbox_undercurl = 1
+  let g:gruvbox_italicize_comments = 1
+  let g:gruvbox_italicize_strings = 1
+  let g:gruvbox_number_column = 'bg0'
 	colorscheme gruvbox
 catch
 endtry
@@ -468,7 +477,7 @@ let g:mkdp_refresh_slow = 1
 " => Airline Themes 
 " ====================
 
-let g:airline_theme='gruvbox'
+let g:airline_theme='base16_gruvbox_dark_soft'
 
 " =========================
 " => Conquer of Completion

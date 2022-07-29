@@ -151,7 +151,7 @@ export QT_AUTO_SCREEN_SCALE_FACTOR=0
 # BEMENU #
 #--------#
 export BEMENU_BACKEND="wayland"
-export BEMENU_OPTS="-iw --fn  'Source Code Pro Bold 11' -l 10 --tb  #1D2021 --tf  #A89984 --fb #3C3836  --ff #928374 --nb  #282828 --nf  #BDAE93 --hb  #282828 --hf  #FABD2F --sb  #32302F --sf  #A89984"                         
+export BEMENU_OPTS="-iw --fn  'monospace 11' -l 10 --tb  #1D2021 --tf  #A89984 --fb #3C3836  --ff #928374 --nb  #282828 --nf  #BDAE93 --hb  #282828 --hf  #FABD2F --sb  #32302F --sf  #A89984"                         
 
 #-----------------#
 # FIREFOX OPTIONS #
