@@ -8,7 +8,6 @@ bemenu-wayland
 brightnessctl
 lua
 luarocks
-nicotine+
 libunrar
 dash
 dunst

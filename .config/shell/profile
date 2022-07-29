@@ -112,16 +112,6 @@ export NPM_CONFIG_USERCONFIG="$HOME/.config/npm/npmrc"
 #-----#
 export NVM_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/nvm"
 
-#------------#
-# POSTGRESQL #
-#------------#
-mkdir -p "${XDG_CONFIG_HOME-:$HOME/.config}/pg"
-mkdir -p "${XDG_CACHE_HOME-:$HOME/.cache}/pg"
-export PSQLRC="${XDG_CONFIG_HOME:-$HOME/.config}/pg/psqlrc"
-export PSQL_HISTORY="${XDG_CACHE_HOME:-$HOME/.cache}/pg/psql_history"
-export PGPASSFILE="${XDG_CONFIG_HOME:-$HOME/.config}/pg/pgpass"
-export PGSERVICEFILE="${XDG_CONFIG_HOME-:$HOME/.config}/pg/pg_service.conf"
-
 #-------#
 # REDIS #
 #-------#
