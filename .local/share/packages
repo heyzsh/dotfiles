@@ -23,11 +23,10 @@ ncdu
 ntp
 gentium-plus-font
 gdb
-cronie
 glow
-gruvbox-material-icon-theme-git
-gruvbox-material-gtk-theme
+cronie
 gtk-engine-murrine
+gtk-engines
 grim
 htop
 imagemagick
@@ -70,7 +69,6 @@ translate-shell
 tree
 ttf-joypixels
 ttf-linux-libertine
-ttf-roboto
 unrar
 unzip
 ventoy-bin
@@ -94,3 +92,6 @@ protonvpn-cli-ng
 network-manager-applet
 usbutils
 ristretto
+otf-cascadia-code
+gruvbox-material-icon-theme-git
+gruvbox-material-gtk-theme

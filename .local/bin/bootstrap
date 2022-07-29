@@ -1,0 +1,142 @@
+#!/bin/bash
+
+#------#
+# SUDO #
+#------#
+echo "setting up sudoers.."
+sudo sed -i 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
+echo "Defaults timestamp_timeout=60" | sudo tee -a /etc/sudoers
+echo "✓ sudoers file is set"
+
+#--------#
+# PACMAN #
+#--------#
+echo "configuring up pacman.."
+sudo sed -i 's/#Color/Color/' /etc/pacman.conf
+sudo sed -i 's/#VerbosePkgList/VerbosePkgList/' /etc/pacman.conf
+echo "✓ pacman configured"
+
+#------#
+# PARU #
+#------#
+echo "checking paru.."
+if [ -x "$(command -v paru)" ]; then
+  echo "paru is not installed.." && exit 1
+  echo "installing.."
+  cwd="$(pwd)"
+  cd "$HOME" || exit
+  mkdir __tmp
+  cd __tmp || exit
+  git clone https://aur.archlinux.org/paru.git
+  cd paru || exit
+  echo "building paru.."
+  makepkg --noconfirm --skippgpcheck -r -si
+
+  cd "$cwd" || exit
+  rm -rf "$HOME/__tmp"
+fi
+echo "✓ paru installed"
+
+#-------------------#
+# ARCHLINUX-KEYRING #
+#-------------------#
+echo "updating archlinux-keyring and gnupg.."
+sudo pacman -Sy archlinux-keyring gnupg 
+echo "populating pacman keys.."
+sudo pacman-key --populate
+echo "✓ keyring updated"
+
+#----------#
+# PACKAGES #
+#----------#
+PKGS="$HOME/.local/share/packages"
+TOTAL="$(wc -l "$PKGS" | awk '{print $1}')"
+COUNT=0
+while IFS= read -r p; do
+  COUNT=$((COUNT+1))
+  echo "[$COUNT/$TOTAL] $p"
+  echo "-----------------"
+  [ "$(echo "$p" | grep -ic "#")" -gt 0 ] && echo "$p is commented out" && clear && continue
+  paru --needed --noconfirm --removemake -S "$p"
+done < "$PKGS"
+echo "✓ packages installed"
+
+#------#
+# CRON #
+#------#
+echo "✓ setting up cron.."
+sudo systemctl --enable cronie --now
+echo "✓ cron setup complete.."
+
+#-------------#
+# SCREENSHARE #
+#-------------#
+echo "setting up screenshare.."
+sudo pacman --noconfirm --needed -S xdg-desktop-portal-wlr pipewire pipewire-media-session
+sudo systemctl --user enable pipewire.socket 
+sudo systemctl --user enable pipewire-media-session
+echo "✓ screenshare setup complete"
+
+#-------------#
+# BACKGROUNDS #
+#-------------#
+echo "setting up backgrounds.."
+cwd="$(pwd)"
+BG_DIR="$HOME/.local/share/bg"
+
+rm -rf BG_DIR
+mkdir -p "$BG_DIR"
+cd "$BG_DIR" || exit 1
+
+if ! [ -f "$BG_DIR/primary.jpg" ]; then
+  curl -L "https://w.wallhaven.cc/full/1k/wallhaven-1ko533.jpg" -o primary.jpg
+  echo "optimizing primary.jpg for lockscreen.."
+  [ -f primary.jpg ] && convert -scale 10% -blur 0x5 -resize 1000% primary.jpg primary.lck.jpg
+  echo "✓ primary screen wallpaper set"
+elif ! [ -f "$BG_DIR/right.jpg" ]; then
+  curl -L "https://w.wallhaven.cc/full/g7/wallhaven-g7e6xl.jpg" -o right.jpg
+  echo "optimizing right.jpg for lockscreen.."
+  [ -f right.jpg ] && convert -scale 10% -blur 0x5 -resize 1000% right.jpg right.lck.jpg
+  echo "✓ right screen wallpaper set"
+else
+  echo "✓ wallpapers already downloaded"
+fi
+
+cd "$cwd" || exit 1
+
+#-------------#
+# ZSH PLUGINS #
+#-------------#
+echo "installing zsh plugins.."
+
+[ -z "$ZDOTDIR" ] && export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
+PLUGINS_DIR="${ZDOTDIR}/plugins"
+! [ -d "$PLUGINS_DIR" ] && mkdir -p "$PLUGINS_DIR"
+git clone --depth=1 "https://github.com/zdharma-continuum/fast-syntax-highlighting" "${PLUGINS_DIR}/fsh"
+rm -rf "${PLUGINS_DIR}/fsh/.git" && echo "done"
+
+echo "sourcing the plugin.."
+source "${PLUGINS_DIR}/fsh/fast-syntax-highlighting.plugin.zsh"
+source "${PLUGINS_DIR}/nnn/_nnn"
+
+echo "✓ zsh plugins installed"
+
+#--------#
+# SHELLS #
+#--------#
+echo "setting default shells.."
+cwd="$(pwd)"
+cd /bin || exit 1
+sudo ln -sf dash /bin/sh
+cd "$cwd" || exit 1
+chsh -s /usr/bin/zsh
+cd "$cwd" || exit 1
+echo "✓ shells set"
+
+#----------#
+# CLEAN UP #
+#----------#
+echo "cleaning up.."
+sudo pacman --noconfirm -Scc
+sudo pacman --noconfirm -Rsn "$(pacman -Qdtq)"
+echo "✓ all done. ready to use."

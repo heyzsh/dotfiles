@@ -1,4 +1,0 @@
-#!/bin/sh
-
-sudo sed -i 's/#Color/Color/' /etc/pacman.conf
-sudo sed -i 's/#VerbosePkgList/VerbosePkgList/' /etc/pacman.conf

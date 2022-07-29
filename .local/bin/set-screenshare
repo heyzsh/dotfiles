@@ -1,5 +1,0 @@
-#!/bin/sh
-
-sudo pacman -S xdg-desktop-portal-wlr pipewire pipewire-media-session 
-systemctl --user enable pipewire.socket 
-systemctl --user enable pipewire-media-session

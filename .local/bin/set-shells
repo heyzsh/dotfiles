@@ -1,7 +1,0 @@
-#!/bin/sh
-
-cwd=$(pwd)
-cd /bin
-sudo ln -sf dash /bin/sh
-cd "$cwd"
-chsh -s /usr/bin/zsh
