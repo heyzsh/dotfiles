@@ -6,7 +6,6 @@
 [ -d "$HOME/.config" ]                && mkdir -p "$HOME/.config"
 ! [ -d "$HOME/.local/bin" ]           && mkdir -p "$HOME/.local/bin"
 ! [ -d "$HOME/.local/share" ]         && mkdir -p "$HOME/.local/share"
-! [ -d "$HOME/.local/backgrounds" ]   && mkdir -p "$HOME/.local/backgrounds"
 ! [ -d "$HOME/.cache" ]               && mkdir -p "$HOME/.cache"
 ! [ -d "$HOME/.cache/tixati" ]        && mkdir -p "$HOME/.cache/tixati"
 ! [ -d "$HOME/GitHub" ]               && mkdir -p "$HOME/GitHub"
@@ -220,7 +219,7 @@ export XDG_CURRENT_DESKTOP=sway
 
 # Enable these services for screensharing
 systemctl --user enable pipewire.socket 
-systemctl --user enable pipewire-media-session
+# systemctl --user enable pipewire-media-session
 
 # Fire up Sway!
 dbus-run-session sway

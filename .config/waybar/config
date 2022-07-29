@@ -100,7 +100,7 @@
     },
 
     "network": {
-      "interface": "enp5s0",
+      "interface": "wlp2s0",
       "interval": 1,
       "format-wifi": "{bandwidthDownOctets}  {bandwidthUpOctets} 祝",
       "format-ethernet": "{bandwidthDownOctets}  {bandwidthUpOctets} 祝",

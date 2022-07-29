@@ -14,20 +14,30 @@ echo "✓ sudoers file is set"
 echo "configuring up pacman.."
 sudo sed -i 's/#Color/Color/' /etc/pacman.conf
 sudo sed -i 's/#VerbosePkgList/VerbosePkgList/' /etc/pacman.conf
+sudo pacman --noconfirm -Syy 
 echo "✓ pacman configured"
+
+#-----------#
+# REFLECTOR #
+#-----------#
+echo "setting up mirrors.."
+sudo pacman --noconfirm -S reflector
+echo "configuring mirrors.."
+sudo reflector --latest 30
+echo "✓ mirrors configured"
 
 #------#
 # PARU #
 #------#
 echo "checking paru.."
-if [ -x "$(command -v paru)" ]; then
+if ! [ -x "$(command -v paru)" ]; then
   echo "paru is not installed.." && exit 1
   echo "installing.."
   cwd="$(pwd)"
   cd "$HOME" || exit
   mkdir __tmp
   cd __tmp || exit
-  git clone https://aur.archlinux.org/paru.git
+  git clone "https://aur.archlinux.org/paru.git" paru
   cd paru || exit
   echo "building paru.."
   makepkg --noconfirm --skippgpcheck -r -si
@@ -41,7 +51,7 @@ echo "✓ paru installed"
 # ARCHLINUX-KEYRING #
 #-------------------#
 echo "updating archlinux-keyring and gnupg.."
-sudo pacman -Sy archlinux-keyring gnupg 
+sudo pacman --needed --noconfirm -Sy archlinux-keyring gnupg 
 echo "populating pacman keys.."
 sudo pacman-key --populate
 echo "✓ keyring updated"
@@ -49,6 +59,7 @@ echo "✓ keyring updated"
 #----------#
 # PACKAGES #
 #----------#
+echo "installing packages.."
 PKGS="$HOME/.local/share/packages"
 TOTAL="$(wc -l "$PKGS" | awk '{print $1}')"
 COUNT=0
@@ -65,17 +76,8 @@ echo "✓ packages installed"
 # CRON #
 #------#
 echo "✓ setting up cron.."
-sudo systemctl --enable cronie --now
+sudo systemctl enable cronie --now
 echo "✓ cron setup complete.."
-
-#-------------#
-# SCREENSHARE #
-#-------------#
-echo "setting up screenshare.."
-sudo pacman --noconfirm --needed -S xdg-desktop-portal-wlr pipewire pipewire-media-session
-sudo systemctl --user enable pipewire.socket 
-sudo systemctl --user enable pipewire-media-session
-echo "✓ screenshare setup complete"
 
 #-------------#
 # BACKGROUNDS #
@@ -90,16 +92,19 @@ cd "$BG_DIR" || exit 1
 
 if ! [ -f "$BG_DIR/primary.jpg" ]; then
   curl -L "https://w.wallhaven.cc/full/1k/wallhaven-1ko533.jpg" -o primary.jpg
-  echo "optimizing primary.jpg for lockscreen.."
+  echo "optimizing primary screen bg for lockscreen.."
   [ -f primary.jpg ] && convert -scale 10% -blur 0x5 -resize 1000% primary.jpg primary.lck.jpg
   echo "✓ primary screen wallpaper set"
-elif ! [ -f "$BG_DIR/right.jpg" ]; then
-  curl -L "https://w.wallhaven.cc/full/g7/wallhaven-g7e6xl.jpg" -o right.jpg
-  echo "optimizing right.jpg for lockscreen.."
-  [ -f right.jpg ] && convert -scale 10% -blur 0x5 -resize 1000% right.jpg right.lck.jpg
-  echo "✓ right screen wallpaper set"
 else
-  echo "✓ wallpapers already downloaded"
+  echo "✓ primary screen bg already downloaded"
+fi
+if ! [ -f "$BG_DIR/right.jpg" ]; then
+  curl -L "https://w.wallhaven.cc/full/g7/wallhaven-g7e6xl.jpg" -o right.jpg
+  echo "optimizing right screen bg for lockscreen.."
+  [ -f right.jpg ] && convert -scale 10% -blur 0x5 -resize 1000% right.jpg right.lck.jpg
+  echo "✓ right screen bg set"
+else
+  echo "✓ right screen bg already downloaded"
 fi
 
 cd "$cwd" || exit 1
@@ -111,14 +116,15 @@ echo "installing zsh plugins.."
 
 [ -z "$ZDOTDIR" ] && export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
 PLUGINS_DIR="${ZDOTDIR}/plugins"
-! [ -d "$PLUGINS_DIR" ] && mkdir -p "$PLUGINS_DIR"
-git clone --depth=1 "https://github.com/zdharma-continuum/fast-syntax-highlighting" "${PLUGINS_DIR}/fsh"
-rm -rf "${PLUGINS_DIR}/fsh/.git" && echo "done"
+if ! [ -e "$PLUGINS_DIR/fsh" ]; then 
+  ! [ -d "$PLUGINS_DIR" ] && mkdir -p "$PLUGINS_DIR"
+  git clone --depth=1 "https://github.com/zdharma-continuum/fast-syntax-highlighting" "${PLUGINS_DIR}/fsh"
+  rm -rf "${PLUGINS_DIR}/fsh/.git" && echo "done"
 
-echo "sourcing the plugin.."
-source "${PLUGINS_DIR}/fsh/fast-syntax-highlighting.plugin.zsh"
-source "${PLUGINS_DIR}/nnn/_nnn"
-
+  echo "sourcing the plugin.."
+  source "${PLUGINS_DIR}/fsh/fast-syntax-highlighting.plugin.zsh"
+  source "${PLUGINS_DIR}/nnn/_nnn"
+fi
 echo "✓ zsh plugins installed"
 
 #--------#
@@ -137,6 +143,5 @@ echo "✓ shells set"
 # CLEAN UP #
 #----------#
 echo "cleaning up.."
-sudo pacman --noconfirm -Scc
-sudo pacman --noconfirm -Rsn "$(pacman -Qdtq)"
+# clean up here
 echo "✓ all done. ready to use."
