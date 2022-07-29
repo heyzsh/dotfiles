@@ -7,4 +7,3 @@ GIT_DIR="$HOME/GitHub/dotfiles"
 files="$(git --git-dir="$GIT_DIR" --work-tree="$HOME" status -s | awk '{ $1=$1; print $2 }' | xargs echo)" 2> /dev/null
 git --git-dir="$GIT_DIR" --work-tree="$HOME" add $files
 echo "$files"
-echo "Done"
