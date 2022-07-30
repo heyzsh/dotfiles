@@ -150,7 +150,7 @@ export QT_AUTO_SCREEN_SCALE_FACTOR=0
 # BEMENU #
 #--------#
 export BEMENU_BACKEND="wayland"
-export BEMENU_OPTS="-iw --fn  'monospace 11' -l 10 --tb  #1D2021 --tf  #A89984 --fb #3C3836  --ff #928374 --nb  #282828 --nf  #BDAE93 --hb  #282828 --hf  #FABD2F --sb  #32302F --sf  #A89984"                         
+export BEMENU_OPTS="-ifnwc -l 10 -p '  ' -P '' -H 1 -M 240 -W 0.5 -B 5 --ch 15 --cw 5 --fn 'monospace 14' --tb '#1d2021' --tf '#98971A' --ff '#fabd2f' --fb '#1d2021' --nb '#1d2021' --nf '#A89984' --hb '#282828' --hf '#fe8019' --ab '#1d2021' --af '#A89984' --bdr '#FBF1c7'"                         
 
 #-----------------#
 # FIREFOX OPTIONS #
