@@ -20,7 +20,6 @@ cmake
 gallery-dl
 ncdu
 ntp
-gentium-plus-font
 gdb
 glow
 cronie
@@ -91,6 +90,8 @@ protonvpn-cli-ng
 network-manager-applet
 usbutils
 ristretto
+swaybg
+papirus-icon-theme
+graphite-gtk-theme
+otf-fira-sans
 otf-cascadia-code
-gruvbox-material-icon-theme-git
-gruvbox-material-gtk-theme

@@ -9,7 +9,7 @@ set $up       k
 set $right    l
 set $br       bracketright
 set $bl       bracketleft
-# Programs
+
 # Wallpapers
 set $primary_bg "$HOME/.local/share/bg/primary.jpg"  
 set $right_bg   "$HOME/.local/share/bg/right.jpg"  
@@ -17,7 +17,11 @@ set $right_bg   "$HOME/.local/share/bg/right.jpg"
 #----------#
 # BEHAVIOR #
 #----------#
-# Multiple Screens
+# Laptop
+output LVDS-1 {
+  bg          $primary_bg fill #282828
+}
+
 # Primary
 output DP-1 {
   transform   0
@@ -30,10 +34,6 @@ output DVI-I-1 {
   pos         1920 -52
   res         1920x1080
   bg          $right_bg fill #282828
-}
-# Laptop
-output LVDS-1 {
-  bg          $primary_bg fill #282828
 }
 # Workspaces Desktop
 workspace 1 output DP-1
@@ -85,7 +85,7 @@ input "2:14:SynPS/2_Synaptics_TouchPad" {
 #---------#
 # Borders
 default_border            pixel 2
-default_floating_border   pixel 2
+default_floating_border   pixel 1
 # Gaps
 gaps inner  4
 smart_gaps  off

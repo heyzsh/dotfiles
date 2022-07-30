@@ -1,6 +1,6 @@
-#---------------#
-# CONFIGURATION #
-#---------------#
+#--------#
+# CONFIG #
+#--------#
 alias config='/usr/bin/git --git-dir=$HOME/GitHub/dotfiles --work-tree=$HOME'
 
 #-----#
@@ -33,18 +33,13 @@ alias nv='nvim'
 alias nvc='nvim $HOME/.config/init.vim'
 alias nva='nvim $HOME/.config/shell/aliases'
 alias nvp='nvim $HOME/.config/shell/profile'
-alias nvmk='sudo nvim /etc/portage/make.conf'
 
 #-------------------#
 # PACKAGE MANGEMENT #
 #-------------------#
-alias install='paru -S'
-alias qinstall='paru --noconfirm'
-alias update='paru -Syu'
-alias qupdate='paru -Syu --noconfirm'
-alias esync='sudo pacman -Sy'
-alias delete='sudo pacman -Rns'
-alias search='paru -Ss'
+alias xi='paru -S --noconfirm'
+alias xd='sudo pacman -Rns'
+alias x='paru -Ss'
 
 #----------------------#
 # NAVIGATION SHORTCUTS #

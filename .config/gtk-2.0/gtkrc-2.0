@@ -2,9 +2,9 @@
 # Any customization should be done in ~/.gtkrc-2.0.mine instead.
 
 include "/home/hey/.gtkrc-2.0.mine"
-gtk-theme-name="Gruvbox-Material-Dark"
-gtk-icon-theme-name="Gruvbox-Material-Dark"
-gtk-font-name="Silawik 10"
+gtk-theme-name="Graphite-dark"
+gtk-icon-theme-name="Papirus-Dark"
+gtk-font-name="Fira Sans 10"
 gtk-cursor-theme-name="Adwaita"
 gtk-cursor-theme-size=0
 gtk-toolbar-style=GTK_TOOLBAR_TEXT
@@ -16,3 +16,4 @@ gtk-enable-input-feedback-sounds=0
 gtk-xft-antialias=1
 gtk-xft-hinting=1
 gtk-xft-hintstyle="hintfull"
+gtk-xft-rgba="none"
