@@ -1,6 +1,0 @@
-sudo npm install -g dockerfile-language-server-nodejs graphql-language-service-cli sql-language-server
-sudo pip install cmake-language-server
-luarocks install --server=http://luarocks.org/dev lua-lsp
-
-nvim -c 'PlugInstall' -c 'CocInstall coc-clangd coc-json coc-sh coc-pyright coc-css coc-html coc-markdownlint' 
-

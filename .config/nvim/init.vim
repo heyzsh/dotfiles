@@ -12,40 +12,18 @@ endif
 
 " Install the plugins
 call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"'))
-	Plug 'kien/ctrlp.vim'
 	Plug 'morhetz/gruvbox'
-	Plug 'plasticboy/vim-markdown'
 	Plug 'preservim/nerdtree'
 	Plug 'tpope/vim-unimpaired'
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
-	Plug 'vim-syntastic/syntastic'
   Plug 'Xuyuanp/nerdtree-git-plugin'
-  Plug 'cdelledonne/vim-cmake'
-  Plug 'kyazdani42/nvim-web-devicons'
+  " Plug 'kyazdani42/nvim-web-devicons'
   Plug 'mzlogin/vim-markdown-toc'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'radenling/vim-dispatch-neovim'
   Plug 'romgrk/barbar.nvim'
   Plug 'ryanoasis/vim-devicons'
 call plug#end()
-"
-" ===================
-" => COC PACKAGES
-" ===================
-
-" CocInstall coc-clangd
-" CocInstall coc-json
-" CocInstall coc-sh
-" CocInstall coc-pyright
-" CocInstall coc-css
-" CocInstall coc-html
-" CocInstall coc-markdownlint
-" npm install -g dockerfile-language-server-nodejs
-" npm install -g graphql-language-service-cli
-" npm install -g sql-language-server
-" pip install cmake-language-server
-" luarocks install --server=http://luarocks.org/dev lua-lsp
 
 " ===================
 " => GENERAL CONFIG
