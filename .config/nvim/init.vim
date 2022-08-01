@@ -18,7 +18,7 @@ call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
   Plug 'Xuyuanp/nerdtree-git-plugin'
-  " Plug 'kyazdani42/nvim-web-devicons'
+  Plug 'kyazdani42/nvim-web-devicons'
   Plug 'mzlogin/vim-markdown-toc'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'romgrk/barbar.nvim'
